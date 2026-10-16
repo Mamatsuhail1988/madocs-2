@@ -180,3 +180,13 @@ mark{background:#fff2a8;padding:0 2px;border-radius:3px}
   .timeline{margin-left:2px;padding-left:18px}
   .timeline>div:before{left:-25px}
 }
+
+/* Label pada imej yang masih ilustrasi (belum gambar sebenar) — kawal melalui data/site.json → gambar_ilustrasi */
+.chip-illustrasi{position:absolute;right:10px;bottom:10px;z-index:3;background:#ffffffe8;color:#041e54;border:1px solid #041e5433;border-radius:999px;padding:3px 9px;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.activity-image span.chip-illustrasi,.course-photo span.chip-illustrasi,.item-photo span.chip-illustrasi{left:auto;right:10px;bottom:10px;background:#ffffffe8;color:#041e54;border-radius:999px;padding:3px 9px;font-size:9px}
+.hero .chip-illustrasi{right:16px;bottom:16px;font-size:10px}
+@media (max-width:640px){.hero .chip-illustrasi{top:12px;bottom:auto;right:12px}}
+
+/* Pepijat: media query .mobile-nav{display:grid} mengalahkan atribut [hidden], jadi menu mudah alih terpaksa
+   ditutup secara manual. Peraturan ini memulihkan kelakuan togol dalam app.js. */
+.mobile-nav[hidden]{display:none!important}

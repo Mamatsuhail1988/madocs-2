@@ -330,6 +330,7 @@ def kad_kursus(k, keutamaan=False):
   <div class="course-photo">
     <img src="/{esc(img)}" alt="{esc(alt)}" loading="{'eager' if keutamaan else 'lazy'}" decoding="async">
     {badge}
+    {chip_ilustrasi()}
   </div>
   <div class="course-info">
     <span class="course-code">{esc(k.get('kod',''))}</span>
@@ -344,6 +345,13 @@ def kad_kursus(k, keutamaan=False):
 </article>"""
 
 
+def chip_ilustrasi():
+    """Label kecil pada imej yang belum gambar sebenar (kawal melalui data/site.json → gambar_ilustrasi)."""
+    if not SITE.get("gambar_ilustrasi"):
+        return ""
+    return '<span class="chip-illustrasi">Imej ilustrasi</span>'
+
+
 def kad_aktiviti(a):
     d = parse_date(a.get("tarikh"))
     kelas = "teal" if (a.get("kategori") or "").upper() in ("TTT", "PCC") else ""
@@ -351,6 +359,7 @@ def kad_aktiviti(a):
   <div class="activity-image">
     <img src="/{esc(a.get('gambar','assets/hero-clinical.webp'))}" alt="{esc(a.get('gambar_alt') or a['tajuk'])}" loading="lazy" decoding="async">
     <span class="{kelas}">{esc(a.get('kategori',''))}</span>
+    {chip_ilustrasi()}
   </div>
   <div class="activity-info">
     <h3>{esc(a['tajuk'])}</h3>
@@ -363,8 +372,8 @@ def kad_aktiviti(a):
 
 def item_kandungan(tajuk, url, ringkas, tarikh=None, kategori="", gambar=None, alt="", meta_ikon="calendar-days"):
     """Kad senarai untuk berita / aktiviti / sumber."""
-    foto = ('<div class="item-photo"><img src="/%s" alt="%s" loading="lazy" decoding="async"></div>'
-            % (esc(gambar), esc(alt or tajuk))) if gambar else ""
+    foto = ('<div class="item-photo"><img src="/%s" alt="%s" loading="lazy" decoding="async">%s</div>'
+            % (esc(gambar), esc(alt or tajuk), chip_ilustrasi())) if gambar else ""
     kelas = "" if gambar else " no-photo"
     badge = '<span class="badge">%s</span>' % esc(kategori) if kategori else ""
     masa = ('<time datetime="%s">%s %s</time>' % (esc(tarikh), icon(meta_ikon), esc(tarikh_pdk(parse_date(tarikh))))) if tarikh else ""
@@ -514,8 +523,9 @@ def bina_utama():
                              "Pengumuman dan berita MADOCS akan diterbitkan di sini.")
 
     isi = f"""<section class="hero">
-  <img src="/assets/hero-clinical.webp" alt="Profesional perubatan dalam latihan klinikal MADOCS" width="1920" height="1920" class="hero-image" fetchpriority="high" decoding="async">
+  <img src="/assets/hero-clinical.webp" alt="Imej ilustrasi: suasana latihan klinikal" width="1920" height="1920" class="hero-image" fetchpriority="high" decoding="async">
   <div class="hero-wash"></div>
+  {chip_ilustrasi()}
   <div class="shell hero-content">
     <div class="hero-copy">
       <p class="hero-kicker">Ditubuhkan {esc(SITE['ditubuhkan'])} · Malaysia</p>
