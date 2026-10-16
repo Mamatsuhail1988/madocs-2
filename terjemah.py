@@ -36,6 +36,7 @@ SLAG_EN = {
     "/carian/": "/en/search/",
     "/dasar-privasi/": "/en/privacy/",
     "/terma/": "/en/terms/",
+    "/kebolehaksesan/": "/en/accessibility/",
 }
 
 # --- penanda yang diletak oleh build.py dan diganti di sini --------------------------

@@ -515,3 +515,12 @@ footer{background:#031330;background-image:none}
 .nota-prakata h3{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--g-biru);margin:0 0 9px}
 .nota-prakata p{font-size:15px;line-height:1.75;margin:0}
 @media (max-width:960px){.split-presiden{grid-template-columns:1fr;gap:26px}.kad-presiden{padding:22px 18px}}
+
+/* --- Fasa 1: butang WhatsApp + kotak bantuan kontekstual --- */
+.btn-blok.wa{background:#128c7e;border-color:#128c7e;box-shadow:none}
+.btn-blok.wa:hover{background:#0f7568;border-color:#0f7568}
+.btn-blok.wa svg{width:15px;height:15px}
+.kotak-bantuan{background:var(--g-permukaan)}
+.kotak-bantuan h3{margin-top:0}
+.kotak-bantuan p{font-size:14px;line-height:1.7;color:var(--g-teks);margin:0 0 16px}
+.topbar a[href^="https://wa.me"]{font-weight:700}

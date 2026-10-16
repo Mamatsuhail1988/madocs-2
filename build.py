@@ -16,6 +16,7 @@ import html
 import re
 import shutil
 import sys
+import urllib.parse
 from pathlib import Path
 from datetime import date, datetime
 
@@ -41,6 +42,30 @@ STATUS_LABEL = {
 # ----------------------------------------------------------------- utiliti
 def esc(s):
     return html.escape(str(s), quote=True)
+
+
+def wa_nombor():
+    """Nombor WhatsApp urusetia dalam format antarabangsa tanpa tanda (untuk wa.me)."""
+    return re.sub(r"\D", "", str(SITE.get("telefon", "")))
+
+
+def wa_pautan(teks=""):
+    """Pautan WhatsApp ke urusetia, dengan mesej sedia taip."""
+    asas = "https://wa.me/%s" % wa_nombor()
+    return asas + ("?text=" + urllib.parse.quote(teks) if teks else "")
+
+
+MESEJ_WA_UMUM = "Salam, saya ingin bertanya tentang MADOCS."
+
+
+def kotak_bantuan(tajuk, teks, mesej=None):
+    """Kotak bantuan kontekstual: WhatsApp + e-mel urusetia (corak RCOG/RCGP)."""
+    return f"""<div class="card kotak-bantuan">
+  <h3>{esc(tajuk)}</h3>
+  <p>{esc(teks)}</p>
+  <a class="btn-blok wa" href="{wa_pautan(mesej or MESEJ_WA_UMUM)}" target="_blank" rel="noopener">{icon('message-circle')} WhatsApp urusetia</a>
+  <a class="btn-blok ghost" href="mailto:{esc(SITE['email'])}" style="margin-top:9px">{icon('mail')} E-mel urusetia</a>
+</div>"""
 
 
 def load(name):
@@ -176,6 +201,8 @@ def topbar():
   <div class="shell topbar-inner">
     <span>{icon('shield-check')} {esc(SITE['pendaftaran'])}</span>
     <div>
+      <a href="{wa_pautan(MESEJ_WA_UMUM)}" target="_blank" rel="noopener">{icon('message-circle')} WhatsApp</a>
+      <i></i>
       <a href="mailto:{esc(SITE['email'])}">{icon('mail')} {esc(SITE['email'])}</a>
       <i></i>
       <a href="tel:{esc(SITE['telefon'])}">{icon('phone')} {esc(SITE['telefon_papar'])}</a>
@@ -221,6 +248,7 @@ def footer():
       <div class="socials">
         <a href="mailto:{esc(SITE['email'])}" aria-label="E-mel">{icon('mail')}</a>
         <a href="tel:{esc(SITE['telefon'])}" aria-label="Telefon">{icon('phone')}</a>
+        <a href="{wa_pautan(MESEJ_WA_UMUM)}" target="_blank" rel="noopener" aria-label="WhatsApp urusetia">{icon('message-circle')}</a>
         <a href="/hubungi/" aria-label="Hubungi kami">{icon('globe')}</a>
       </div>
     </div>
@@ -247,7 +275,7 @@ def footer():
   </div>
   <div class="shell footer-bottom">
     <span>© {date.today().year} {esc(SITE['nama'])}. Hak cipta terpelihara.</span>
-    <span><a href="/dasar-privasi/">Dasar Privasi</a><i></i><a href="/terma/">Terma Penggunaan</a></span>
+    <span><a href="/dasar-privasi/">Dasar Privasi</a><i></i><a href="/terma/">Terma Penggunaan</a><i></i><a href="/kebolehaksesan/">Aksesibiliti</a></span>
   </div>
 </footer>"""
 
@@ -385,6 +413,9 @@ def kad_kursus(k, keutamaan=False):
         fakta.append(f"<li>{icon('map-pin')}{esc(k['tempat'])}</li>")
     if k.get("sasaran"):
         fakta.append(f"<li>{icon('users')}{esc(k['sasaran'])}</li>")
+    if k.get("kapasiti"):
+        fakta.append(f"<li>{icon('list-checks')}Kapasiti {esc(k['kapasiti'])}"
+                     + (f" · {esc(k['baki'])} tempat berbaki" if k.get("baki") else "") + "</li>")
     if k.get("masa_mula"):
         fakta.append(f"<li>{icon('clock')}{esc(k['masa_mula'])}–{esc(k.get('masa_tamat',''))}</li>")
     tag = "".join("<span>%s</span>" % esc(t) for t in (k.get("tag") or []))
@@ -867,7 +898,8 @@ def bina_kursus_detail(k):
     if k.get("tutup_daftar"):
         baris("Tutup pendaftaran", esc(tarikh_pdk(parse_date(k["tutup_daftar"]))))
     if k.get("kapasiti"):
-        baris("Kapasiti peserta", esc(k["kapasiti"]))
+        baris("Kapasiti peserta", esc(k["kapasiti"])
+              + (f" · {esc(k['baki'])} tempat berbaki" if k.get("baki") else ""))
     baris("Status", badge_status(k.get("status")))
 
     for medan, label in (("objektif", "Objektif pembelajaran"), ("rangka", "Rangka program")):
@@ -975,7 +1007,8 @@ def bina_kursus_detail(k):
       <div class="card">
         <h3>Perlukan bantuan?</h3>
         <p style="font-size:14px;line-height:1.7;color:#3b4659">Hubungi urusetia MADOCS untuk pertanyaan tentang pendaftaran, yuran atau keperluan kursus.</p>
-        <a class="btn-blok ghost" href="/hubungi/" style="margin-top:14px">{icon('mail')} Hubungi urusetia</a>
+        <a class="btn-blok wa" href="{wa_pautan('Salam, saya ingin bertanya tentang kursus ' + k['tajuk'] + ' (' + k.get('kod','') + ').')}" target="_blank" rel="noopener" style="margin-top:14px">{icon('message-circle')} WhatsApp urusetia</a>
+        <a class="btn-blok ghost" href="/hubungi/" style="margin-top:9px">{icon('mail')} E-mel / borang</a>
       </div>
     </aside>
   </div>
@@ -1078,6 +1111,8 @@ def bina_keahlian():
   </div>
 </section>
 
+<section class="content-wrap"><div class="shell">{kotak_bantuan("Ada pertanyaan tentang keahlian?", "Hubungi urusetia MADOCS untuk kelayakan, kategori atau yuran keahlian.", "Salam, saya ingin bertanya tentang keahlian MADOCS.")}</div></section>
+
 {cta_komuniti(label='Sertai MADOCS sekarang')}"""
     halaman("keahlian", "Keahlian | MADOCS",
             "Keahlian MADOCS: manfaat, kelayakan, kategori, yuran dan proses permohonan untuk doktor yang terlibat dalam amalan berkhatan di Malaysia.",
@@ -1103,8 +1138,10 @@ def bina_sertai():
                   'E-MEL URUSETIA %s</a>' % (esc(SITE["email"]), icon("mail")))
         nota = ('<div class="form-note"><b>Borang dalam talian belum diaktifkan.</b> Buat masa ini, sila hantar '
                 'permohonan melalui e-mel atau WhatsApp urusetia MADOCS: <a href="mailto:%s">%s</a> · '
-                '<a href="tel:%s">%s</a>. Sediakan butiran di bawah untuk memudahkan urusan.</div>'
-                % (esc(SITE["email"]), esc(SITE["email"]), esc(SITE["telefon"]), esc(SITE["telefon_papar"])))
+                '<a href="tel:%s">%s</a> · <a href="%s" target="_blank" rel="noopener">WhatsApp</a>. '
+                'Sediakan butiran di bawah untuk memudahkan urusan.</div>'
+                % (esc(SITE["email"]), esc(SITE["email"]), esc(SITE["telefon"]), esc(SITE["telefon_papar"]),
+                   esc(wa_pautan("Salam, saya ingin memohon keahlian MADOCS."))))
 
     borang = f"""{aksi}
   <div class="form-grid">
@@ -1376,6 +1413,11 @@ def bina_hubungi():
           <span>{icon('shield-check')}{esc(SITE['pendaftaran'])}</span>
         </div>
       </div>
+      <div class="card kotak-bantuan">
+        <h3>Lebih pantas melalui WhatsApp</h3>
+        <p>Urusetia MADOCS boleh dihubungi terus melalui WhatsApp pada waktu pejabat.</p>
+        <a class="btn-blok wa" href="{wa_pautan(MESEJ_WA_UMUM)}" target="_blank" rel="noopener">{icon('message-circle')} Buka WhatsApp</a>
+      </div>
       <div class="card">
         <h3>Keahlian</h3>
         <p style="font-size:14px;line-height:1.7;color:#3b4659">Ingin menyertai MADOCS? Mulakan dengan borang permohonan keahlian.</p>
@@ -1424,6 +1466,7 @@ def bina_carian():
         {"t": "Aktiviti MADOCS", "u": "/aktiviti/", "r": "Program dan aktiviti yang telah dijalankan.", "j": "Halaman"},
         {"t": "Pusat Sumber", "u": "/sumber/", "r": "Rujukan klinikal dan bahan pendidikan.", "j": "Halaman"},
         {"t": "Hubungi MADOCS", "u": "/hubungi/", "r": "E-mel, telefon dan borang pertanyaan urusetia.", "j": "Halaman"},
+        {"t": "Pernyataan Aksesibiliti", "u": "/kebolehaksesan/", "r": "Komitmen aksesibiliti laman MADOCS dan cara memberi maklum balas.", "j": "Halaman"},
     ]
     (ROOT / "carian").mkdir(exist_ok=True)
     (ROOT / "carian" / "index.json").write_text(json.dumps(indeks, ensure_ascii=False, indent=0), encoding="utf-8")
@@ -1495,6 +1538,66 @@ def bina_peta_sitemap():
 
 def _src_css(name):
     return (ROOT / "_src" / name).read_text(encoding="utf-8")
+
+
+def bina_kebolehaksesan():
+    """Pernyataan aksesibiliti (corak RCOG) — ikhlas tentang apa yang sudah dibuat dan apa yang belum."""
+    akses_wa = wa_pautan("Salam, saya menghadapi masalah mengakses laman MADOCS:")
+    isi = page_hero([("Utama", "/"), ("Pernyataan Aksesibiliti", None)], "Pernyataan Aksesibiliti",
+                    "Komitmen MADOCS supaya laman ini boleh digunakan oleh semua pengunjung.") + f"""
+<section class="content-wrap">
+  <div class="shell split">
+    <div>
+      <div class="card prose">
+        <h2>Komitmen kami</h2>
+        <p>MADOCS mahu maklumat tentang persatuan, kursus dan keahlian boleh diakses oleh semua orang —
+        termasuk pengguna pembaca skrin, pengguna papan kekunci, dan mereka yang membaca pada telefon
+        dengan teks besar. Kami merujuk garis panduan <b>WCAG 2.2 tahap AA</b> sebagai sasaran, dan
+        memperbaiki laman secara berperingkat.</p>
+
+        <h2>Apa yang telah kami lakukan</h2>
+        <ul>
+          <li>Struktur tajuk yang tersusun dan teks alternatif bagi setiap gambar.</li>
+          <li>Pautan "lompat ke kandungan utama" pada setiap halaman dan keadaan fokus papan kekunci yang jelas.</li>
+          <li>Saiz teks sekurang-kurangnya 12px (kebanyakan teks badan 15–17px) dengan kontras warna yang tinggi.</li>
+          <li>Semua gerakan (peralihan halaman, animasi skrol) dimatikan secara automatik apabila peranti pengguna menetapkan "kurang gerakan".</li>
+          <li>Laman dwibahasa (Bahasa Melayu dan Inggeris) dengan pemilih bahasa pada setiap halaman.</li>
+          <li>Sasaran sentuh sekurang-kurangnya 44px untuk butang dan pautan utama pada telefon.</li>
+        </ul>
+
+        <h2>Apa yang masih belum sempurna</h2>
+        <ul>
+          <li>Sebahagian imej masih merupakan <b>imej ilustrasi</b> (dilabel "Imej ilustrasi") menunggu gambar sebenar daripada jawatankuasa.</li>
+          <li>Kandungan yang belum disediakan (angka, jawatankuasa, bahan Pusat Sumber) dipaparkan sebagai "Sedang disediakan" — kami sengaja tidak mengisi ruang itu dengan teks contoh.</li>
+          <li>Muat turun fail (PDF) dalam Pusat Sumber belum diuji dengan pembaca skrin untuk semua pembaca PDF.</li>
+        </ul>
+
+        <h2>Beritahu kami jika ada halangan</h2>
+        <p>Jika anda menghadapi masalah mengakses mana-mana bahagian laman ini — teks yang tidak boleh dibaca,
+        butang yang sukar ditekan, atau maklumat yang hilang — hubungi urusetia kami. Kami akan cuba membetulkannya
+        dan memberi jawapan dalam masa munasabah (biasanya dalam tiga hari bekerja).</p>
+        <p>E-mel: <a href="mailto:{esc(SITE['email'])}">{esc(SITE['email'])}</a> &middot;
+        Telefon: <a href="tel:{esc(SITE['telefon'])}">{esc(SITE['telefon_papar'])}</a></p>
+        <p class="nota-isi">Pernyataan ini dikemas kini pada Oktober 2026 dan akan disemak semula apabila laman
+        ditambah ciri baharu.</p>
+      </div>
+    </div>
+    <aside class="side">
+      {kotak_bantuan("Ada halangan akses?", "Hantar kepada urusetia butiran halaman dan masalah yang anda hadapi.", "Salam, saya menghadapi masalah mengakses laman MADOCS:")}
+      <div class="card">
+        <h3>Pintasan</h3>
+        <nav class="side-nav">
+          <a href="/dasar-privasi/">Dasar Privasi</a>
+          <a href="/terma/">Terma Penggunaan</a>
+          <a href="/hubungi/">Hubungi urusetia</a>
+        </nav>
+      </div>
+    </aside>
+  </div>
+</section>"""
+    halaman("", "Pernyataan Aksesibiliti | MADOCS",
+            "Pernyataan aksesibiliti laman MADOCS: sasaran WCAG 2.2 AA, apa yang telah dibuat dan cara memberi maklum balas.",
+            "/kebolehaksesan/", isi)
 
 
 def bina_404():
@@ -1637,6 +1740,7 @@ def main():
     bina_hubungi()
     bina_carian()
     bina_prakata()
+    bina_kebolehaksesan()
     bina_dasar()
     bina_404()
 
