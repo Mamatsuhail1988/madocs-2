@@ -1,4 +1,50 @@
 {
- "cara_edit": "Berita/pengumuman. 'kandungan' ialah senarai perenggan. Setiap berita boleh ada beberapa perenggan.",
- "berita": []
+ "cara_edit": "Berita/pengumuman. 'kandungan' ialah senarai perenggan. Setiap berita boleh ada beberapa perenggan. DRAF: teks ini ditulis oleh urusetia teknikal berdasarkan tarikh/tempat peristiwa — jawatankuasa dinasihatkan menyemak dan menambah butiran sebelum dihebahkan.",
+ "berita": [
+  {
+   "slug": "2026-09-17-pelancaran-garis-panduan-berkhatan",
+   "tajuk": "Majlis Pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam",
+   "tarikh": "2026-09-17",
+   "kategori": "Program",
+   "penulis": "Urusetia MADOCS",
+   "ringkas": "MADOCS menyertai majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam, bersempena sambutan Hari Keselamatan Pesakit.",
+   "kandungan": [
+    "Pada 17 September 2026, MADOCS menyertai majlis pelancaran Garis Panduan Berkhatan 2026 yang diadakan di Hospital Shah Alam, bersempena sambutan Hari Keselamatan Pesakit.",
+    "Majlis ini menghimpunkan pengamal perubatan dan kakitangan hospital. Garis panduan tersebut disediakan sebagai rujukan bersama bagi menyokong amalan berkhatan yang selamat dan selaras dengan piawaian klinikal semasa.",
+    "MADOCS mengucapkan terima kasih kepada pihak hospital dan semua yang terlibat. Untuk maklumat lanjut mengenai garis panduan dan program latihan MADOCS, hubungi urusetia kami."
+   ],
+   "gambar": "assets/berita-2026-09-17-pelancaran.webp",
+   "gambar_alt": "Kaunter pendaftaran dan sepanduk majlis pelancaran di Hospital Shah Alam"
+  },
+  {
+   "slug": "2026-08-10-lawatan-klinik-sunat-indonesia",
+   "tajuk": "Lawatan Kerja MADOCS ke Klinik Sunat Kanak-kanak di Indonesia",
+   "tarikh": "2026-08-10",
+   "kategori": "Lawatan",
+   "penulis": "Urusetia MADOCS",
+   "ringkas": "Delegasi MADOCS mengadakan lawatan kerja ke sebuah klinik berkhatan di Indonesia untuk berkongsi pengalaman dalam pengurusan perkhidmatan berkhatan kanak-kanak.",
+   "kandungan": [
+    "Pada 10 Ogos 2026, delegasi MADOCS mengadakan lawatan kerja ke sebuah klinik berkhatan di Indonesia bagi meninjau pengurusan perkhidmatan berkhatan kanak-kanak di sana.",
+    "Lawatan ini memberi peluang kepada kedua-dua pihak untuk berkongsi pengalaman mengenai peralatan, prosedur dan penyediaan pesakit. Pertukaran pandangan sebegini membantu MADOCS memperbaiki latihan dan piawaian amalan di Malaysia.",
+    "MADOCS akan terus membina hubungan dengan rakan pengamal di rantau ini demi kepentingan pesakit."
+   ],
+   "gambar": "assets/berita-2026-08-10-lawatan.webp",
+   "gambar_alt": "Peralatan klinikal disusun di atas meja semasa lawatan kerja ke klinik berkhatan di Indonesia"
+  },
+  {
+   "slug": "2026-09-16-mesyuarat-ahli-jawatankuasa",
+   "tajuk": "Mesyuarat Ahli Jawatankuasa MADOCS",
+   "tarikh": "2026-09-16",
+   "kategori": "Mesyuarat",
+   "penulis": "Urusetia MADOCS",
+   "ringkas": "Mesyuarat Ahli Jawatankuasa MADOCS diadakan di Qasar Balqis, Taman Melati bagi membincangkan perancangan program dan latihan.",
+   "kandungan": [
+    "Ahli Jawatankuasa MADOCS mengadakan mesyuarat pada 16 September 2026 di Qasar Balqis, Taman Melati.",
+    "Mesyuarat membincangkan perancangan program latihan, pengurusan keahlian dan penambahbaikan laman web persatuan.",
+    "Keputusan penuh mesyuarat akan dimaklumkan kepada ahli melalui urusetia dan papan makluman ahli."
+   ],
+   "gambar": "assets/berita-2026-09-16-mesyuarat.webp",
+   "gambar_alt": "Bangunan tempat berlangsungnya mesyuarat Ahli Jawatankuasa MADOCS"
+  }
+ ]
 }

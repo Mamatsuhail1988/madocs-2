@@ -6,14 +6,20 @@
 "j": "Kursus"
 },
 {
-"t": "PCC1-2 Kota Kinabalu",
-"u": "/aktiviti/pcc1-2-kota-kinabalu/",
-"r": "",
+"t": "Majlis Pelancaran Garis Panduan Berkhatan 2026",
+"u": "/aktiviti/2026-09-17-pelancaran-garis-panduan/",
+"r": "Penyertaan MADOCS dalam majlis pelancaran Garis Panduan Berkhatan 2026 sempena Hari Keselamatan Pesakit.",
 "j": "Aktiviti"
 },
 {
-"t": "PCC3 Putrajaya",
-"u": "/aktiviti/pcc3-putrajaya/",
+"t": "Lawatan Kerja ke Klinik Sunat Kanak-kanak, Indonesia",
+"u": "/aktiviti/2026-08-10-lawatan-klinik-indonesia/",
+"r": "Lawatan kerja delegasi MADOCS bagi meninjau pengurusan perkhidmatan berkhatan kanak-kanak.",
+"j": "Aktiviti"
+},
+{
+"t": "CCC8 Batu Pahat",
+"u": "/aktiviti/ccc8-batu-pahat/",
 "r": "",
 "j": "Aktiviti"
 },
@@ -24,10 +30,34 @@
 "j": "Aktiviti"
 },
 {
-"t": "CCC8 Batu Pahat",
-"u": "/aktiviti/ccc8-batu-pahat/",
+"t": "PCC3 Putrajaya",
+"u": "/aktiviti/pcc3-putrajaya/",
 "r": "",
 "j": "Aktiviti"
+},
+{
+"t": "PCC1-2 Kota Kinabalu",
+"u": "/aktiviti/pcc1-2-kota-kinabalu/",
+"r": "",
+"j": "Aktiviti"
+},
+{
+"t": "Majlis Pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam",
+"u": "/berita/2026-09-17-pelancaran-garis-panduan-berkhatan/",
+"r": "MADOCS menyertai majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam, bersempena sambutan Hari Keselamatan Pesakit.",
+"j": "Berita"
+},
+{
+"t": "Lawatan Kerja MADOCS ke Klinik Sunat Kanak-kanak di Indonesia",
+"u": "/berita/2026-08-10-lawatan-klinik-sunat-indonesia/",
+"r": "Delegasi MADOCS mengadakan lawatan kerja ke sebuah klinik berkhatan di Indonesia untuk berkongsi pengalaman dalam pengurusan perkhidmatan berkhatan kanak-kanak.",
+"j": "Berita"
+},
+{
+"t": "Mesyuarat Ahli Jawatankuasa MADOCS",
+"u": "/berita/2026-09-16-mesyuarat-ahli-jawatankuasa/",
+"r": "Mesyuarat Ahli Jawatankuasa MADOCS diadakan di Qasar Balqis, Taman Melati bagi membincangkan perancangan program dan latihan.",
+"j": "Berita"
 },
 {
 "t": "Tentang MADOCS",

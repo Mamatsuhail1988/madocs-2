@@ -2,23 +2,33 @@
  "cara_edit": "Aktiviti/aktiviti lepas. Tarikh = YYYY-MM-DD. Kategori bebas (CCC, PCC, TTT, dll). Gambar: letak fail dalam folder assets/.",
  "aktiviti": [
   {
-   "slug": "pcc1-2-kota-kinabalu",
-   "kategori": "PCC",
-   "tajuk": "PCC1-2 Kota Kinabalu",
-   "tarikh": "2026-01-26",
-   "tempat": "Kota Kinabalu, Sabah",
-   "gambar": "assets/activity-course.webp",
-   "gambar_alt": "Imej ilustrasi: sesi latihan klinikal",
-   "ringkas": ""
+   "slug": "2026-09-17-pelancaran-garis-panduan",
+   "kategori": "Program",
+   "tajuk": "Majlis Pelancaran Garis Panduan Berkhatan 2026",
+   "tarikh": "2026-09-17",
+   "tempat": "Hospital Shah Alam, Selangor",
+   "gambar": "assets/berita-2026-09-17-shah-alam.webp",
+   "gambar_alt": "Papan tanda Hospital Shah Alam tempat majlis pelancaran diadakan",
+   "ringkas": "Penyertaan MADOCS dalam majlis pelancaran Garis Panduan Berkhatan 2026 sempena Hari Keselamatan Pesakit."
   },
   {
-   "slug": "pcc3-putrajaya",
-   "kategori": "PCC",
-   "tajuk": "PCC3 Putrajaya",
-   "tarikh": "2026-03-01",
-   "tempat": "Putrajaya",
-   "gambar": "assets/activity-seminar.webp",
-   "gambar_alt": "Imej ilustrasi: sesi pembangunan profesional",
+   "slug": "2026-08-10-lawatan-klinik-indonesia",
+   "kategori": "Lawatan",
+   "tajuk": "Lawatan Kerja ke Klinik Sunat Kanak-kanak, Indonesia",
+   "tarikh": "2026-08-10",
+   "tempat": "Indonesia",
+   "gambar": "assets/berita-2026-08-10-lawatan.webp",
+   "gambar_alt": "Peralatan klinikal disusun di atas meja semasa lawatan kerja",
+   "ringkas": "Lawatan kerja delegasi MADOCS bagi meninjau pengurusan perkhidmatan berkhatan kanak-kanak."
+  },
+  {
+   "slug": "ccc8-batu-pahat",
+   "kategori": "CCC",
+   "tajuk": "CCC8 Batu Pahat",
+   "tarikh": "2026-04-26",
+   "tempat": "Batu Pahat, Johor",
+   "gambar": "assets/activity-workshop.webp",
+   "gambar_alt": "Imej ilustrasi: kursus komprehensif berkhatan",
    "ringkas": ""
   },
   {
@@ -32,13 +42,23 @@
    "ringkas": ""
   },
   {
-   "slug": "ccc8-batu-pahat",
-   "kategori": "CCC",
-   "tajuk": "CCC8 Batu Pahat",
-   "tarikh": "2026-04-26",
-   "tempat": "Batu Pahat, Johor",
-   "gambar": "assets/activity-workshop.webp",
-   "gambar_alt": "Imej ilustrasi: kursus komprehensif berkhatan",
+   "slug": "pcc3-putrajaya",
+   "kategori": "PCC",
+   "tajuk": "PCC3 Putrajaya",
+   "tarikh": "2026-03-01",
+   "tempat": "Putrajaya",
+   "gambar": "assets/activity-seminar.webp",
+   "gambar_alt": "Imej ilustrasi: sesi pembangunan profesional",
+   "ringkas": ""
+  },
+  {
+   "slug": "pcc1-2-kota-kinabalu",
+   "kategori": "PCC",
+   "tajuk": "PCC1-2 Kota Kinabalu",
+   "tarikh": "2026-01-26",
+   "tempat": "Kota Kinabalu, Sabah",
+   "gambar": "assets/activity-course.webp",
+   "gambar_alt": "Imej ilustrasi: sesi latihan klinikal",
    "ringkas": ""
   }
  ]

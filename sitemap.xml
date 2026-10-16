@@ -2,17 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://madocs.drsuhailsatri.com/</loc><priority>1.0</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/aktiviti/</loc><priority>0.8</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/aktiviti/2026-08-10-lawatan-klinik-indonesia/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/aktiviti/2026-09-17-pelancaran-garis-panduan/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/aktiviti/ccc8-batu-pahat/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/aktiviti/pcc1-2-kota-kinabalu/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/aktiviti/pcc3-putrajaya/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/aktiviti/ttt-sip-rejap/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/berita/</loc><priority>0.8</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/berita/2026-08-10-lawatan-klinik-sunat-indonesia/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/berita/2026-09-16-mesyuarat-ahli-jawatankuasa/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/berita/2026-09-17-pelancaran-garis-panduan-berkhatan/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/carian/</loc><priority>0.8</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/dasar-privasi/</loc><priority>0.8</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/</loc><priority>1.0</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/about/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/accessibility/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/activities/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/en/activities/2026-08-10-lawatan-klinik-indonesia/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/en/activities/2026-09-17-pelancaran-garis-panduan/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/activities/ccc8-batu-pahat/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/activities/pcc1-2-kota-kinabalu/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/activities/pcc3-putrajaya/</loc><priority>0.6</priority></url>
@@ -23,6 +30,9 @@
   <url><loc>https://madocs.drsuhailsatri.com/en/membership/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/membership/join/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/news/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/en/news/2026-08-10-lawatan-klinik-sunat-indonesia/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/en/news/2026-09-16-mesyuarat-ahli-jawatankuasa/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/en/news/2026-09-17-pelancaran-garis-panduan-berkhatan/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/president-foreword/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/privacy/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/resources/</loc><priority>0.6</priority></url>

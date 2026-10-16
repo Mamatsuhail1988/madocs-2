@@ -421,11 +421,12 @@ def kad_kursus(k, keutamaan=False):
     tag = "".join("<span>%s</span>" % esc(t) for t in (k.get("tag") or []))
     img = k.get("gambar") or "assets/hero-clinical.webp"
     alt = k.get("gambar_alt") or k.get("tajuk", "")
+    chip = chip_ilustrasi(alt)
     return f"""<article class="course-feature">
   <div class="course-photo">
     <img src="/{esc(img)}" alt="{esc(alt)}" loading="{'eager' if keutamaan else 'lazy'}" decoding="async">
     {badge}
-    {chip_ilustrasi()}
+    {chip}
   </div>
   <div class="course-info">
     <span class="course-code">{esc(k.get('kod',''))}</span>
@@ -440,9 +441,15 @@ def kad_kursus(k, keutamaan=False):
 </article>"""
 
 
-def chip_ilustrasi():
-    """Label kecil pada imej yang belum gambar sebenar (kawal melalui data/site.json → gambar_ilustrasi)."""
+def chip_ilustrasi(alt=""):
+    """Label 'Imej ilustrasi' — hanya apabila teks alt menyatakan imej itu ilustrasi.
+
+    Gambar sebenar MADOCS (alt menerangkan peristiwa) tidak dilabel; imej ilustrasi lama
+    (alt bermula 'Imej ilustrasi') dilabel. Kawalan induk: data/site.json → gambar_ilustrasi.
+    """
     if not SITE.get("gambar_ilustrasi"):
+        return ""
+    if alt and not str(alt).strip().lower().startswith("imej ilustrasi"):
         return ""
     return '<span class="chip-illustrasi">Imej ilustrasi</span>'
 
@@ -454,7 +461,7 @@ def kad_aktiviti(a):
   <div class="activity-image">
     <img src="/{esc(a.get('gambar','assets/hero-clinical.webp'))}" alt="{esc(a.get('gambar_alt') or a['tajuk'])}" loading="lazy" decoding="async">
     <span class="{kelas}">{esc(a.get('kategori',''))}</span>
-    {chip_ilustrasi()}
+    {chip_ilustrasi(a.get('gambar_alt'))}
   </div>
   <div class="activity-info">
     <h3>{esc(a['tajuk'])}</h3>
@@ -468,7 +475,7 @@ def kad_aktiviti(a):
 def item_kandungan(tajuk, url, ringkas, tarikh=None, kategori="", gambar=None, alt="", meta_ikon="calendar-days"):
     """Kad senarai untuk berita / aktiviti / sumber."""
     foto = ('<div class="item-photo"><img src="/%s" alt="%s" loading="lazy" decoding="async">%s</div>'
-            % (esc(gambar), esc(alt or tajuk), chip_ilustrasi())) if gambar else ""
+            % (esc(gambar), esc(alt or tajuk), chip_ilustrasi(alt))) if gambar else ""
     kelas = "" if gambar else " no-photo"
     badge = '<span class="badge">%s</span>' % esc(kategori) if kategori else ""
     masa = ('<time datetime="%s">%s %s</time>' % (esc(tarikh), icon(meta_ikon), esc(tarikh_pdk(parse_date(tarikh))))) if tarikh else ""
@@ -597,7 +604,7 @@ def bina_utama():
     if sumber:
         sumber_html = "".join(
             item_kandungan(s["tajuk"], "/sumber/%s/" % s["slug"], s.get("ringkas", ""),
-                           kategori=s.get("kategori", ""), gambar=s.get("gambar"))
+                           kategori=s.get("kategori", ""), alt=s.get("gambar_alt", ""), gambar=s.get("gambar"))
             for s in sumber[:3])
         sumber_html = '<div class="listing">%s</div>' % sumber_html
     else:
@@ -609,7 +616,7 @@ def bina_utama():
     if berita:
         berita_html = "".join(
             item_kandungan(b["tajuk"], "/berita/%s/" % b["slug"], b.get("ringkas", ""),
-                           tarikh=b.get("tarikh"), kategori=b.get("kategori", ""), gambar=b.get("gambar"))
+                           tarikh=b.get("tarikh"), kategori=b.get("kategori", ""), alt=b.get("gambar_alt", ""), gambar=b.get("gambar"))
             for b in berita[:3])
         berita_html = '<div class="listing">%s</div>' % berita_html
     else:
@@ -618,9 +625,9 @@ def bina_utama():
                              "Pengumuman dan berita MADOCS akan diterbitkan di sini.")
 
     isi = f"""<section class="hero">
-  <img src="/assets/hero-clinical.webp" alt="Imej ilustrasi: suasana latihan klinikal" width="1920" height="1920" class="hero-image" fetchpriority="high" decoding="async">
+  <img src="/assets/hero-clinical.webp" alt="Dewan majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam" width="1080" height="810" class="hero-image" fetchpriority="high" decoding="async">
   <div class="hero-wash"></div>
-  {chip_ilustrasi()}
+  {chip_ilustrasi("Dewan majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam")}
   <div class="shell hero-content">
     <div class="hero-copy">
       <p class="hero-kicker">Ditubuhkan {esc(SITE['ditubuhkan'])} · Malaysia</p>
@@ -1312,7 +1319,7 @@ def bina_berita():
     if berita:
         senarai = '<div class="listing">%s</div>' % "".join(
             item_kandungan(b["tajuk"], "/berita/%s/" % b["slug"], b.get("ringkas", ""),
-                           tarikh=b.get("tarikh"), kategori=b.get("kategori", ""), gambar=b.get("gambar"))
+                           tarikh=b.get("tarikh"), kategori=b.get("kategori", ""), alt=b.get("gambar_alt", ""), gambar=b.get("gambar"))
             for b in berita)
     else:
         kurang("Tiada berita diterbitkan (data/berita.json) — PRD §49.")
