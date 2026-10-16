@@ -1,0 +1,23 @@
+{
+ "cara_edit": "Prakata Presiden. Teks ini DRAF generik yang disediakan untuk Presiden — dia boleh ubah, tambah atau ganti mana-mana ayat. Setiap perenggan ialah satu item dalam 'perenggan'. 'tunjang' ialah senarai ringkas di bawah potret. Pastikan 'gambar_alt' menerangkan gambar dengan jujur.",
+ "tajuk": "Prakata Presiden",
+ "nama": "Dr. Abdul Rashid",
+ "label": "Presiden Pertama",
+ "jawatan": "Presiden · Sesi 2026–2028",
+ "organisasi": "Pertubuhan Doktor Khatan Malaysia",
+ "gambar": "assets/presiden.png",
+ "gambar_alt": "Dr. Abdul Rashid, Presiden Pertama Pertubuhan Doktor Khatan Malaysia",
+ "tunjang": ["Pendidikan berstruktur", "Latihan klinikal", "Perkongsian ilmu"],
+ "salam": "Assalamualaikum warahmatullahi wabarakatuh dan salam sejahtera.",
+ "perenggan": [
+  "Alhamdulillah, setinggi-tinggi kesyukuran ke hadrat Allah SWT kerana dengan limpah kurnia-Nya kita masih diberi ruang untuk terus berbakti kepada masyarakat melalui bidang kesihatan.",
+  "Pertubuhan Doktor Khatan Malaysia (MADOCS) ditubuhkan atas kesedaran bahawa amalan berkhatan yang selamat memerlukan ilmu, latihan dan panduan yang berterusan. Persatuan ini berdiri atas tiga tunjang: pendidikan yang berstruktur, latihan klinikal yang berkualiti, dan perkongsian ilmu antara pengamal perubatan di seluruh negara.",
+  "Laman web ini dibina sebagai satu saluran rasmi untuk ahli, pengamal perubatan dan orang awam mendapatkan maklumat mengenai program latihan, aktiviti dan perkhidmatan persatuan. Kami berhasrat menjadikannya rujukan yang mudah diakses, tepat dan sentiasa dikemas kini.",
+  "Kepada ahli-ahli dan rakan sekerja yang telah menyumbang tenaga, masa dan kepakaran — terima kasih. Kepada doktor yang belum menyertai kami, pintu MADOCS sentiasa terbuka. Marilah bersama-sama kita tingkatkan mutu penjagaan pesakit dan keselamatan amalan berkhatan di Malaysia.",
+  "Semoga usaha ini memberi manfaat yang berpanjangan kepada pesakit, keluarga mereka dan seluruh profesion perubatan negara."
+ ],
+ "penutup": "Sekian, terima kasih.",
+ "kotak_tajuk": "Tentang MADOCS",
+ "kotak": "Ditubuhkan pada 2022 — kini berusia empat tahun — Pertubuhan Doktor Khatan Malaysia (MADOCS) ialah persatuan profesional yang menghimpunkan doktor yang terlibat dalam amalan, pendidikan dan latihan berkhatan di Malaysia.",
+ "tarikh": "Oktober 2026"
+}

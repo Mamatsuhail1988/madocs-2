@@ -755,6 +755,11 @@ def bina_tentang():
         <p class="nota-isi">Butiran perlembagaan dan dokumen rasmi akan diterbitkan selepas kelulusan jawatankuasa.</p>
       </div>
       <div class="card">
+        <h2>Prakata Presiden</h2>
+        <p>Perutusan daripada Presiden Pertama MADOCS, Dr. Abdul Rashid.</p>
+        <p style="margin-top:14px"><a class="btn btn-outline" href="/prakata-presiden/" style="display:inline-flex;align-items:center;text-decoration:none">Baca prakata</a></p>
+      </div>
+      <div class="card">
         <h2>{tajuk_jk}</h2>
         {ahli_html}
       </div>
@@ -1412,6 +1417,7 @@ def bina_carian():
         indeks.append({"t": s["tajuk"], "u": "/sumber/%s/" % s["slug"], "r": s.get("ringkas", ""), "j": "Sumber"})
     indeks += [
         {"t": "Tentang MADOCS", "u": "/tentang/", "r": "Latar belakang, visi, misi dan jawatankuasa eksekutif.", "j": "Halaman"},
+        {"t": "Prakata Presiden", "u": "/prakata-presiden/", "r": "Perutusan Presiden Pertama MADOCS.", "j": "Halaman"},
         {"t": "Pendidikan & Latihan", "u": "/pendidikan/", "r": "Program latihan klinikal berstruktur MADOCS.", "j": "Halaman"},
         {"t": "Keahlian MADOCS", "u": "/keahlian/", "r": "Manfaat, kelayakan, kategori dan yuran keahlian.", "j": "Halaman"},
         {"t": "Borang permohonan keahlian", "u": "/keahlian/sertai/", "r": "Mohon menjadi ahli MADOCS.", "j": "Halaman"},
@@ -1512,6 +1518,49 @@ def bina_404():
             "Halaman yang anda cari tidak dijumpai.", "/404.html", isi, masuk_sitemap=False)
 
 
+def bina_prakata():
+    """Halaman 'Prakata Presiden' — kandungan dalam data/prakata.json (draf untuk Presiden)."""
+    p = load("prakata.json")
+    tunjang = "".join('<li>%s</li>' % esc(t) for t in p.get("tunjang") or [])
+    perenggan = "".join("<p>%s</p>" % esc(x) for x in p.get("perenggan") or [])
+
+    isi = page_hero([("Utama", "/"), ("Prakata Presiden", None)], p["tajuk"],
+                    "Perutusan daripada Presiden Pertama MADOCS.") + f"""
+<section class="content-wrap">
+  <div class="shell split-presiden">
+    <aside>
+      <div class="card kad-presiden">
+        <div class="bulat-presiden"><img src="/{esc(p['gambar'])}" alt="{esc(p['gambar_alt'])}"
+             loading="eager" decoding="async"></div>
+        <h3>{esc(p['nama'])}</h3>
+        <span class="pil-presiden">{esc(p['label'])}</span>
+        <p class="jawatan">{esc(p['jawatan'])}</p>
+        <p class="organisasi">{esc(p['organisasi'])}</p>
+        {f'<ul class="tunjang">{tunjang}</ul>' if tunjang else ''}
+      </div>
+    </aside>
+    <div>
+      <div class="card prose prakata">
+        <p class="salam">{esc(p['salam'])}</p>
+        {perenggan}
+        <p class="penutup">{esc(p['penutup'])}</p>
+        <div class="tandatangan-prakata">
+          <div class="nm">{esc(p['nama'])}</div>
+          <div class="jw">{esc(p['label'])}, {esc(p['organisasi'])}</div>
+        </div>
+      </div>
+      <div class="card nota-prakata">
+        <h3>{esc(p['kotak_tajuk'])}</h3>
+        <p>{esc(p['kotak'])}</p>
+      </div>
+    </div>
+  </div>
+</section>"""
+    halaman("tentang", "%s | MADOCS" % p["tajuk"],
+            "Prakata daripada Presiden Pertama Pertubuhan Doktor Khatan Malaysia (MADOCS).",
+            "/prakata-presiden/", isi)
+
+
 def bina_dasar():
     laman_ringkas("dasar-privasi", "Dasar Privasi", f"""
 <p>{esc(SITE['nama'])} ({esc(SITE['singkatan'])}) mengumpul maklumat peribadi yang dihantar secara sukarela melalui laman ini, contohnya melalui borang permohonan keahlian, pendaftaran kursus atau borang pertanyaan.</p>
@@ -1587,6 +1636,7 @@ def main():
         bina_berita_detail(b)
     bina_hubungi()
     bina_carian()
+    bina_prakata()
     bina_dasar()
     bina_404()
 
