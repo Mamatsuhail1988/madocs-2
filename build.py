@@ -216,7 +216,7 @@ def footer():
     return f"""<footer>
   <div class="shell footer-grid">
     <div>
-      <h3>TENTANG MADOCS</h3>
+      <h3>Tentang MADOCS</h3>
       <p>{esc(SITE['nama'])} ({esc(SITE['singkatan'])}) ialah persatuan profesional yang meningkatkan standard amalan berkhatan selamat melalui pendidikan, latihan, advokasi dan kerjasama profesional.</p>
       <div class="socials">
         <a href="mailto:{esc(SITE['email'])}" aria-label="E-mel">{icon('mail')}</a>
@@ -225,23 +225,23 @@ def footer():
       </div>
     </div>
     <div>
-      <h3>PINTASAN</h3>
+      <h3>Pintasan</h3>
       {pintasan}
       <a href="/carian/">Carian</a>
     </div>
     <div>
-      <h3>HUBUNGI KAMI</h3>
+      <h3>Hubungi kami</h3>
       <p>{esc(SITE['nama'])}<br>No. Pendaftaran : {esc(SITE['pendaftaran'])}</p>
       <a href="mailto:{esc(SITE['email'])}">{icon('mail')} {esc(SITE['email'])}</a>
       <a href="tel:{esc(SITE['telefon'])}">{icon('phone')} {esc(SITE['telefon_papar'])}</a>
       <span>{icon('map-pin')} {esc(SITE['alamat'])}</span>
     </div>
     <div>
-      <h3>LANGGAN BERITA</h3>
+      <h3>Langgan berita</h3>
       <p>Hantar e-mel kepada urusetia untuk menerima kemas kini kursus, aktiviti dan berita MADOCS.</p>
       <form action="mailto:{esc(SITE['email'])}" method="get" enctype="text/plain">
         <label>{icon('mail')}<input type="email" name="email" placeholder="Alamat e-mel anda" aria-label="Alamat e-mel" required></label>
-        <button type="submit">LANGGAN</button>
+        <button type="submit">Langgan</button>
       </form>
     </div>
   </div>
@@ -462,9 +462,9 @@ def kosong(ikon_nama, tajuk, mesej, butang=""):
 </div>"""
 
 
-def cta_komuniti(tajuk="SERTAI KOMUNITI PROFESIONAL MADOCS",
+def cta_komuniti(tajuk="Sertai komuniti profesional MADOCS",
                  mesej="Bersama-sama kita memartabatkan amalan khatan yang selamat, profesional dan beretika di Malaysia.",
-                 label="SERTAI MADOCS SEKARANG", href="/keahlian/sertai/"):
+                 label="Sertai MADOCS sekarang", href="/keahlian/sertai/"):
     return f"""<section class="community-cta">
   <div class="shell cta-grid">
     <span class="cta-icon">{icon('users')}</span>
@@ -593,12 +593,12 @@ def bina_utama():
   <div class="shell hero-content">
     <div class="hero-copy">
       <p class="hero-kicker">Ditubuhkan {esc(SITE['ditubuhkan'])} · Malaysia</p>
-      <h1>{esc(SITE['nama'].upper())} ({esc(SITE['singkatan'])})</h1>
+      <h1>{esc(SITE['nama'])} ({esc(SITE['singkatan'])})</h1>
       <h2>Memajukan Amalan Berkhatan Selamat di Malaysia</h2>
       <p>Memperkasa pengamal perubatan melalui pendidikan, latihan klinikal berstruktur, pembangunan profesional dan amalan khatan yang selamat.</p>
       <div class="hero-buttons">
-        <a href="/pendidikan/" class="btn btn-primary">{icon('book-open')} LIHAT KURSUS</a>
-        <a href="/keahlian/sertai/" class="btn btn-outline">SERTAI MADOCS</a>
+        <a href="/pendidikan/" class="btn btn-primary">{icon('book-open')} Lihat kursus</a>
+        <a href="/keahlian/sertai/" class="btn btn-outline">Sertai MADOCS</a>
       </div>
     </div>
   </div>
@@ -611,7 +611,7 @@ def bina_utama():
 <section class="section-pad" id="tentang">
   <div class="shell overview-grid">
     <div class="upcoming">
-      <div class="section-title-row"><h2>TENTANG MADOCS</h2></div>
+      <div class="section-title-row"><h2>Tentang MADOCS</h2></div>
       <div class="prose">
         <p>{esc(SITE['nama'])} ({esc(SITE['singkatan'])}) ialah persatuan profesional yang menghimpunkan doktor yang terlibat dalam amalan, pendidikan dan latihan berkhatan di Malaysia.</p>
         <p>Kami menyediakan platform latihan klinikal berstruktur, pembangunan profesional berterusan dan perkongsian ilmu bagi meningkatkan kualiti serta keselamatan perkhidmatan berkhatan untuk masyarakat.</p>
@@ -619,7 +619,7 @@ def bina_utama():
       <div style="margin-top:18px"><a class="btn btn-primary" href="/tentang/">Kenali MADOCS {icon('arrow-right')}</a></div>
     </div>
     <div class="what-we-do">
-      <div class="section-title-row"><h2>APA YANG KAMI LAKUKAN</h2></div>
+      <div class="section-title-row"><h2>Apa yang kami lakukan</h2></div>
       <div class="service-grid">{servis_html}</div>
     </div>
   </div>
@@ -627,7 +627,7 @@ def bina_utama():
 
 <section class="stats-band">
   <div class="shell stats-grid">
-    <h2>MADOCS DALAM<br>ANGKA</h2>
+    <h2>MADOCS dalam<br>Angka</h2>
     {stat_items}
   </div>
 </section>
@@ -635,7 +635,7 @@ def bina_utama():
 <section class="section-pad" id="kursus">
   <div class="shell">
     <div class="section-title-row activities-head">
-      <h2>KURSUS AKAN DATANG</h2>
+      <h2>Kursus akan datang</h2>
       <a href="/pendidikan/">Lihat semua kursus {icon('arrow-right')}</a>
     </div>
     {kursus_html}
@@ -645,7 +645,7 @@ def bina_utama():
 <section class="section-pad" style="background:var(--ice);border-block:1px solid var(--line)">
   <div class="shell">
     <div class="section-title-row activities-head">
-      <h2>MENGAPA SERTAI MADOCS</h2>
+      <h2>Mengapa sertai MADOCS</h2>
       <a href="/keahlian/">Maklumat keahlian {icon('arrow-right')}</a>
     </div>
     <div class="grid-3">{manfaat}</div>
@@ -655,7 +655,7 @@ def bina_utama():
 <section class="activities section-pad" id="aktiviti">
   <div class="shell">
     <div class="section-title-row activities-head">
-      <h2>AKTIVITI TERKINI</h2>
+      <h2>Aktiviti terkini</h2>
       <a href="/aktiviti/">Lihat semua aktiviti {icon('arrow-right')}</a>
     </div>
     <div class="activity-stage">
@@ -669,7 +669,7 @@ def bina_utama():
 <section class="section-pad" style="background:var(--ice);border-block:1px solid var(--line)">
   <div class="shell">
     <div class="section-title-row activities-head">
-      <h2>PUSAT SUMBER</h2>
+      <h2>Pusat sumber</h2>
       <a href="/sumber/">Semua sumber {icon('arrow-right')}</a>
     </div>
     {sumber_html}
@@ -679,7 +679,7 @@ def bina_utama():
 <section class="section-pad">
   <div class="shell">
     <div class="section-title-row activities-head">
-      <h2>BERITA TERKINI</h2>
+      <h2>Berita terkini</h2>
       <a href="/berita/">Semua berita {icon('arrow-right')}</a>
     </div>
     {berita_html}
@@ -693,7 +693,7 @@ def bina_utama():
     <div class="search-bar">
       {icon('search')}
       <input type="search" id="carian-pantas" placeholder="Cari kursus, berita, sumber atau aktiviti…" aria-label="Carian pantas">
-      <a class="small-btn filled" id="butang-carian" href="/carian/" style="display:inline-flex;align-items:center;text-decoration:none">CARI</a>
+      <a class="small-btn filled" id="butang-carian" href="/carian/" style="display:inline-flex;align-items:center;text-decoration:none">Cari</a>
     </div>
   </div>
 </section>"""
@@ -805,8 +805,8 @@ def bina_pendidikan():
     isi = page_hero([("Utama", "/"), ("Pendidikan & Latihan", None)],
                     "Pendidikan & Latihan",
                     "Program latihan klinikal berstruktur untuk doktor yang terlibat dalam amalan berkhatan.",
-                    '<div class="hero-buttons"><a class="btn btn-primary" href="#akan-datang">KURSUS AKAN DATANG</a>'
-                    '<a class="btn btn-outline" href="/keahlian/sertai/">SERTAI MADOCS</a></div>') + f"""
+                    '<div class="hero-buttons"><a class="btn btn-primary" href="#akan-datang">Kursus akan datang</a>'
+                    '<a class="btn btn-outline" href="/keahlian/sertai/">Sertai MADOCS</a></div>') + f"""
 <section class="content-wrap">
   <div class="shell">
     <div class="grid-4">{''.join('<div class="tile"><span class="ikon">%s</span><h3>%s</h3><p>%s</p></div>' % (icon(i), t, p) for i, t, c, p in kategori)}</div>
@@ -815,7 +815,7 @@ def bina_pendidikan():
 
 <section class="content-wrap" id="akan-datang" style="padding-top:0">
   <div class="shell">
-    <div class="section-title-row activities-head"><h2>KURSUS AKAN DATANG</h2></div>
+    <div class="section-title-row activities-head"><h2>Kursus akan datang</h2></div>
     {senarai(akan, kosong("calendar-days", "Tiada kursus akan datang buat masa ini",
                           "Jadual latihan sedang disusun. Hubungi urusetia MADOCS atau semak semula tidak lama lagi.",
                           '<div style="margin-top:20px"><a class="btn btn-primary" href="/hubungi/">Hubungi urusetia</a></div>'))}
@@ -824,14 +824,14 @@ def bina_pendidikan():
 
 <section class="content-wrap" style="padding-top:0">
   <div class="shell">
-    <div class="section-title-row activities-head"><h2>PROGRAM LEPAS</h2></div>
+    <div class="section-title-row activities-head"><h2>Program lepas</h2></div>
     {senarai(lepas, kosong("clock", "Belum ada rekod program lepas", "Rekod program yang telah dijalankan akan diterbitkan di sini."))}
   </div>
 </section>
 
-{cta_komuniti(tajuk='PERTANYAAN TENTANG LATIHAN MADOCS',
+{cta_komuniti(tajuk='Pertanyaan tentang latihan MADOCS',
               mesej='Urusetia MADOCS boleh membantu anda memilih program latihan yang sesuai dengan keperluan amalan anda.',
-              label='HUBUNGI URUSETIA', href='/hubungi/')}"""
+              label='Hubungi urusetia', href='/hubungi/')}"""
     halaman("pendidikan", "Pendidikan & Latihan | MADOCS",
             "Kursus, bengkel dan latihan klinikal berstruktur MADOCS untuk doktor di Malaysia: CCC, PCC, TTT dan aktiviti pembelajaran berterusan.",
             "/pendidikan/", isi)
@@ -908,11 +908,11 @@ def bina_kursus_detail(k):
                          f'Untuk pertanyaan, hubungi urusetia MADOCS.</div>')
     elif k.get("daftar_url"):
         butang_daftar = (f'<a class="btn-hantar" href="{esc(k["daftar_url"])}" target="_blank" rel="noopener">'
-                         f'DAFTAR SEKARANG {icon("external-link")}</a>')
+                         f'Daftar sekarang {icon("external-link")}</a>')
     else:
         kurang("Pautan pendaftaran (daftar_url) belum ditetapkan untuk kursus %s (PRD §14)." % k["kod"])
         butang_daftar = (f'<a class="btn-hantar" href="/hubungi/?kursus={esc(k["slug"])}">'
-                         f'DAFTAR MELALUI URUSETIA {icon("arrow-right")}</a>')
+                         f'Daftar melalui urusetia {icon("arrow-right")}</a>')
 
     kaitan = [x for x in load("kursus.json")["kursus"] if x["slug"] != k["slug"]][:2]
     kaitan_html = ""
@@ -1026,8 +1026,8 @@ def bina_keahlian():
 
     isi = page_hero([("Utama", "/"), ("Keahlian", None)], "Keahlian MADOCS",
                     "Sertai komuniti profesional doktor yang terlibat dalam amalan berkhatan di Malaysia.",
-                    '<div class="hero-buttons"><a class="btn btn-primary" href="/keahlian/sertai/">SERTAI MADOCS</a>'
-                    '<a class="btn btn-outline" href="#faq">SOALAN LAZIM</a></div>') + f"""
+                    '<div class="hero-buttons"><a class="btn btn-primary" href="/keahlian/sertai/">Sertai MADOCS</a>'
+                    '<a class="btn btn-outline" href="#faq">Soalan lazim</a></div>') + f"""
 <section class="content-wrap">
   <div class="shell">
     {jika_belum}
@@ -1063,7 +1063,7 @@ def bina_keahlian():
       <div class="card">
         <h2>Proses permohonan</h2>
         <div class="timeline">{proses}</div>
-        <div style="margin-top:24px"><a class="btn-hantar" href="/keahlian/sertai/">MULA PERMOHONAN {icon('arrow-right')}</a></div>
+        <div style="margin-top:24px"><a class="btn-hantar" href="/keahlian/sertai/">Mula permohonan {icon('arrow-right')}</a></div>
       </div>
       <div class="card" id="faq">
         <h2>Soalan lazim</h2>
@@ -1073,7 +1073,7 @@ def bina_keahlian():
   </div>
 </section>
 
-{cta_komuniti(label='SERTAI MADOCS SEKARANG')}"""
+{cta_komuniti(label='Sertai MADOCS sekarang')}"""
     halaman("keahlian", "Keahlian | MADOCS",
             "Keahlian MADOCS: manfaat, kelayakan, kategori, yuran dan proses permohonan untuk doktor yang terlibat dalam amalan berkhatan di Malaysia.",
             "/keahlian/", isi, jsonld=[ld_faq])
@@ -1089,7 +1089,7 @@ def bina_sertai():
 
     if endpoint:
         aksi = f'<form class="form" action="{esc(endpoint)}" method="POST">'
-        hantar = f'<button class="btn-hantar" type="submit">HANTAR PERMOHONAN {icon("arrow-right")}</button>'
+        hantar = f'<button class="btn-hantar" type="submit">Hantar permohonan {icon("arrow-right")}</button>'
         nota = ('<div class="form-note">Maklumat anda dihantar kepada urusetia MADOCS untuk semakan. '
                 'Sila pastikan butiran tepat. Data peribadi diproses menurut <a href="/dasar-privasi/">Dasar Privasi</a> kami.</div>')
     else:
@@ -1173,12 +1173,12 @@ def bina_aktiviti():
 
     isi = page_hero([("Utama", "/"), ("Aktiviti", None)], "Aktiviti MADOCS",
                     "Program latihan, seminar, bengkel dan aktiviti komuniti MADOCS di seluruh Malaysia.",
-                    '<div class="hero-buttons"><a class="btn btn-primary" href="/pendidikan/">PROGRAM AKAN DATANG</a>'
-                    '<a class="btn btn-outline" href="/keahlian/sertai/">SERTAI MADOCS</a></div>') + f"""
+                    '<div class="hero-buttons"><a class="btn btn-primary" href="/pendidikan/">Program akan datang</a>'
+                    '<a class="btn btn-outline" href="/keahlian/sertai/">Sertai MADOCS</a></div>') + f"""
 <section class="content-wrap">
   <div class="shell">{senarai}</div>
 </section>
-{cta_komuniti(label='HUBUNGI URUSETIA', href='/hubungi/')}"""
+{cta_komuniti(label='Hubungi urusetia', href='/hubungi/')}"""
     halaman("aktiviti", "Aktiviti | MADOCS",
             "Aktiviti dan program MADOCS: latihan klinikal, seminar, bengkel dan program komuniti di seluruh Malaysia.",
             "/aktiviti/", isi)
@@ -1329,7 +1329,7 @@ def bina_hubungi():
     endpoint = (SITE.get("borang_endpoint") or "").strip()
     if endpoint:
         buka = '<form class="form" action="%s" method="POST">' % esc(endpoint)
-        hantar = '<button class="btn-hantar" type="submit">HANTAR MESEJ %s</button>' % icon("arrow-right")
+        hantar = '<button class="btn-hantar" type="submit">Hantar mesej %s</button>' % icon("arrow-right")
     else:
         kurang("Borang hubungi belum diaktifkan (site.json → borang_endpoint kosong).")
         buka = '<form class="form" method="get" action="/hubungi/">'
@@ -1446,10 +1446,23 @@ def skala_fon(css):
     return re.sub(r"font-size:([\d.]+)px", ganti, css)
 
 
+def gabung_css():
+    """Gabungkan base.css + extra.css. Blok "GAYA A" dalam extra.css dikecualikan daripada
+    skala_fon() kerana nilai di dalamnya sudah nilai akhir (dipilih secara visual)."""
+    base = _src_css("base.css")
+    extra = _src_css("extra.css")
+    tanda = extra.find("GAYA A")
+    if tanda == -1:
+        return skala_fon(base + "\n" + extra)
+    potong = extra.rfind("/* ===", 0, tanda)
+    if potong == -1:
+        potong = tanda
+    return skala_fon(base + "\n" + extra[:potong]) + "\n" + extra[potong:]
+
+
 def bina_fail_statik():
-    # CSS gabungan (saiz fon dinaikkan untuk kebolehbacaan)
-    (ROOT / "styles.css").write_text(
-        skala_fon(_src_css("base.css") + "\n" + _src_css("extra.css")), encoding="utf-8")
+    # CSS gabungan (saiz fon dinaikkan untuk kebolehbacaan, kecuali blok GAYA A)
+    (ROOT / "styles.css").write_text(gabung_css(), encoding="utf-8")
 
     # CSS tambahan kecil untuk carian
     with open(ROOT / "styles.css", "a", encoding="utf-8") as f:
