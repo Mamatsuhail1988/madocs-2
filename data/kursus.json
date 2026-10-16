@@ -1,0 +1,33 @@
+{
+ "cara_edit": "Latihan/kursus. Tarikh = YYYY-MM-DD. status: open (buka), limited (kerusi terhad), closed (ditutup), done (selesai). Susun yang terbaru di atas. Medan kosong ('') akan tersembunyi dari laman — jangan reka nilai.",
+ "kursus": [
+  {
+   "slug": "ccc9-kuala-lumpur",
+   "kod": "CCC 9",
+   "tajuk": "Kursus Komprehensif Berkhatan",
+   "kategori": "Kursus Komprehensif",
+   "ringkas": "Program latihan klinikal seharian merangkumi teori, demonstrasi, amali dan penilaian untuk doktor perubatan.",
+   "gambar": "assets/course-ccc9.webp",
+   "gambar_alt": "Peserta kursus berkhatan MADOCS",
+   "tarikh": "2026-09-20",
+   "masa_mula": "08:00",
+   "masa_tamat": "17:00",
+   "tempat": "Kuala Lumpur",
+   "penganjur": "MADOCS",
+   "fakulti": "",
+   "sasaran": "Doktor Perubatan",
+   "objektif": [],
+   "rangka": [],
+   "yuran": "",
+   "yuran_ahli": "",
+   "yuran_bukan_ahli": "",
+   "tutup_daftar": "",
+   "kapasiti": "",
+   "status": "done",
+   "daftar_url": "",
+   "kandungan": [
+    "Ini satu-satunya program latihan yang direkodkan pada laman MADOCS 2.0 setakat ini. Butiran penuh program (objektif pembelajaran, rangka masa, yuran, tenaga pengajar) belum disediakan oleh MADOCS dan perlu dilengkapkan dalam fail ini."
+   ]
+  }
+ ]
+}

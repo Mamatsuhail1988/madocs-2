@@ -1,0 +1,31 @@
+{
+ "cara_edit": "PRD §11: angka TIDAK diterbitkan sehingga disahkan jawatankuasa. Set 'disahkan': true hanya selepas pengesahan bertulis.",
+ "disahkan": false,
+ "nota": "Angka di bawah menunggu pengesahan jawatankuasa MADOCS.",
+ "items": [
+  {
+   "nilai": "300+",
+   "label": "Ahli Aktif",
+   "sub": "Seluruh Malaysia",
+   "ikon": "users"
+  },
+  {
+   "nilai": "25+",
+   "label": "Kursus & Program",
+   "sub": "Dilaksanakan",
+   "ikon": "graduation-cap"
+  },
+  {
+   "nilai": "1,500+",
+   "label": "Doktor Terlatih",
+   "sub": "Sejak penubuhan",
+   "ikon": "stethoscope"
+  },
+  {
+   "nilai": "10+",
+   "label": "Negeri Terlibat",
+   "sub": "Dalam Aktiviti",
+   "ikon": "map-pin"
+  }
+ ]
+}

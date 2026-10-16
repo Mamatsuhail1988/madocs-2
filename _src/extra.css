@@ -1,0 +1,182 @@
+/* ============================================================
+   MADOCS 2.0 — komponen tambahan (halaman dalaman)
+   Ditambah di atas sistem reka bentuk asal (base.css).
+   ============================================================ */
+
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--blue-2);outline-offset:2px}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:#fff;color:var(--navy);padding:12px 18px;border-radius:0 0 6px 0;font-size:12px;font-weight:800}
+.skip-link:focus{left:0}
+
+/* ---------- sepanduk halaman ---------- */
+.page-hero{color:#fff;background:linear-gradient(90deg,#041e55,#073377,#041e55);position:relative;overflow:hidden}
+.page-hero:before{content:"";position:absolute;inset:0;opacity:.16;background-image:linear-gradient(30deg,#0000 24%,#fff 25% 26%,#0000 27% 74%,#fff 75% 76%,#0000 77%);background-size:50px 87px}
+.page-hero>.shell{padding:40px 0 44px;position:relative;z-index:2}
+.crumbs{align-items:center;gap:9px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#ffffffb0;display:flex;flex-wrap:wrap}
+.crumbs a:hover{color:#fff;text-decoration:underline}
+.crumbs svg{width:11px;height:11px;opacity:.7}
+.page-hero h1{letter-spacing:-.02em;margin:14px 0 0;font-size:clamp(26px,3.3vw,40px);line-height:1.06}
+.page-hero p{color:#ffffffd9;max-width:790px;margin:13px 0 0;font-size:12.5px;line-height:1.65}
+.page-hero .hero-buttons{margin-top:22px}
+
+/* ---------- susun atur ---------- */
+.content-wrap{padding:42px 0 54px}
+.split{grid-template-columns:minmax(0,1fr) 322px;gap:36px;align-items:start;display:grid}
+.split.lebar{grid-template-columns:minmax(0,1fr)}
+.card{border:1px solid var(--line);background:#fff;border-radius:13px;padding:26px 28px;box-shadow:0 5px 18px #041e540d}
+.card+.card{margin-top:20px}
+.card>h2{color:#092a6e;margin:0 0 13px;font-size:18px}
+.card>h2:not(:first-child),.card>h3:not(:first-child){margin-top:26px}
+.card h3{color:#08275f;margin:20px 0 8px;font-size:13px}
+.card h4{color:#08275f;margin:16px 0 6px;font-size:12px}
+.card>p:first-of-type{margin-top:0}
+
+/* ---------- teks panjang ---------- */
+.prose{color:#33405a;font-size:12.5px;line-height:1.78}
+.prose p{margin:0 0 14px}
+.prose ul,.prose ol{margin:0 0 14px;padding-left:20px}
+.prose li{margin:0 0 7px}
+.prose a{color:var(--blue);text-decoration:underline}
+.prose strong{color:#0d1c38}
+.prose blockquote{border-left:3px solid var(--blue);background:var(--ice);margin:0 0 14px;padding:14px 18px;border-radius:0 8px 8px 0}
+.nota-isi{color:#6a788e;font-size:11px;font-style:italic}
+
+/* ---------- grid kad umum ---------- */
+.grid-2{grid-template-columns:1fr 1fr;gap:18px;display:grid}
+.grid-3{grid-template-columns:repeat(3,1fr);gap:18px;display:grid}
+.grid-4{grid-template-columns:repeat(4,1fr);gap:18px;display:grid}
+.tile{border:1px solid var(--line);background:#fff;border-radius:13px;padding:22px 22px 24px;box-shadow:0 5px 18px #041e540d}
+.tile>span.ikon{background:var(--navy);color:#fff;border-radius:50%;place-items:center;width:44px;height:44px;display:grid;margin-bottom:14px}
+.tile>span.ikon svg{width:25px;height:25px}
+.tile h3{color:#08275f;margin:0 0 8px;font-size:13px}
+.tile p{color:#3b4659;margin:0;font-size:10.5px;line-height:1.6}
+.tile ul{margin:10px 0 0;padding-left:17px;color:#3b4659;font-size:10.5px;line-height:1.65}
+.tile a.lebih{color:var(--blue);align-items:center;gap:6px;margin-top:12px;font-size:9px;font-weight:800;text-transform:uppercase;display:flex}
+.tile a.lebih svg{width:12px;height:12px}
+
+/* ---------- senarai kandungan (berita, aktiviti, sumber) ---------- */
+.listing{display:grid;gap:18px}
+.item{border:1px solid var(--line);background:#fff;border-radius:13px;grid-template-columns:264px minmax(0,1fr);display:grid;overflow:hidden;box-shadow:0 5px 18px #041e540d}
+.item.no-photo{grid-template-columns:1fr}
+.item-photo{min-height:186px;position:relative;overflow:hidden;background:var(--pale)}
+.item-photo img{object-fit:cover;width:100%;height:100%}
+.item-body{padding:20px 24px 22px}
+.item-body h3{margin:8px 0 9px;font-size:19px;line-height:1.15;color:#0d1c38}
+.item-body h3 a:hover{color:var(--blue)}
+.item-meta{flex-wrap:wrap;gap:14px;display:flex}
+.item-meta span,.item-meta time{color:#5b6880;align-items:center;gap:6px;font-size:9px;display:flex}
+.item-meta svg{width:12px;height:12px;color:var(--navy)}
+.item-body p{color:#3b4659;margin:10px 0 0;font-size:11px;line-height:1.65}
+.item-body .lebih{color:var(--blue);align-items:center;gap:7px;margin-top:14px;font-size:9px;font-weight:800;text-transform:uppercase;display:flex}
+.item-body .lebih svg{width:12px;height:12px}
+
+/* ---------- status / tag ---------- */
+.badge{background:#e1efff;color:var(--blue);border-radius:5px;padding:5px 9px;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;display:inline-block}
+.badge.open{background:#dcf6ef;color:#0a7a68}
+.badge.limited{background:#fff1d9;color:#9a6200}
+.badge.closed,.badge.done{background:#eceff4;color:#5b6880}
+.badge.member{background:#e6e0fb;color:#4b31a8}
+.chips{flex-wrap:wrap;gap:6px;display:flex;margin:12px 0 0}
+.chips span{background:#eef2f8;color:#47546b;border-radius:4px;padding:5px 8px;font-size:8px}
+
+/* ---------- jadual ---------- */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.data{border-collapse:collapse;width:100%;min-width:520px;font-size:11px}
+table.data th,table.data td{border-bottom:1px solid var(--line);text-align:left;padding:12px 14px;vertical-align:top}
+table.data thead th{color:#092a6e;background:var(--ice);font-size:9.5px;text-transform:uppercase;letter-spacing:.06em}
+table.data tbody tr:hover{background:#fafcff}
+table.data td strong{color:#0d1c38}
+
+/* ---------- senarai fakta (profil kursus) ---------- */
+.facts{border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.facts div{border-bottom:1px solid var(--line);grid-template-columns:190px minmax(0,1fr);display:grid}
+.facts div:last-child{border-bottom:0}
+.facts dt,.facts .k{color:#5b6880;background:var(--ice);margin:0;padding:11px 16px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.facts dd,.facts .v{margin:0;padding:11px 16px;font-size:11px;line-height:1.6}
+
+/* ---------- sidebar ---------- */
+.side .card{padding:22px 24px}
+.side .card h3{margin-top:0}
+.side-nav{display:grid;gap:2px;margin-top:4px}
+.side-nav a{border-left:2px solid transparent;color:#33405a;padding:9px 12px;font-size:11px;font-weight:650;border-radius:0 6px 6px 0}
+.side-nav a:hover{background:var(--ice);color:var(--blue)}
+.side-nav a.aktif{background:var(--pale);border-left-color:var(--blue);color:var(--blue)}
+.btn-blok{border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:5px;justify-content:center;align-items:center;gap:9px;min-height:42px;padding:0 18px;font-size:10px;font-weight:800;text-transform:uppercase;display:flex;width:100%}
+.btn-blok.ghost{background:#fff;color:var(--navy)}
+.btn-blok svg{width:14px;height:14px}
+.btn-blok+.btn-blok{margin-top:9px}
+
+/* ---------- FAQ ---------- */
+.faq{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:0}
+.faq summary{cursor:pointer;color:#0d1c38;justify-content:space-between;align-items:center;gap:14px;padding:16px 20px;font-size:12px;font-weight:700;display:flex;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--blue);flex:none;font-size:17px;font-weight:800;line-height:1}
+.faq details[open] summary:after{content:"–"}
+.faq details[open] summary{background:var(--ice)}
+.faq .jawapan{border-top:1px solid var(--line);padding:16px 20px 18px;color:#3b4659;font-size:11.5px;line-height:1.75}
+.faq .jawapan p{margin:0 0 10px}
+.faq .jawapan p:last-child{margin:0}
+
+/* ---------- borang ---------- */
+.form-grid{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.form-grid .penuh{grid-column:1 / -1}
+.field{display:grid;gap:6px}
+.field>label{color:var(--navy);font-size:10px;font-weight:800}
+.field .hint{color:#7c8798;font-size:9px}
+.field input,.field select,.field textarea{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:5px;width:100%;min-height:44px;padding:11px 13px;font-size:12px;outline:none}
+.field textarea{min-height:132px;resize:vertical;line-height:1.6}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #0749a517}
+.field .pilihan{align-items:flex-start;gap:9px;display:flex;font-size:11px;line-height:1.6;color:#33405a}
+.field .pilihan input{width:auto;min-height:auto;margin-top:2px}
+.form-note{color:#6a788e;background:var(--ice);border:1px solid var(--line);border-radius:8px;margin:0 0 20px;padding:14px 16px;font-size:10.5px;line-height:1.65}
+.form-note b{color:#0d1c38}
+.btn-hantar{border:0;background:linear-gradient(135deg,var(--navy),#0752b4);color:#fff;border-radius:5px;justify-content:center;align-items:center;gap:10px;min-height:46px;padding:0 26px;font-size:11px;font-weight:800;text-transform:uppercase;display:inline-flex;box-shadow:0 8px 22px #041e5426}
+.btn-hantar svg{width:15px;height:15px}
+
+/* ---------- carian ---------- */
+.search-bar{border:1px solid var(--line);background:#fff;border-radius:11px;align-items:center;gap:12px;padding:12px 16px;display:flex;box-shadow:0 5px 18px #041e540d}
+.search-bar svg{width:18px;height:18px;color:var(--navy);flex:none}
+.search-bar input{border:0;outline:none;flex:1;min-height:34px;font-size:13px}
+.hasil{color:#6a788e;margin:16px 0 18px;font-size:10.5px}
+mark{background:#fff2a8;padding:0 2px;border-radius:3px}
+
+/* ---------- keadaan kosong ---------- */
+.kosong{border:1px dashed #c3d3e8;background:var(--ice);border-radius:13px;text-align:center;padding:46px 26px}
+.kosong span.ikon{background:#fff;color:var(--blue);border:1px solid #c3d3e8;border-radius:50%;place-items:center;width:58px;height:58px;margin:0 auto 16px;display:grid}
+.kosong span.ikon svg{width:27px;height:27px}
+.kosong h3{color:#092a6e;margin:0 0 8px;font-size:15px}
+.kosong p{color:#5b6880;max-width:520px;margin:0 auto;font-size:11.5px;line-height:1.7}
+
+/* ---------- garis masa ---------- */
+.timeline{border-left:2px solid var(--line);margin:8px 0 0 6px;padding:0 0 0 22px;display:grid;gap:20px}
+.timeline>div{position:relative}
+.timeline>div:before{content:"";background:var(--blue);border:3px solid #fff;border-radius:50%;width:11px;height:11px;position:absolute;top:4px;left:-29px;box-shadow:0 0 0 1px var(--line)}
+.timeline time{color:var(--blue);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.timeline strong{color:#0d1c38;margin:4px 0 3px;font-size:12px;display:block}
+.timeline p{color:#4a5670;margin:0;font-size:10.5px;line-height:1.65}
+
+/* ---------- petikan pengesahan ---------- */
+.pengesahan{background:#fff8e7;border:1px solid #f0dba6;color:#6b4d00;border-radius:11px;margin-bottom:20px;padding:15px 18px;font-size:10.5px;line-height:1.65}
+.pengesahan b{color:#4a3400}
+
+/* ---------- responsif ---------- */
+@media (max-width:960px){
+  .split{grid-template-columns:1fr}
+  .grid-3,.grid-4{grid-template-columns:1fr 1fr}
+  .item{grid-template-columns:1fr}
+  .item-photo{min-height:200px}
+  .facts div{grid-template-columns:150px minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .content-wrap{padding:30px 0 42px}
+  .card{padding:22px 18px}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .facts div{grid-template-columns:1fr}
+  .facts dt,.facts .k{border-bottom:1px solid var(--line)}
+  .page-hero>.shell{padding:30px 0 34px}
+  .timeline{margin-left:2px;padding-left:18px}
+  .timeline>div:before{left:-25px}
+}

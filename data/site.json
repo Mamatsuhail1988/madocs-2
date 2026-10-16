@@ -1,0 +1,20 @@
+{
+ "cara_edit": "Fail tetapan laman. Tukar nilai di sini sahaja (nama, e-mel, telefon, pautan sosial). Jangan tukar 'base_url' kecuali domain berubah.",
+ "nama": "Pertubuhan Doktor Khatan Malaysia",
+ "singkatan": "MADOCS",
+ "nama_en": "Malaysian Doctor of Circumcision Society",
+ "pendaftaran": "PPM-020-10-23082022 (ROS)",
+ "ditubuhkan": "2022",
+ "email": "info@madocs.my",
+ "telefon": "+6012-3344079",
+ "telefon_papar": "+6012-334 4079",
+ "alamat": "Malaysia",
+ "base_url": "https://madocs.drsuhailsatri.com",
+ "borang_endpoint": "",
+ "sosial": {
+  "facebook": "",
+  "instagram": "",
+  "youtube": "",
+  "linkedin": ""
+ }
+}

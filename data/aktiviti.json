@@ -1,0 +1,45 @@
+{
+ "cara_edit": "Aktiviti/aktiviti lepas. Tarikh = YYYY-MM-DD. Kategori bebas (CCC, PCC, TTT, dll). Gambar: letak fail dalam folder assets/.",
+ "aktiviti": [
+  {
+   "slug": "pcc1-2-kota-kinabalu",
+   "kategori": "PCC",
+   "tajuk": "PCC1-2 Kota Kinabalu",
+   "tarikh": "2026-01-26",
+   "tempat": "Kota Kinabalu, Sabah",
+   "gambar": "assets/activity-course.webp",
+   "gambar_alt": "Aktiviti latihan klinikal MADOCS",
+   "ringkas": ""
+  },
+  {
+   "slug": "pcc3-putrajaya",
+   "kategori": "PCC",
+   "tajuk": "PCC3 Putrajaya",
+   "tarikh": "2026-03-01",
+   "tempat": "Putrajaya",
+   "gambar": "assets/activity-seminar.webp",
+   "gambar_alt": "Aktiviti pembangunan profesional MADOCS",
+   "ringkas": ""
+  },
+  {
+   "slug": "ttt-sip-rejap",
+   "kategori": "TTT",
+   "tajuk": "Latihan Tenaga Pengajar",
+   "tarikh": "2026-03-15",
+   "tempat": "SIP Rejap, Kuala Lumpur",
+   "gambar": "assets/activity-team.webp",
+   "gambar_alt": "Latihan tenaga pengajar MADOCS",
+   "ringkas": ""
+  },
+  {
+   "slug": "ccc8-batu-pahat",
+   "kategori": "CCC",
+   "tajuk": "CCC8 Batu Pahat",
+   "tarikh": "2026-04-26",
+   "tempat": "Batu Pahat, Johor",
+   "gambar": "assets/activity-workshop.webp",
+   "gambar_alt": "Kursus komprehensif berkhatan Batu Pahat",
+   "ringkas": ""
+  }
+ ]
+}

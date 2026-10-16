@@ -1,0 +1,36 @@
+{
+ "cara_edit": "Maklumat keahlian. 'disahkan': false bermaksud kandungan belum diluluskan jawatankuasa — laman akan menunjukkannya sebagai belum disahkan, bukan sebagai fakta.",
+ "disahkan": false,
+ "manfaat": [
+  "Komuniti profesional doktor yang terlibat dalam amalan berkhatan",
+  "Pendidikan klinikal dan latihan berstruktur",
+  "Peluang latihan amali dan bengkel",
+  "Rangkaian profesional dan perkongsian ilmu",
+  "Sumber dan bahan rujukan ahli",
+  "Pembangunan profesional berterusan (CPD)"
+ ],
+ "kategori": [],
+ "yuran": [],
+ "kelayakan": [],
+ "dokumen": [],
+ "proses": [
+  "Hantar borang permohonan melalui laman ini atau e-mel kepada urusetia MADOCS.",
+  "Permohonan disemak oleh Jawatankuasa Keahlian.",
+  "Pemohon dihubungi untuk maklumat tambahan atau pengesahan.",
+  "Keahlian diaktifkan selepas kelulusan dan pembayaran yuran."
+ ],
+ "faq": [
+  {
+   "s": "Siapa layak menyertai MADOCS?",
+   "j": "Kelayakan penuh sedang dikemas kini. Sila hubungi urusetia MADOCS untuk maklumat terkini."
+  },
+  {
+   "s": "Berapa yuran keahlian?",
+   "j": "Struktur yuran sedang disahkan oleh jawatankuasa. Sila rujuk urusetia MADOCS."
+  },
+  {
+   "s": "Bagaimana proses permohonan?",
+   "j": "Hantar borang permohonan; Jawatankuasa Keahlian akan menyemak dan menghubungi pemohon."
+  }
+ ]
+}
