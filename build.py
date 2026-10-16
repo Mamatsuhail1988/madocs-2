@@ -641,11 +641,16 @@ def bina_utama():
 
 # ----------------------------------------------------------------- halaman: tentang
 def bina_tentang():
-    jk = load("jawatankuasa.json")["jawatankuasa"]
+    jk_data = load("jawatankuasa.json")
+    jk = jk_data["jawatankuasa"]
+    sesi = (jk_data.get("sesi") or "").strip()
+    tajuk_jk = "Jawatankuasa Eksekutif" + (f" — Sesi {esc(sesi)}" if sesi else "")
     if not jk:
         kurang("Senarai Jawatankuasa Eksekutif kosong (data/jawatankuasa.json) — diperlukan oleh PRD §9.2 dan §55.")
         ahli_html = kosong("users", "Senarai jawatankuasa belum disediakan",
-                           "Struktur halaman ini sedia untuk memaparkan Jawatankuasa Eksekutif sebaik sahaja nama dan gambar disahkan oleh MADOCS.")
+                           "Struktur halaman ini sedia untuk memaparkan Jawatankuasa Eksekutif"
+                           + (f" Sesi {esc(sesi)}" if sesi else "")
+                           + " sebaik sahaja nama dan gambar disahkan oleh MADOCS.")
     else:
         ahli_html = '<div class="grid-4">%s</div>' % "".join(
             '<div class="tile">%s<h3>%s</h3><p>%s</p></div>'
@@ -686,7 +691,7 @@ def bina_tentang():
         <p class="nota-isi">Butiran perlembagaan dan dokumen rasmi akan diterbitkan selepas kelulusan jawatankuasa.</p>
       </div>
       <div class="card">
-        <h2>Jawatankuasa Eksekutif</h2>
+        <h2>{tajuk_jk}</h2>
         {ahli_html}
       </div>
     </div>
