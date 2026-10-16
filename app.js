@@ -115,4 +115,38 @@
 
     medan.addEventListener("input", function () { papar(medan.value.trim()); });
   }
+
+  /* ---- pengepala mengecil selepas skrol ---- */
+  var pengepala = document.querySelector(".header");
+  if (pengepala) {
+    var tandaKompak = function () {
+      if (window.scrollY > 40) { pengepala.classList.add("kompak"); }
+      else { pengepala.classList.remove("kompak"); }
+    };
+    tandaKompak();
+    window.addEventListener("scroll", tandaKompak, { passive: true });
+  }
+
+  /* ---- kemunculan lembut semasa skrol ----
+     Kelas .mula ditambah oleh JS sahaja: jika JS gagal atau pengguna minta kurang
+     gerakan, kandungan kekal kelihatan (tiada risiko halaman kosong). */
+  var kurangGerak = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!kurangGerak && "IntersectionObserver" in window) {
+    var blok = document.querySelectorAll(
+      ".section-pad > .shell > *, .page-hero > .shell > *, .course-feature, .activity-card, .item, .card, .content-wrap > .shell > *");
+    if (blok.length) {
+      var pemerhati = new IntersectionObserver(function (masuk) {
+        masuk.forEach(function (satu) {
+          if (!satu.isIntersecting) { return; }
+          satu.target.classList.add("muncul");
+          pemerhati.unobserve(satu.target);
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+      Array.prototype.forEach.call(blok, function (el, i) {
+        el.classList.add("mula");
+        el.style.transitionDelay = (Math.min(i % 4, 3) * 45) + "ms";
+        pemerhati.observe(el);
+      });
+    }
+  }
 })();

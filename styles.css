@@ -226,4 +226,68 @@ mark{background:#fff2a8;padding:0 2px;border-radius:3px}
 .tukar-bahasa:hover{background:var(--navy);color:#fff}
 @media (max-width:1240px){.tukar-bahasa{margin-left:auto;padding:8px 10px}}
 
+/* ============================================================================
+   Lapisan gerak + kemasan UI (2026-10-16)
+   Prinsip: gerak sebagai nisbah isyarat — mengesahkan tindakan, menunjukkan
+   kesinambungan antara halaman, tidak menangguhkan pengguna. Semua gerakan
+   dimatikan apabila pengguna menetapkan prefers-reduced-motion: reduce.
+   ============================================================================ */
+:root{
+  --r-sm:8px;--r-md:12px;--r-lg:18px;
+  --sh-1:0 1px 2px #041e540f,0 2px 8px #041e540f;
+  --sh-2:0 6px 18px #041e5414,0 2px 6px #041e540d;
+  --sh-3:0 18px 44px #041e5421,0 6px 14px #041e5414;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur-1:.16s;--dur-2:.28s;--dur-3:.5s;
+}
+
+/* --- peralihan antara halaman (View Transitions API; pelayar lama abaikan) --- */
+@view-transition{navigation:auto}
+@keyframes vtKeluar{to{opacity:0;transform:translateY(-5px)}}
+@keyframes vtMasuk{from{opacity:0;transform:translateY(7px)}}
+::view-transition-old(root){animation:vtKeluar .19s var(--ease) both}
+::view-transition-new(root){animation:vtMasuk .26s var(--ease-out) both}
+
+/* --- tindak balas klik: butang, pautan, kad --- */
+.btn,.small-btn,.join-nav,.tukar-bahasa,.cta-grid>button,.footer-grid form button,.mobile-nav button{
+  transition:transform var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease),background-color var(--dur-1) linear,color var(--dur-1) linear;
+}
+.btn:hover,.small-btn:hover,.cta-grid>button:hover,.footer-grid form button:hover{transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn:active,.small-btn:active,.join-nav:active,.tukar-bahasa:active,.cta-grid>button:active,.footer-grid form button:active,.mobile-nav button:active{transform:translateY(1px) scale(.985);box-shadow:var(--sh-1);transition-duration:.06s}
+
+/* --- fokus papan kekunci yang jelas (aksesibiliti) --- */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid #0749a559;outline-offset:2px;border-radius:4px;
+}
+
+/* --- kad: naik sedikit pada hover --- */
+.course-feature,.activity-card,.item,.service-grid,.stats-grid,.card,.tile{
+  transition:transform var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease),border-color var(--dur-2) linear;
+}
+.course-feature{box-shadow:var(--sh-1)}
+.activity-card,.item{box-shadow:var(--sh-1)}
+@media (hover:hover){
+  .course-feature:hover,.activity-card:hover,.item:hover{transform:translateY(-3px);box-shadow:var(--sh-3);border-color:#c3d5ec}
+  .activity-card:hover .activity-image img{transform:scale(1.05)}
+}
+
+/* --- pengepala mengecil sedikit selepas skrol --- */
+.header{transition:box-shadow var(--dur-2) var(--ease)}
+.header.kompak .nav-row{min-height:64px}
+.header.kompak{box-shadow:0 6px 20px #041e5414}
+
+/* --- kemunculan lembut semasa skrol --- */
+.mula{opacity:0;transform:translateY(16px)}
+.muncul{opacity:1;transform:none;transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out)}
+
+/* --- pengguna yang minta kurang gerakan: matikan semuanya --- */
+@media (prefers-reduced-motion:reduce){
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+  .mula,.muncul{opacity:1;transform:none;transition:none}
+  .btn:hover,.small-btn:hover,.cta-grid>button:hover,.footer-grid form button:hover,
+  .course-feature:hover,.activity-card:hover,.item:hover{transform:none}
+  .btn:active,.small-btn:active,.join-nav:active,.tukar-bahasa:active,.mobile-nav button:active{transform:none}
+}
+
 .ikon-ganti{display:inline-block;width:1em;height:1em}
