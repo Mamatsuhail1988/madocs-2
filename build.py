@@ -1541,6 +1541,34 @@ def bina_dasar():
 
 
 # ----------------------------------------------------------------- utama
+def cap_versi():
+    """Tambah cap versi (?v=<hash>) pada pautan styles.css dan app.js.
+
+    GitHub Pages menghidangkan HTML/CSS dengan `cache-control: max-age=600`, jadi pelawat
+    boleh nampak versi lama sehingga 10 minit selepas terbitan. Dengan cap berasaskan
+    kandungan fail, setiap terbitan menghasilkan URL baharu dan pelayar terus mengambil
+    versi terbaharu.
+    """
+    import hashlib
+    cap = hashlib.md5()
+    for nama in ("styles.css", "app.js"):
+        f = ROOT / nama
+        if f.exists():
+            cap.update(f.read_bytes())
+    tanda = cap.hexdigest()[:8]
+    pola = re.compile(r'(/styles\.css|/app\.js)(\?v=[0-9a-f]+)?')
+    bil = 0
+    for f in ROOT.rglob("*.html"):
+        if ".git" in f.parts:
+            continue
+        teks = f.read_text(encoding="utf-8")
+        baharu = pola.sub(lambda m: "%s?v=%s" % (m.group(1), tanda), teks)
+        if baharu != teks:
+            f.write_text(baharu, encoding="utf-8")
+            bil += 1
+    print("Cap versi %s digunakan pada %d fail HTML." % (tanda, bil))
+
+
 def main():
     bina_fail_statik()
     bina_utama()
@@ -1564,6 +1592,7 @@ def main():
 
     bina_bahasa_inggeris()
     bina_peta_sitemap()
+    cap_versi()
 
     if "--report" in sys.argv:
         print("\n=== KANDUNGAN YANG MASIH DIPERLUKAN (%d) ===" % len(KURANG))
