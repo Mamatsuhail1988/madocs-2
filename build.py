@@ -408,7 +408,7 @@ def cta_komuniti(tajuk="SERTAI KOMUNITI PROFESIONAL MADOCS",
       <h2>{esc(tajuk)}</h2>
       <p>{esc(mesej)}</p>
     </div>
-    <a href="{href}" style="text-decoration:none;min-height:46px;color:var(--blue);text-transform:uppercase;background:#fff;border-radius:5px;align-items:center;gap:14px;padding:0 28px;font-size:10px;font-weight:800;display:inline-flex;box-shadow:0 8px 22px #041e5433">{esc(label)} {icon('arrow-right')}</a>
+    <a href="{href}" style="text-decoration:none;min-height:46px;color:var(--blue);text-transform:uppercase;background:#fff;border-radius:5px;align-items:center;gap:14px;padding:0 28px;font-size:13px;font-weight:800;display:inline-flex;box-shadow:0 8px 22px #041e5433">{esc(label)} {icon('arrow-right')}</a>
   </div>
 </section>"""
 
@@ -707,7 +707,7 @@ def bina_tentang():
       </div>
       <div class="card">
         <h3>Sertai MADOCS</h3>
-        <p style="font-size:11px;line-height:1.7;color:#3b4659">Doktor yang berminat dalam amalan berkhatan dialu-alukan menyertai MADOCS.</p>
+        <p style="font-size:14px;line-height:1.7;color:#3b4659">Doktor yang berminat dalam amalan berkhatan dialu-alukan menyertai MADOCS.</p>
         <a class="btn-blok" href="/keahlian/sertai/" style="margin-top:14px">Borang keahlian {icon('arrow-right')}</a>
       </div>
     </aside>
@@ -905,7 +905,7 @@ def bina_kursus_detail(k):
       </div>
       <div class="card">
         <h3>Perlukan bantuan?</h3>
-        <p style="font-size:11px;line-height:1.7;color:#3b4659">Hubungi urusetia MADOCS untuk pertanyaan tentang pendaftaran, yuran atau keperluan kursus.</p>
+        <p style="font-size:14px;line-height:1.7;color:#3b4659">Hubungi urusetia MADOCS untuk pertanyaan tentang pendaftaran, yuran atau keperluan kursus.</p>
         <a class="btn-blok ghost" href="/hubungi/" style="margin-top:14px">{icon('mail')} Hubungi urusetia</a>
       </div>
     </aside>
@@ -1078,7 +1078,7 @@ def bina_sertai():
     <aside class="side">
       <div class="card">
         <h3>Sebelum menghantar</h3>
-        <ul class="prose" style="padding-left:18px;font-size:11px">
+        <ul class="prose" style="padding-left:18px;font-size:14px">
           <li>Sediakan nombor pendaftaran MMC dan butiran amalan anda.</li>
           <li>Pastikan e-mel dan nombor telefon aktif.</li>
           <li>Permohonan disemak oleh Jawatankuasa Keahlian.</li>
@@ -1086,7 +1086,7 @@ def bina_sertai():
       </div>
       <div class="card">
         <h3>Soalan?</h3>
-        <p style="font-size:11px;line-height:1.7;color:#3b4659">Urusetia MADOCS sedia membantu.</p>
+        <p style="font-size:14px;line-height:1.7;color:#3b4659">Urusetia MADOCS sedia membantu.</p>
         <a class="btn-blok ghost" href="/hubungi/" style="margin-top:14px">{icon('mail')} Hubungi urusetia</a>
       </div>
     </aside>
@@ -1309,7 +1309,7 @@ def bina_hubungi():
       </div>
       <div class="card">
         <h3>Keahlian</h3>
-        <p style="font-size:11px;line-height:1.7;color:#3b4659">Ingin menyertai MADOCS? Mulakan dengan borang permohonan keahlian.</p>
+        <p style="font-size:14px;line-height:1.7;color:#3b4659">Ingin menyertai MADOCS? Mulakan dengan borang permohonan keahlian.</p>
         <a class="btn-blok" href="/keahlian/sertai/" style="margin-top:14px">Borang keahlian {icon('arrow-right')}</a>
       </div>
     </aside>
@@ -1360,10 +1360,32 @@ def bina_carian():
 
 
 # ----------------------------------------------------------------- fail statik
+def skala_fon(css):
+    """Naikkan saiz fon supaya selesa dibaca (Doc mengadu teks 'kecil sangat, sakit mata').
+
+    Reka bentuk yang dicermin daripada laman lama menggunakan saiz amat kecil (8–11px).
+    Tiga jalur: teks hiasan (<7px, tagline logo) → 9px; teks kecil (7–11.9px) → sekurang-kurangnya 12px;
+    teks sederhana (12–17.9px) → digandakan 1.15. Tajuk (≥18px) dibiarkan supaya susun atur tidak pecah.
+    """
+    def ganti(m):
+        saiz = float(m.group(1))
+        if saiz < 7:
+            baharu = 9.0
+        elif saiz < 12:
+            baharu = max(12.0, round(saiz * 1.35))
+        elif saiz < 18:
+            baharu = round(saiz * 1.15, 1)
+        else:
+            baharu = saiz
+        teks = ("%d" % baharu) if baharu == int(baharu) else ("%.1f" % baharu)
+        return "font-size:%spx" % teks
+    return re.sub(r"font-size:([\d.]+)px", ganti, css)
+
+
 def bina_fail_statik():
-    # CSS gabungan
+    # CSS gabungan (saiz fon dinaikkan untuk kebolehbacaan)
     (ROOT / "styles.css").write_text(
-        (_src_css("base.css") + "\n" + _src_css("extra.css")), encoding="utf-8")
+        skala_fon(_src_css("base.css") + "\n" + _src_css("extra.css")), encoding="utf-8")
 
     # CSS tambahan kecil untuk carian
     with open(ROOT / "styles.css", "a", encoding="utf-8") as f:
