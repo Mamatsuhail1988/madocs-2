@@ -2,6 +2,25 @@
 (function () {
   "use strict";
 
+  /* ---- bahasa: halaman Inggeris berada di bawah /en/ ---- */
+  var EN = document.documentElement.lang === "en";
+  var JEJAK_CARIAN = EN ? "/en/search" : "/carian";
+  var TEKS = EN ? {
+    minimum: "Type at least 2 characters to start searching.",
+    hasil: "results found for",
+    tiada: "No results",
+    cuba: "Try another keyword, or contact the MADOCS secretariat for help.",
+    buka: "Open",
+    gagal: "The search index could not be loaded."
+  } : {
+    minimum: "Taip sekurang-kurangnya 2 aksara untuk mula mencari.",
+    hasil: "hasil dijumpai untuk",
+    tiada: "Tiada hasil",
+    cuba: "Cuba kata kunci lain, atau hubungi urusetia MADOCS untuk bantuan.",
+    buka: "Buka",
+    gagal: "Indeks carian tidak dapat dimuatkan."
+  };
+
   /* ---- menu mudah alih ---- */
   var butangMenu = document.querySelector(".menu-toggle");
   var menu = document.getElementById("menu-mudah");
@@ -38,7 +57,7 @@
   var butang = document.getElementById("butang-carian");
   function pergiCarian() {
     if (!pantas || !pantas.value.trim()) { return; }
-    window.location.href = "/carian/?q=" + encodeURIComponent(pantas.value.trim());
+    window.location.href = JEJAK_CARIAN + "/?q=" + encodeURIComponent(pantas.value.trim());
   }
   if (pantas) {
     pantas.addEventListener("keydown", function (e) { if (e.key === "Enter") { pergiCarian(); } });
@@ -70,13 +89,13 @@
         });
       }
       if (kata.length < 2) {
-        info.textContent = "Taip sekurang-kurangnya 2 aksara untuk mula mencari.";
+        info.textContent = TEKS.minimum;
         senarai.innerHTML = "";
         return;
       }
-      info.textContent = hasil.length + " hasil dijumpai untuk \"" + kata + "\".";
+      info.textContent = hasil.length + " " + TEKS.hasil + " \"" + kata + "\".";
       if (!hasil.length) {
-        senarai.innerHTML = '<div class="kosong"><h3>Tiada hasil</h3><p>Cuba kata kunci lain, atau hubungi urusetia MADOCS untuk bantuan.</p></div>';
+        senarai.innerHTML = '<div class="kosong"><h3>' + TEKS.tiada + '</h3><p>' + TEKS.cuba + '</p></div>';
         return;
       }
       senarai.innerHTML = hasil.map(function (it) {
@@ -84,15 +103,15 @@
           '<span class="badge">' + it.j + "</span>" +
           '<h3><a href="' + it.u + '">' + sorot(it.t, kata) + "</a></h3>" +
           '<p>' + sorot(it.r || "", kata) + "</p>" +
-          '<a class="lebih" href="' + it.u + '">Buka</a></div></article>';
+          '<a class="lebih" href="' + it.u + '">' + TEKS.buka + "</a></div></article>";
       }).join("");
     }
 
     var q = new URLSearchParams(window.location.search).get("q") || "";
-    fetch("/carian/index.json")
+    fetch(JEJAK_CARIAN + "/index.json")
       .then(function (r) { return r.json(); })
       .then(function (j) { indeks = j; if (q) { medan.value = q; papar(q); } else { papar(""); } })
-      .catch(function () { info.textContent = "Indeks carian tidak dapat dimuatkan."; });
+      .catch(function () { info.textContent = TEKS.gagal; });
 
     medan.addEventListener("input", function () { papar(medan.value.trim()); });
   }

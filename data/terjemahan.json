@@ -1,0 +1,12 @@
+{
+ "_nota": "Kamus terjemahan BM -> EN. Kunci mesti sama persis dengan teks yang muncul dalam HTML (termasuk entiti seperti &amp;). Jalankan `python3 terjemah.py --laporan` untuk melihat teks yang belum diterjemah.",
+ "Utama": "Home",
+ "Tentang": "About",
+ "Sertai MADOCS": "Join MADOCS",
+ "Hubungi": "Contact",
+ "Keahlian": "Membership",
+ "Aktiviti": "Activities",
+ "Sumber": "Resources",
+ "Berita": "News",
+ "Pendidikan": "Education"
+}

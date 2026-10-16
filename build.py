@@ -19,6 +19,8 @@ import sys
 from pathlib import Path
 from datetime import date, datetime
 
+import terjemah
+
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 ICON_DIR = ROOT / "_icons"
@@ -94,6 +96,7 @@ icon = muat_ikon()
 SITE = load("site.json")
 BASE = SITE.get("base_url", "").rstrip("/")
 PAGES = []          # untuk sitemap
+HALAMAN_BM = []     # (laluan, html) — sumber tunggal untuk penjanaan versi Inggeris
 KURANG = []         # kandungan yang belum disediakan (untuk --report)
 
 
@@ -122,6 +125,7 @@ def head(tajuk, deskripsi, laluan, og_jenis="website", jsonld=None):
     sekatan.append("<title>%s</title>" % esc(tajuk))
     sekatan.append('<meta name="description" content="%s">' % esc(deskripsi))
     sekatan.append('<link rel="canonical" href="%s">' % esc(kanon))
+    sekatan.append("<!--HREFLANG-->")
     sekatan.append('<meta name="theme-color" content="#041e54">')
     sekatan.append('<link rel="icon" href="/assets/favicon-64.png" sizes="64x64">')
     sekatan.append('<link rel="apple-touch-icon" href="/assets/apple-touch-180.png">')
@@ -197,6 +201,7 @@ def header(aktif):
     </a>
     <nav class="desktop-nav" aria-label="Navigasi utama">{pautan}</nav>
     <a class="join-nav" href="/keahlian/sertai/" style="text-decoration:none">Sertai MADOCS</a>
+    <!--TUKAR-BAHASA-->
     <button class="menu-toggle" aria-label="Buka atau tutup menu" aria-expanded="false">{icon('menu')}</button>
   </div>
   <nav class="mobile-nav" id="menu-mudah" aria-label="Navigasi mudah alih" hidden>
@@ -270,14 +275,73 @@ def halaman(aktif, tajuk, deskripsi, laluan, isi, og_jenis="website", jsonld=Non
 
 def tulis(laluan, kandungan, masuk_sitemap=True):
     """laluan contohnya '/tentang/' atau '/404.html'."""
+    _tulis_fail(laluan, kandungan)
+    HALAMAN_BM.append((laluan, kandungan))
+    if masuk_sitemap:
+        PAGES.append(laluan)
+
+
+def _tulis_fail(laluan, kandungan):
     if laluan.endswith("/"):
         fail = ROOT / (laluan.strip("/") or "") / "index.html" if laluan != "/" else ROOT / "index.html"
     else:
         fail = ROOT / laluan.strip("/")
     fail.parent.mkdir(parents=True, exist_ok=True)
     fail.write_text(kandungan, encoding="utf-8")
-    if masuk_sitemap:
-        PAGES.append(laluan)
+
+
+# ----------------------------------------------------------------- dwi-bahasa
+def bina_bahasa_inggeris():
+    """Suntik pautan tukar bahasa + hreflang pada halaman BM, dan jana versi Inggeris di /en/.
+
+    Sumber kandungan tunggal = Bahasa Melayu. Versi EN ialah terjemahan HTML yang sama,
+    menggunakan kamus data/terjemahan.json (lihat terjemah.py).
+    """
+    peta = terjemah.peta_slug([l for l, _ in HALAMAN_BM])
+    kamus = terjemah.muat_kamus()
+    belum = 0
+    for laluan, html in HALAMAN_BM:
+        if laluan == "/404.html":
+            _tulis_fail(laluan, html.replace(terjemah.PENANDA_BAHASA, "")
+                         .replace(terjemah.PENANDA_HREFLANG, ""))
+            continue
+        # halaman BM: tambah pautan EN + hreflang
+        _tulis_fail(laluan, terjemah.suntik_navigasi_bahasa(html, peta, laluan, BASE))
+        # halaman EN
+        en = peta.get(laluan)
+        if not en:
+            continue
+        html_en = terjemah.terjemah_html(html, kamus, peta, laluan, en, BASE)
+        html_en = terjemah.suntik_navigasi_bahasa(html_en, peta, en, BASE)
+        _tulis_fail(en, html_en)
+        PAGES.append(en)
+        for t in terjemah.teks_dalam_html(html):
+            if t not in kamus:
+                belum += 1
+
+    # indeks carian versi Inggeris (pautan + teks diterjemah)
+    indeks_bm = ROOT / "carian" / "index.json"
+    if indeks_bm.exists():
+        try:
+            data = json.loads(indeks_bm.read_text(encoding="utf-8"))
+        except Exception:
+            data = []
+        en_data = []
+        for it in data:
+            baharu = dict(it)
+            baharu["t"] = kamus.get(it.get("t", ""), it.get("t", ""))
+            baharu["r"] = kamus.get(it.get("r", ""), it.get("r", ""))
+            baharu["j"] = kamus.get(it.get("j", ""), it.get("j", ""))
+            if it.get("u") in peta:
+                baharu["u"] = peta[it["u"]]
+            en_data.append(baharu)
+        (ROOT / "en" / "search").mkdir(parents=True, exist_ok=True)
+        (ROOT / "en" / "search" / "index.json").write_text(
+            json.dumps(en_data, ensure_ascii=False, indent=0), encoding="utf-8")
+
+    if belum:
+        print("Nota: %d cebisan teks belum diterjemah (kekal BM) — lihat terjemah.py --laporan." % belum)
+    print("Bahasa Inggeris: %d halaman dijana di /en/." % (len(PAGES) - len(HALAMAN_BM)))
 
 
 # ----------------------------------------------------------------- komponen
@@ -1391,13 +1455,18 @@ def bina_fail_statik():
     with open(ROOT / "styles.css", "a", encoding="utf-8") as f:
         f.write("\n.ikon-ganti{display:inline-block;width:1em;height:1em}\n")
 
-    # robots + sitemap + CNAME
+
+def bina_peta_sitemap():
+    """Tulis robots.txt, sitemap.xml, CNAME dan .nojekyll.
+
+    Dipanggil selepas versi Inggeris dijana supaya laluan /en/ turut disenaraikan.
+    """
     (ROOT / "robots.txt").write_text(
         "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE, encoding="utf-8")
     peta = ['<?xml version="1.0" encoding="UTF-8"?>',
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p in sorted(set(PAGES)):
-        keutamaan = "1.0" if p == "/" else ("0.8" if p.count("/") <= 2 else "0.6")
+        keutamaan = "1.0" if p in ("/", "/en/") else ("0.8" if p.count("/") <= 2 else "0.6")
         peta.append("  <url><loc>%s%s</loc><priority>%s</priority></url>" % (BASE, p, keutamaan))
     peta.append("</urlset>")
     (ROOT / "sitemap.xml").write_text("\n".join(peta) + "\n", encoding="utf-8")
@@ -1479,6 +1548,9 @@ def main():
     bina_carian()
     bina_dasar()
     bina_404()
+
+    bina_bahasa_inggeris()
+    bina_peta_sitemap()
 
     if "--report" in sys.argv:
         print("\n=== KANDUNGAN YANG MASIH DIPERLUKAN (%d) ===" % len(KURANG))

@@ -198,24 +198,32 @@ mark{background:#fff2a8;padding:0 2px;border-radius:3px}
    jadi jarak dan saiz dikecilkan secara berperingkat sebelum menu mudah alih mengambil alih. */
 .nav-row{flex-wrap:nowrap}
 .logo{min-width:0}
-.desktop-nav{flex-wrap:nowrap;min-width:0}
-@media (max-width:1339px){
-  .logo{flex:0 1 240px}
-  .logo strong{font-size:25px}
-  .desktop-nav{gap:13px}
-  .desktop-nav a{font-size:14.4px}
-  .join-nav{padding:12px 13px;font-size:14.4px}
-}
+.desktop-nav{flex:0 0 auto;min-width:0}
+/* Shell maksimum 1180px, jadi bar navigasi mesti muat dalam 1180px pada SEMUA lebar skrin
+   (bukan hanya pada skrin sempit) — jika tidak, kandungan melimpah keluar shell. */
+.logo{flex:0 0 240px}
+.logo strong{font-size:25px}
+.desktop-nav{gap:11px}
+.desktop-nav a{font-size:13.8px;padding:31px 0 27px}
+.join-nav{padding:12px 13px;font-size:13.8px}
+.tukar-bahasa{padding:8px 10px;font-size:16px;margin-left:9px}
 /* Lapan pautan nav + logo + butang tidak lagi muat antara 961px dan 1180px walaupun dikecilkan —
    jadi menu mudah alih mengambil alih lebih awal daripada 960px (nilai dalam base.css). */
-@media (max-width:1180px){
+@media (max-width:1240px){
   .desktop-nav,.join-nav{display:none}
-  .menu-toggle{color:var(--navy);background:0 0;border:0;place-items:center;margin-left:auto;display:grid}
+  /* pautan bahasa di sebelah butang menu, kedua-duanya di kanan (elak dua 'margin-left:auto' kongsi ruang) */
+  .tukar-bahasa{order:2;margin-left:auto}
+  .menu-toggle{color:var(--navy);background:0 0;border:0;place-items:center;margin-left:10px;display:grid;order:3}
   .mobile-nav{border-top:1px solid var(--line);padding:8px 22px 22px}
   .mobile-nav a{border-bottom:1px solid var(--line);padding:12px 0;font-size:17.2px;font-weight:700;display:block}
   .mobile-nav button{background:var(--navy);color:#fff;border:0;border-radius:5px;width:100%;min-height:44px;margin-top:14px;font-size:14.9px;font-weight:800}
   .logo{flex:0 1 250px}
   .logo strong{font-size:25px}
 }
+
+/* Pautan tukar bahasa (BM/EN) dalam bar navigasi */
+.tukar-bahasa{flex:none;border:1px solid var(--navy);color:var(--navy);background:#fff;border-radius:5px;padding:9px 11px;font-size:13.8px;font-weight:800;letter-spacing:.06em;margin-left:10px}
+.tukar-bahasa:hover{background:var(--navy);color:#fff}
+@media (max-width:1240px){.tukar-bahasa{margin-left:auto;padding:8px 10px}}
 
 .ikon-ganti{display:inline-block;width:1em;height:1em}
