@@ -193,4 +193,29 @@ mark{background:#fff2a8;padding:0 2px;border-radius:3px}
    ditutup secara manual. Peraturan ini memulihkan kelakuan togol dalam app.js. */
 .mobile-nav[hidden]{display:none!important}
 
+/* Navigasi: cegah limpahan mendatar antara 961px dan ~1340px.
+   Teks nav yang lebih besar (kebolehbacaan) menyebabkan menu + butang melebihi lebar shell,
+   jadi jarak dan saiz dikecilkan secara berperingkat sebelum menu mudah alih mengambil alih. */
+.nav-row{flex-wrap:nowrap}
+.logo{min-width:0}
+.desktop-nav{flex-wrap:nowrap;min-width:0}
+@media (max-width:1339px){
+  .logo{flex:0 1 240px}
+  .logo strong{font-size:25px}
+  .desktop-nav{gap:13px}
+  .desktop-nav a{font-size:14.4px}
+  .join-nav{padding:12px 13px;font-size:14.4px}
+}
+/* Lapan pautan nav + logo + butang tidak lagi muat antara 961px dan 1180px walaupun dikecilkan —
+   jadi menu mudah alih mengambil alih lebih awal daripada 960px (nilai dalam base.css). */
+@media (max-width:1180px){
+  .desktop-nav,.join-nav{display:none}
+  .menu-toggle{color:var(--navy);background:0 0;border:0;place-items:center;margin-left:auto;display:grid}
+  .mobile-nav{border-top:1px solid var(--line);padding:8px 22px 22px}
+  .mobile-nav a{border-bottom:1px solid var(--line);padding:12px 0;font-size:17.2px;font-weight:700;display:block}
+  .mobile-nav button{background:var(--navy);color:#fff;border:0;border-radius:5px;width:100%;min-height:44px;margin-top:14px;font-size:14.9px;font-weight:800}
+  .logo{flex:0 1 250px}
+  .logo strong{font-size:25px}
+}
+
 .ikon-ganti{display:inline-block;width:1em;height:1em}
