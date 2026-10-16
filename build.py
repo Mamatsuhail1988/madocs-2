@@ -1725,7 +1725,31 @@ def cap_versi():
         if baharu != teks:
             f.write_text(baharu, encoding="utf-8")
             bil += 1
+    # Cap per-aset imej: URL imej berubah apabila fail imej berubah.
+    # Penting kerana GitHub Pages mengecualikan imej daripada revalidasi (max-age=600):
+    # tanpa cap, telefon boleh memaparkan gambar LAMA walaupun HTML sudah baharu.
+    cap_imej = re.compile(r'(/(?:assets/|favicon|apple-touch-icon)[^"\'\s>]*?\.(?:webp|png|jpe?g|svg|ico))(\?v=[0-9a-f]+)?')
+    jadual = {}
+    for f in ROOT.rglob("*.html"):
+        if ".git" in f.parts:
+            continue
+        for laluan in set(cap_imej.findall(f.read_text(encoding="utf-8"))):
+            laluan = laluan[0] if isinstance(laluan, tuple) else laluan
+            fail = ROOT / laluan.lstrip("/")
+            if laluan not in jadual and fail.exists():
+                jadual[laluan] = hashlib.md5(fail.read_bytes()).hexdigest()[:8]
+    bil_imej = 0
+    for f in ROOT.rglob("*.html"):
+        if ".git" in f.parts:
+            continue
+        teks = f.read_text(encoding="utf-8")
+        baharu = cap_imej.sub(
+            lambda m: "%s?v=%s" % (m.group(1), jadual.get(m.group(1), tanda)), teks)
+        if baharu != teks:
+            f.write_text(baharu, encoding="utf-8")
+            bil_imej += 1
     print("Cap versi %s digunakan pada %d fail HTML." % (tanda, bil))
+    print("Cap imej (per-fail) digunakan pada %d fail HTML (%d aset)." % (bil_imej, len(jadual)))
 
 
 def main():

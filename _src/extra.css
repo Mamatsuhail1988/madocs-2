@@ -485,8 +485,17 @@ footer{background:#031330;background-image:none}
 
 /* --- penalaan mudah alih (gaya A) --- */
 @media (max-width:640px){
-  /* label ilustrasi duduk di bawah kawasan imej hero, bukan bertindih dengan kicker */
-  .hero .chip-illustrasi{top:auto;bottom:auto;top:calc(46% - 44px);right:12px}
+  /* Hero telefon: foto jadi jalur di atas, teks di bawah atas latar putih.
+     Sebelum ini foto dan teks bertindih dan tagline jatuh di atas bahagian foto
+     yang cerah — sukar dibaca. Tiada lapisan kabur diperlukan lagi. */
+  .hero{min-height:auto}
+  .hero:after{display:none}
+  .hero-image{inset:0 0 auto 0;left:0;right:0;width:100%;height:232px;object-position:center 42%}
+  .hero-wash{display:none}
+  .hero-content{align-items:flex-start;min-height:auto;margin-top:232px}
+  .hero-copy{width:100%;padding:26px 0 34px}
+  /* label ilustrasi (jika hero memakai imej ilustrasi) duduk di dalam jalur foto */
+  .hero .chip-illustrasi{top:auto;bottom:auto;top:190px;right:12px}
   /* butang hero penuh lebar supaya teks tidak terpotong dua baris */
   .hero-buttons{grid-template-columns:1fr}
 }
