@@ -724,4 +724,9 @@ html{overflow-x:clip}
   nav a,.side-nav a,h3 a,h4 a,.item-body h3 a,.activity-info h3 a{min-height:40px;display:inline-flex;align-items:center}
 }
 
+/* Kad aktiviti tanpa gambar sebenar (contoh CCC8 — gambar belum diterima) */
+.activity-image.tiada-gambar{background:linear-gradient(135deg,#eef4ff,#dbe8fb);display:grid;place-items:center}
+.activity-image.tiada-gambar .ikon-tiada{color:var(--g-biru);opacity:.55}
+.activity-image.tiada-gambar .ikon-tiada svg{width:38px;height:38px}
+
 .ikon-ganti{display:inline-block;width:1em;height:1em}

@@ -545,9 +545,16 @@ def chip_ilustrasi(alt=""):
 def kad_aktiviti(a):
     d = parse_date(a.get("tarikh"))
     kelas = "teal" if (a.get("kategori") or "").upper() in ("TTT", "PCC") else ""
+    # Aktiviti tanpa gambar sebenar: jangan pinjam gambar peristiwa lain — paparkan blok
+    # kategori yang bersih supaya kad kekal sekata dan tidak mengelirukan.
+    if a.get("gambar"):
+        gambar_html = ('<img src="/%s" alt="%s" loading="lazy" decoding="async">'
+                       % (esc(a["gambar"]), esc(a.get("gambar_alt") or a["tajuk"])))
+    else:
+        gambar_html = '<span class="ikon-tiada">%s</span>' % icon("calendar-days")
     return f"""<article class="activity-card">
-  <div class="activity-image">
-    <img src="/{esc(a.get('gambar','assets/hero-clinical.webp'))}" alt="{esc(a.get('gambar_alt') or a['tajuk'])}" loading="lazy" decoding="async">
+  <div class="activity-image{" tiada-gambar" if not a.get("gambar") else ""}">
+    {gambar_html}
     <span class="{kelas}">{esc(a.get('kategori',''))}</span>
     {chip_ilustrasi(a.get('gambar_alt'))}
   </div>
@@ -714,7 +721,11 @@ def bina_utama():
                              "Pengumuman dan berita MADOCS akan diterbitkan di sini.")
 
     isi = f"""<section class="hero">
-  <img src="/assets/hero-clinical.webp" alt="Dewan majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam" width="1080" height="810" class="hero-image" fetchpriority="high" decoding="async">
+  <img src="/assets/hero-clinical.webp"
+       srcset="/assets/hero-clinical-w960.webp 960w, /assets/hero-clinical.webp 1600w"
+       sizes="(max-width: 640px) 100vw, 61vw"
+       alt="Peserta kursus MADOCS berlatih pada model berkhatan dengan peralatan klinikal tersusun, sambil sesi pembentangan anatomi berlangsung di dewan kursus"
+       width="1600" height="1160" class="hero-image" fetchpriority="high" decoding="async">
   <div class="hero-wash"></div>
   {chip_ilustrasi("Dewan majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam")}
   <div class="shell hero-content">

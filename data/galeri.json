@@ -2,15 +2,19 @@
  "cara_edit": "Galeri foto. Setiap album ada 'gambar' (senarai) dengan 'src' dan 'alt'. Gambar diletakkan dalam assets/galeri/<slug>/. Hanya gambar dewasa dalam konteks kursus/perhimpunan — JANGAN masukkan gambar pesakit dirawat atau kanak-kanak tanpa kebenaran bertulis.",
  "album": [
   {
-   "slug": "agm-cme-raya-2026",
-   "tajuk": "AGM & CME Raya MADOCS 2026",
+   "slug": "program-madocs-2026",
+   "tajuk": "Program MADOCS 2026 (AGM Ke-4, CME & Jamuan Aidilfitri)",
    "tarikh": "2026-04-26",
-   "tempat": "Concorde Hotel Shah Alam",
+   "tempat": "Howard Johnson by Wyndham, Kuala Lumpur",
    "kategori": "AGM & CME",
    "gambar": [
     {
+     "src": "assets/berita-cme-raya-dewan.webp",
+     "alt": "Dewan Program MADOCS 2026 di Howard Johnson by Wyndham, Kuala Lumpur"
+    },
+    {
      "src": "assets/galeri/agm-cme-raya-2026/01.webp",
-     "alt": "Barisan pengerusi Mesyuarat Agung Tahunan MADOCS 2026"
+     "alt": "Barisan pengerusi Mesyuarat Agung Tahunan Ke-4 MADOCS 2026"
     },
     {
      "src": "assets/galeri/agm-cme-raya-2026/02.webp",
@@ -23,35 +27,42 @@
     {
      "src": "assets/galeri/agm-cme-raya-2026/04.webp",
      "alt": "Ahli-ahli MADOCS bergambar bersama selepas Mesyuarat Agung Tahunan 2026"
-    }
-   ]
-  },
-  {
-   "slug": "agm-cme-raya-2026-program",
-   "tajuk": "Program CME Raya MADOCS 2026",
-   "tarikh": "2026-04-26",
-   "tempat": "Concorde Hotel Shah Alam",
-   "kategori": "AGM & CME",
-   "gambar": [
+    },
     {
      "src": "assets/galeri/agm-cme-raya-2026-program/01.webp",
-     "alt": "Ruang pendaftaran program CME Raya MADOCS 2026"
+     "alt": "Ruang pendaftaran Program MADOCS 2026"
     },
     {
      "src": "assets/galeri/agm-cme-raya-2026-program/02.webp",
-     "alt": "Ruang pameran dan kaunter program CME Raya MADOCS 2026"
+     "alt": "Ruang pameran dan kaunter Program MADOCS 2026"
     },
     {
      "src": "assets/galeri/agm-cme-raya-2026-program/03.webp",
-     "alt": "Dewan program CME Raya MADOCS 2026 semasa sesi berlangsung"
+     "alt": "Dewan Program MADOCS 2026 semasa sesi berlangsung"
     },
     {
      "src": "assets/galeri/agm-cme-raya-2026-program/04.webp",
-     "alt": "Sesi pembentangan dalam program CME Raya MADOCS 2026"
+     "alt": "Sesi pembentangan dalam Program MADOCS 2026"
     },
     {
      "src": "assets/galeri/agm-cme-raya-2026-program/05.webp",
-     "alt": "Peserta mengikuti sesi program CME Raya MADOCS 2026"
+     "alt": "Peserta mengikuti sesi Program MADOCS 2026"
+    },
+    {
+     "src": "assets/galeri/ccc8-2026/01.webp",
+     "alt": "Peserta kursus mengikuti sesi di dalam dewan"
+    },
+    {
+     "src": "assets/galeri/ccc8-2026/02.webp",
+     "alt": "Peserta kursus menyertai pembentangan dalam dewan"
+    },
+    {
+     "src": "assets/galeri/ccc8-2026/03.webp",
+     "alt": "Sesi pembentangan dalam kursus"
+    },
+    {
+     "src": "assets/galeri/ccc8-2026/04.webp",
+     "alt": "Peserta kursus mengikuti sesi dalam dewan"
     }
    ]
   },
@@ -77,31 +88,6 @@
     {
      "src": "assets/galeri/pcc2-4-semporna-2026/04.webp",
      "alt": "Kakitangan pendaftaran menjalankan tugas di Semporna"
-    }
-   ]
-  },
-  {
-   "slug": "ccc8-2026",
-   "tajuk": "Kursus CCC8",
-   "tarikh": "2026-04-26",
-   "tempat": "Batu Pahat, Johor",
-   "kategori": "Kursus",
-   "gambar": [
-    {
-     "src": "assets/galeri/ccc8-2026/01.webp",
-     "alt": "Peserta kursus mengikuti sesi di dalam dewan"
-    },
-    {
-     "src": "assets/galeri/ccc8-2026/02.webp",
-     "alt": "Peserta kursus menyertai pembentangan dalam dewan"
-    },
-    {
-     "src": "assets/galeri/ccc8-2026/03.webp",
-     "alt": "Sesi pembentangan dalam kursus"
-    },
-    {
-     "src": "assets/galeri/ccc8-2026/04.webp",
-     "alt": "Peserta kursus mengikuti sesi akhir dalam dewan"
     }
    ]
   },
@@ -142,7 +128,7 @@
    "slug": "pcc2-3-putrajaya-2026",
    "tajuk": "Kursus PCC2-3 Putrajaya",
    "tarikh": "2026-05-30",
-   "tempat": "Putrajaya",
+   "tempat": "Masjid Putra, Putrajaya",
    "kategori": "Kursus",
    "gambar": [
     {

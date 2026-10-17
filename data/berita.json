@@ -77,37 +77,38 @@
     "Seramai 32 orang doktor menjalani penilaian dalam kursus PCC2-4 di bawah penyeliaan 20 orang jurulatih yang terdiri daripada pakar pembedahan, pegawai perubatan dan pembantu perubatan bertauliah.",
     "Hanya peserta yang memenuhi tahap kompetensi ditetapkan akan diperakukan untuk menerima Sijil Privileging Berkhatan (Dorsal Slit)."
    ],
-   "gambar": "assets/berita-semporna-dewan.webp",
+   "gambar": "assets/berita-semporna-urusetia.webp",
    "gambar_alt": "Peserta kursus PCC2-4 berkumpul di dalam dewan di Semporna"
   },
   {
+   "slug": "2026-05-31-ccc8-masjid-putra",
+   "tajuk": "Kursus CCC8 di Masjid Putra, Putrajaya",
+   "tarikh": "2026-05-31",
+   "kategori": "Kursus",
+   "penulis": "Urusetia MADOCS",
+   "ringkas": "Kursus CCC8 diadakan di Masjid Putra, Putrajaya pada 31 Mei 2026, dengan sesi hands-on pada 48 kanak-kanak.",
+   "kandungan": [
+    "Kursus CCC8 MADOCS diadakan di Masjid Putra, Putrajaya pada Ahad, 31 Mei 2026, dari pukul 7:30 pagi hingga 5:00 petang.",
+    "Kursus ini merangkumi sesi kuliah serta sesi hands-on pada 48 kanak-kanak, di bawah penyeliaan jurulatih bertauliah MADOCS.",
+    "Sehari sebelum itu, pada Sabtu 30 Mei 2026, kursus PCC2-3 dijalankan di tempat yang sama.",
+    "Gambar program akan diterbitkan di halaman Galeri sebaik sahaja diterima daripada urusetia."
+   ],
+   "gambar": ""
+  },
+  {
    "slug": "2026-04-26-agm-dan-cme-raya",
-   "tajuk": "Mesyuarat Agung Tahunan dan Program CME Raya MADOCS 2026",
+   "tajuk": "Program MADOCS 2026: CME, Jamuan Aidilfitri dan AGM Ke-4",
    "tarikh": "2026-04-26",
    "kategori": "Perhimpunan",
    "penulis": "Urusetia MADOCS",
-   "ringkas": "MADOCS mengadakan Mesyuarat Agung Tahunan 2026 dan program CME Raya pada hari yang sama, dihadiri ahli dari seluruh negara.",
+   "ringkas": "Program MADOCS 2026 di Howard Johnson by Wyndham, Kuala Lumpur menggabungkan sesi CME, Jamuan Aidilfitri dan Mesyuarat Agung Tahunan Ke-4 dengan pemilihan ahli jawatankuasa baharu.",
    "kandungan": [
-    "MADOCS mengadakan Mesyuarat Agung Tahunan (AGM) 2026 pada 26 April 2026, diikuti program CME Raya MADOCS 2026 pada hari yang sama.",
-    "AGM membentangkan hal ehwal persatuan sepanjang tahun lalu dan memilih barisan jawatankuasa untuk sesi berikutnya. Ahli-ahli yang hadir turut berpeluang bertanya dan memberi pandangan.",
-    "Program CME Raya pula menghimpunkan ahli dalam sesi perkongsian ilmu. Maklumat penuh mengenai keputusan AGM akan dimaklumkan kepada ahli melalui urusetia."
+    "MADOCS mengadakan Program MADOCS 2026 pada 26 April 2026 di Howard Johnson by Wyndham, Kuala Lumpur.",
+    "Program sehari itu merangkumi tiga bahagian: sesi Pembangunan Profesional Berterusan (CME), Jamuan Aidilfitri bersama ahli, dan Mesyuarat Agung Tahunan Ke-4 (AGM4).",
+    "Dalam AGM4, ahli-ahli memilih barisan Ahli Jawatankuasa bagi sesi 2026–2028. Senarai penuh jawatankuasa boleh dilihat di halaman Tentang."
    ],
    "gambar": "assets/berita-agm-2026-kumpulan.webp",
-   "gambar_alt": "Ahli-ahli MADOCS bergambar bersama selepas Mesyuarat Agung Tahunan 2026"
-  },
-  {
-   "slug": "2026-04-26-ccc8-batu-pahat",
-   "tajuk": "Kursus CCC8 Batu Pahat Berjaya Dijalankan",
-   "tarikh": "2026-04-26",
-   "kategori": "Kursus",
-   "penulis": "Urusetia MADOCS",
-   "ringkas": "Kursus CCC8 di Batu Pahat, Johor dijalankan selama beberapa hari dengan sesi kuliah dan latihan amali.",
-   "kandungan": [
-    "Kursus CCC8 MADOCS dijalankan di Batu Pahat, Johor. Sepanjang kursus, peserta mengikuti sesi kuliah, demonstrasi dan latihan amali dalam suasana klinikal.",
-    "Kursus ini merupakan sebahagian daripada usaha berterusan MADOCS untuk meningkatkan kemahiran pengamal berkhatan di seluruh negara."
-   ],
-   "gambar": "assets/berita-ccc8-dewan.webp",
-   "gambar_alt": "Para peserta kursus CCC8 mengikuti sesi di dalam dewan"
+   "gambar_alt": "Ahli-ahli MADOCS bergambar bersama selepas Program MADOCS 2026 di Kuala Lumpur"
   }
  ]
 }

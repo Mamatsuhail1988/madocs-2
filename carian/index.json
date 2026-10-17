@@ -24,27 +24,21 @@
 "j": "Aktiviti"
 },
 {
+"t": "CCC8 di Masjid Putra, Putrajaya",
+"u": "/aktiviti/2026-05-31-ccc8-masjid-putra/",
+"r": "Kursus CCC8 diadakan di Masjid Putra, Putrajaya, dengan sesi hands-on pada 48 kanak-kanak.",
+"j": "Aktiviti"
+},
+{
 "t": "PCC2-3 Putrajaya",
 "u": "/aktiviti/2026-05-30-pcc2-3-putrajaya/",
 "r": "Kursus PCC2-3 diadakan di Putrajaya merangkumi sesi kuliah, penilaian dan pameran.",
 "j": "Aktiviti"
 },
 {
-"t": "CCC8 Batu Pahat",
-"u": "/aktiviti/ccc8-batu-pahat/",
-"r": "",
-"j": "Aktiviti"
-},
-{
-"t": "Mesyuarat Agung Tahunan MADOCS 2026",
-"u": "/aktiviti/2026-04-26-agm-madocs/",
-"r": "Mesyuarat Agung Tahunan MADOCS 2026 dihadiri ahli-ahli persatuan.",
-"j": "Aktiviti"
-},
-{
-"t": "CME Raya MADOCS 2026",
-"u": "/aktiviti/2026-04-26-cme-raya-madocs/",
-"r": "Program CME Raya MADOCS 2026 dijalankan bersempena Mesyuarat Agung Tahunan.",
+"t": "Program MADOCS 2026 — CME, Jamuan Aidilfitri & AGM Ke-4",
+"u": "/aktiviti/2026-04-26-program-madocs/",
+"r": "Program MADOCS 2026 menggabungkan sesi CME, Jamuan Aidilfitri dan Mesyuarat Agung Tahunan Ke-4 dengan pemilihan ahli jawatankuasa.",
 "j": "Aktiviti"
 },
 {
@@ -56,7 +50,7 @@
 {
 "t": "PCC1-2 Kota Kinabalu",
 "u": "/aktiviti/pcc1-2-kota-kinabalu/",
-"r": "",
+"r": "Kursus PCC1-2 diadakan di Kota Kinabalu, Sabah dengan sesi kuliah dan penilaian klinikal.",
 "j": "Aktiviti"
 },
 {
@@ -90,15 +84,15 @@
 "j": "Berita"
 },
 {
-"t": "Mesyuarat Agung Tahunan dan Program CME Raya MADOCS 2026",
-"u": "/berita/2026-04-26-agm-dan-cme-raya/",
-"r": "MADOCS mengadakan Mesyuarat Agung Tahunan 2026 dan program CME Raya pada hari yang sama, dihadiri ahli dari seluruh negara.",
+"t": "Kursus CCC8 di Masjid Putra, Putrajaya",
+"u": "/berita/2026-05-31-ccc8-masjid-putra/",
+"r": "Kursus CCC8 diadakan di Masjid Putra, Putrajaya pada 31 Mei 2026, dengan sesi hands-on pada 48 kanak-kanak.",
 "j": "Berita"
 },
 {
-"t": "Kursus CCC8 Batu Pahat Berjaya Dijalankan",
-"u": "/berita/2026-04-26-ccc8-batu-pahat/",
-"r": "Kursus CCC8 di Batu Pahat, Johor dijalankan selama beberapa hari dengan sesi kuliah dan latihan amali.",
+"t": "Program MADOCS 2026: CME, Jamuan Aidilfitri dan AGM Ke-4",
+"u": "/berita/2026-04-26-agm-dan-cme-raya/",
+"r": "Program MADOCS 2026 di Howard Johnson by Wyndham, Kuala Lumpur menggabungkan sesi CME, Jamuan Aidilfitri dan Mesyuarat Agung Tahunan Ke-4 dengan pemilihan ahli jawatankuasa baharu.",
 "j": "Berita"
 },
 {
