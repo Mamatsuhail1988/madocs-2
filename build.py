@@ -367,6 +367,9 @@ def tulis(laluan, kandungan, masuk_sitemap=True):
         PAGES.append(laluan)
 
 
+DIJANA = set()      # laluan fail HTML yang dijana dalam larian ini (untuk bersihkan halaman sisa)
+
+
 def _tulis_fail(laluan, kandungan):
     if laluan.endswith("/"):
         fail = ROOT / (laluan.strip("/") or "") / "index.html" if laluan != "/" else ROOT / "index.html"
@@ -374,6 +377,7 @@ def _tulis_fail(laluan, kandungan):
         fail = ROOT / laluan.strip("/")
     fail.parent.mkdir(parents=True, exist_ok=True)
     fail.write_text(kandungan, encoding="utf-8")
+    DIJANA.add(fail.resolve())
 
 
 # ----------------------------------------------------------------- dwi-bahasa
@@ -1812,6 +1816,34 @@ def cap_versi():
     print("Cap imej (per-fail) digunakan pada %d fail HTML (%d aset)." % (bil_imej, len(jadual)))
 
 
+SEKSYEN_SLUG = ("aktiviti", "berita", "pendidikan", "sumber", "kursus", "en")
+
+
+def bersih_halaman_sisa():
+    """Buang direktori halaman slug yang tidak lagi dijana.
+
+    Contoh: slug aktiviti bertukar (pcc3-putrajaya -> 2026-05-30-pcc2-3-putrajaya).
+    Tanpa langkah ini, halaman lama kekal di repo dan terus boleh diakses pelawat
+    dengan maklumat yang sudah usang.
+    """
+    dibuang = []
+    for seksyen in SEKSYEN_SLUG:
+        akar = ROOT / seksyen
+        if not akar.is_dir():
+            continue
+        for f in akar.rglob("index.html"):
+            if f.resolve() in DIJANA:
+                continue
+            folder = f.parent
+            if folder == akar:
+                continue
+            shutil.rmtree(folder, ignore_errors=True)
+            dibuang.append(str(folder.relative_to(ROOT)))
+    for sisa in sorted(dibuang, reverse=True):
+        print("  halaman sisa dibuang:", sisa)
+    return dibuang
+
+
 def main():
     bina_fail_statik()
     bina_utama()
@@ -1837,6 +1869,7 @@ def main():
 
     bina_bahasa_inggeris()
     bina_peta_sitemap()
+    bersih_halaman_sisa()
     cap_versi()
 
     if "--report" in sys.argv:
