@@ -572,3 +572,38 @@ footer{background:#031330;background-image:none}
                 padding-left:14px;margin:0 0 14px}
 .amaran-bayaran{background:#fff8e6;border:1px solid #f2d99b;border-radius:var(--g-r-kecil);
                 padding:12px 14px;font-size:13.5px;line-height:1.6;color:#6b5316;margin:0 0 16px}
+
+/* --- GAYA A: galeri gambar + lightbox --- */
+.album-ringkas{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:22px}
+.album-pautan{border:1px solid var(--g-line);border-radius:var(--g-r-kecil);padding:13px 16px;background:#fff;
+              display:flex;justify-content:space-between;align-items:center;gap:12px}
+.album-pautan b{font-size:15px;font-weight:600;color:var(--g-ink);line-height:1.35}
+.album-pautan span{font-size:13px;color:var(--g-teks);white-space:nowrap}
+.album-pautan:hover{border-color:var(--g-biru);box-shadow:0 6px 18px #041e5410}
+.album-kepala{margin-bottom:20px}
+.album-kepala h2{margin:10px 0 6px;font-size:26px;font-weight:600;color:var(--g-ink);letter-spacing:-.02em}
+.album-meta{margin:0;font-size:14.5px;color:var(--g-teks)}
+.galeri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.galeri .gambar{padding:0;border:1px solid var(--g-line);border-radius:var(--g-r-kecil);overflow:hidden;
+                background:var(--g-permukaan);cursor:zoom-in;display:block;aspect-ratio:4/3;width:100%}
+.galeri .gambar img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.galeri .gambar:hover img{transform:scale(1.04)}
+.galeri .gambar:focus-visible{outline:3px solid var(--g-biru);outline-offset:2px}
+.lightbox{position:fixed;inset:0;z-index:200;background:#071021e6;display:flex;flex-direction:column;
+          align-items:center;justify-content:center;padding:22px;gap:12px}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:min(1180px,94vw);max-height:78vh;object-fit:contain;border-radius:var(--g-r-kecil);background:#0c1730}
+.lightbox .lb-kapsyen{color:#e8eefb;font-size:14.5px;margin:0;text-align:center;max-width:74ch;line-height:1.6}
+.lightbox button{position:absolute;background:#ffffff1f;color:#fff;border:1px solid #ffffff40;border-radius:50%;
+                 width:44px;height:44px;font-size:22px;line-height:1;display:grid;place-items:center;cursor:pointer}
+.lightbox button:hover{background:#ffffff33}
+.lightbox .lb-tutup{top:18px;right:18px}
+.lightbox .lb-sebelum{left:18px;top:50%;transform:translateY(-50%)}
+.lightbox .lb-selepas{right:18px;top:50%;transform:translateY(-50%)}
+@media (max-width:900px){.galeri{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  .galeri{grid-template-columns:1fr;gap:12px}
+  .album-kepala h2{font-size:21px}
+  .lightbox button{width:38px;height:38px;font-size:19px}
+  .lightbox .lb-sebelum{left:8px} .lightbox .lb-selepas{right:8px}
+}

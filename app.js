@@ -150,3 +150,73 @@
     }
   }
 })();
+
+/* ---- MADOCS 2.0: lightbox galeri ----
+   Thumbnail galeri ialah <button> supaya boleh dicapai papan kekunci. Klik atau Enter
+   membuka lapisan penuh; Esc menutup, anak panah kiri/kanan menukar gambar. */
+(function () {
+  "use strict";
+  var EN = document.documentElement.lang === "en";
+  var TEKS = EN ? { tutup: "Close", sebelum: "Previous photo", selepas: "Next photo" }
+                : { tutup: "Tutup", sebelum: "Gambar sebelum", selepas: "Gambar seterusnya" };
+  var senarai = Array.prototype.slice.call(document.querySelectorAll(".galeri .gambar"));
+  if (!senarai.length) { return; }
+
+  var kotak = document.createElement("div");
+  kotak.className = "lightbox";
+  kotak.setAttribute("role", "dialog");
+  kotak.setAttribute("aria-modal", "true");
+  kotak.hidden = true;
+  kotak.innerHTML =
+    '<button class="lb-tutup" type="button" aria-label="' + TEKS.tutup + '">\u00d7</button>' +
+    '<button class="lb-sebelum" type="button" aria-label="' + TEKS.sebelum + '">\u2039</button>' +
+    '<img alt="">' +
+    '<p class="lb-kapsyen"></p>' +
+    '<button class="lb-selepas" type="button" aria-label="' + TEKS.selepas + '">\u203a</button>';
+  document.body.appendChild(kotak);
+
+  var imej = kotak.querySelector("img");
+  var kapsyen = kotak.querySelector(".lb-kapsyen");
+  var indeks = 0;
+  var fokus_asal = null;
+  var adaSebelum = senarai.length > 1;
+  kotak.querySelector(".lb-sebelum").hidden = !adaSebelum;
+  kotak.querySelector(".lb-selepas").hidden = !adaSebelum;
+
+  function tunjuk(i) {
+    indeks = (i + senarai.length) % senarai.length;
+    var butang = senarai[indeks];
+    imej.src = butang.getAttribute("data-besar");
+    imej.alt = butang.getAttribute("data-kapsyen") || "";
+    kapsyen.textContent = butang.getAttribute("data-kapsyen") || "";
+  }
+
+  function buka(i) {
+    fokus_asal = document.activeElement;
+    tunjuk(i);
+    kotak.hidden = false;
+    document.body.style.overflow = "hidden";
+    kotak.querySelector(".lb-tutup").focus();
+  }
+
+  function tutup() {
+    kotak.hidden = true;
+    imej.src = "";
+    document.body.style.overflow = "";
+    if (fokus_asal && fokus_asal.focus) { fokus_asal.focus(); }
+  }
+
+  senarai.forEach(function (butang, i) {
+    butang.addEventListener("click", function () { buka(i); });
+  });
+  kotak.querySelector(".lb-tutup").addEventListener("click", tutup);
+  kotak.querySelector(".lb-sebelum").addEventListener("click", function () { tunjuk(indeks - 1); });
+  kotak.querySelector(".lb-selepas").addEventListener("click", function () { tunjuk(indeks + 1); });
+  kotak.addEventListener("click", function (e) { if (e.target === kotak) { tutup(); } });
+  document.addEventListener("keydown", function (e) {
+    if (kotak.hidden) { return; }
+    if (e.key === "Escape") { tutup(); }
+    else if (e.key === "ArrowLeft") { tunjuk(indeks - 1); }
+    else if (e.key === "ArrowRight") { tunjuk(indeks + 1); }
+  });
+})();

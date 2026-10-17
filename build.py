@@ -217,6 +217,7 @@ NAV = [
     ("Aktiviti", "/aktiviti/", "aktiviti"),
     ("Sumber", "/sumber/", "sumber"),
     ("Berita", "/berita/", "berita"),
+    ("Galeri", "/galeri/", "galeri"),
     ("Hubungi", "/hubungi/", "hubungi"),
 ]
 
@@ -1562,6 +1563,7 @@ def bina_carian():
         {"t": "Keahlian MADOCS", "u": "/keahlian/", "r": "Manfaat, kelayakan, kategori dan yuran keahlian.", "j": "Halaman"},
         {"t": "Borang permohonan keahlian", "u": "/keahlian/sertai/", "r": "Mohon menjadi ahli MADOCS.", "j": "Halaman"},
         {"t": "Aktiviti MADOCS", "u": "/aktiviti/", "r": "Program dan aktiviti yang telah dijalankan.", "j": "Halaman"},
+        {"t": "Galeri", "u": "/galeri/", "r": "Album gambar program, kursus dan perhimpunan MADOCS.", "j": "Halaman"},
         {"t": "Pusat Sumber", "u": "/sumber/", "r": "Rujukan klinikal dan bahan pendidikan.", "j": "Halaman"},
         {"t": "Hubungi MADOCS", "u": "/hubungi/", "r": "E-mel, telefon dan borang pertanyaan urusetia.", "j": "Halaman"},
         {"t": "Pernyataan Aksesibiliti", "u": "/kebolehaksesan/", "r": "Komitmen aksesibiliti laman MADOCS dan cara memberi maklum balas.", "j": "Halaman"},
@@ -1614,6 +1616,56 @@ def bina_fail_statik():
     # CSS tambahan kecil untuk carian
     with open(ROOT / "styles.css", "a", encoding="utf-8") as f:
         f.write("\n.ikon-ganti{display:inline-block;width:1em;height:1em}\n")
+
+
+def bina_galeri():
+    """Halaman Galeri — album gambar sebenar MADOCS (data/galeri.json).
+
+    Hanya gambar dewasa dalam konteks kursus/perhimpunan dimasukkan; gambar pesakit
+    menerima rawatan atau kanak-kanak memerlukan kebenaran bertulis.
+    """
+    al = load("galeri.json").get("album", [])
+    if not al:
+        kurang("Galeri kosong (data/galeri.json) — PRD §24.")
+
+    def album_satu(a):
+        d = parse_date(a.get("tarikh"))
+        meta = " · ".join(x for x in (tarikh_pdk(d), a.get("tempat", "")) if x)
+        kad = "".join(
+            '<button class="gambar" type="button" data-besar="/%s" data-kapsyen="%s" aria-label="%s">'
+            '<img src="/%s" alt="%s" loading="lazy" decoding="async"></button>'
+            % (esc(g["src"]), esc(g["alt"]), esc(g["alt"]), esc(g["src"]), esc(g["alt"]))
+            for g in a.get("gambar", []))
+        return ("""<section class="content-wrap album" id="%s">
+  <div class="shell">
+    <div class="album-kepala">
+      <span class="chip">%s</span>
+      <h2>%s</h2>
+      <p class="album-meta">%s</p>
+    </div>
+    <div class="galeri">%s</div>
+  </div>
+</section>""" % (esc(a["slug"]), esc(a.get("kategori", "")), esc(a["tajuk"]), esc(meta), kad))
+
+    ringkas = "".join(
+        '<a class="album-pautan" href="#%s"><b>%s</b><span>%d gambar</span></a>'
+        % (esc(a["slug"]), esc(a["tajuk"]), len(a.get("gambar", [])))
+        for a in al)
+
+    isi = page_hero([("Utama", "/"), ("Galeri", None)], "Galeri",
+                    "Album gambar sebenar program, kursus dan perhimpunan MADOCS.") + f"""
+<section class="content-wrap">
+  <div class="shell">
+    <div class="album-ringkas">{ringkas}</div>
+    <p class="nota-isi">Gambar diambil semasa program MADOCS dan diterbitkan untuk tujuan dokumentasi persatuan.
+    Ibu bapa, penjaga atau peserta yang ingin gambar tertentu dibuang boleh menghubungi urusetia MADOCS —
+    kami akan memadamkannya.</p>
+  </div>
+</section>
+{"".join(album_satu(a) for a in al)}"""
+    halaman("galeri", "Galeri | MADOCS",
+            "Galeri gambar program, kursus dan perhimpunan Pertubuhan Doktor Khatan Malaysia (MADOCS).",
+            "/galeri/", isi)
 
 
 def bina_peta_sitemap():
@@ -1881,6 +1933,7 @@ def main():
     bina_keahlian()
     bina_sertai()
     bina_aktiviti()
+    bina_galeri()
     for a in load("aktiviti.json")["aktiviti"]:
         bina_aktiviti_detail(a)
     bina_sumber()
