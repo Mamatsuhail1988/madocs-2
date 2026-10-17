@@ -68,6 +68,64 @@ def kotak_bantuan(tajuk, teks, mesej=None):
 </div>"""
 
 
+def blok_promosi_keahlian(kh):
+    """Kad promosi keahlian (poster + yuran + bayaran + WhatsApp urusetia).
+
+    Sumber: poster rasmi jawatankuasa MADOCS 2026 (data/keahlian.json → promosi).
+    """
+    pr = kh.get("promosi") or {}
+    if not pr.get("aktif"):
+        return ""
+    kad = "".join(
+        '<div class="kad-yuran"><small>%s</small>%s<strong>%s</strong></div>'
+        % (esc(y["nama"]),
+           ("<s>%s</s>" % esc(y["harga_asas"])) if y.get("harga_asas") else "",
+           esc(y["harga"]))
+        for y in pr.get("yuran", []))
+    bay = pr.get("bayaran") or {}
+    urus = pr.get("urusan") or {}
+    pautan_wa = "https://wa.me/%s?text=%s" % (
+        re.sub(r"\D", "", str(urus.get("whatsapp", ""))),
+        urllib.parse.quote("Salam, saya ingin mendaftar / naik taraf keahlian seumur hidup MADOCS."))
+    baris_bayar = "".join(
+        "<p><span>%s</span><b>%s</b></p>" % (esc(label), esc(bay.get(kunci, "")))
+        for kunci, label in (("bank", "Bank"), ("akaun", "Nombor akaun"), ("nama_akaun", "Nama akaun")))
+    return ("""<section class="content-wrap" style="padding-top:0">
+  <div class="shell">
+    <div class="promosi">
+      <div class="promosi-poster">
+        <img src="/%s" alt="%s" width="820" height="1025" loading="lazy" decoding="async">
+      </div>
+      <div class="promosi-isi">
+        <span class="chip promosi-chip">%s</span>
+        <h2>%s</h2>
+        <p>%s</p>
+        <div class="promosi-yuran">%s</div>
+        <div class="promosi-bayaran">
+          <h3>Bayaran</h3>
+          %s
+        </div>
+        <a class="btn-blok wa" href="%s" target="_blank" rel="noopener">%s WhatsApp %s (%s)</a>
+        <p class="nota-isi">%s Sumber: %s.</p>
+      </div>
+    </div>
+  </div>
+</section>""" % (esc(pr.get("gambar", "")), esc(pr.get("gambar_alt", "")), esc(pr.get("chip", "Promosi")),
+                 esc(pr.get("tajuk", "")), esc(pr.get("pengenalan", "")), kad, baris_bayar,
+                 pautan_wa, icon("message-circle"), esc(urus.get("telefon", "")), esc(urus.get("nama", "")),
+                 esc(pr.get("nota", "")), esc(pr.get("sumber", ""))))
+
+
+def blok_sumber_berita(b):
+    """Nota sumber untuk berita yang memetik liputan media luar."""
+    if not b.get("sumber_teks"):
+        return ""
+    teks = esc(b["sumber_teks"])
+    if b.get("sumber_pautan"):
+        teks = '<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(b["sumber_pautan"]), teks)
+    return '<p class="sumber-berita">Sumber: %s</p>' % teks
+
+
 def load(name):
     return json.loads((DATA / name).read_text(encoding="utf-8"))
 
@@ -1118,6 +1176,7 @@ def bina_keahlian():
   </div>
 </section>
 
+{blok_promosi_keahlian(kh)}
 <section class="content-wrap"><div class="shell">{kotak_bantuan("Ada pertanyaan tentang keahlian?", "Hubungi urusetia MADOCS untuk kelayakan, kategori atau yuran keahlian.", "Salam, saya ingin bertanya tentang keahlian MADOCS.")}</div></section>
 
 {cta_komuniti(label='Sertai MADOCS sekarang')}"""
@@ -1355,6 +1414,7 @@ def bina_berita_detail(b):
     <div class="card">
       {gambar}
       <div class="prose">{kandungan}</div>
+      {blok_sumber_berita(b)}
     </div>
     <aside class="side">
       <div class="card">

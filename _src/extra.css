@@ -533,3 +533,30 @@ footer{background:#031330;background-image:none}
 .kotak-bantuan h3{margin-top:0}
 .kotak-bantuan p{font-size:14px;line-height:1.7;color:var(--g-teks);margin:0 0 16px}
 .topbar a[href^="https://wa.me"]{font-weight:700}
+
+/* --- GAYA A: blok promosi keahlian + nota sumber berita --- */
+.promosi{display:grid;grid-template-columns:320px minmax(0,1fr);gap:34px;align-items:start;
+         border:1px solid var(--g-line);border-radius:var(--g-r-besar);background:var(--g-permukaan);
+         padding:26px}
+.promosi-poster img{width:100%;height:auto;border-radius:var(--g-r-kecil);display:block;
+                    border:1px solid var(--g-line)}
+.promosi-isi h2{margin:8px 0 12px;font-size:24px;font-weight:600;color:var(--g-ink);letter-spacing:-.02em}
+.promosi-isi>p{font-size:15px;line-height:1.7;color:var(--g-teks);margin:0 0 20px}
+.promosi-chip{background:#e8f5ec;color:#1a7f45;border:1px solid #c9e7d4;margin-bottom:4px;display:inline-block}
+.promosi-yuran{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.kad-yuran{border:1px solid var(--g-line);background:#fff;border-radius:var(--g-r-kecil);padding:14px 16px}
+.kad-yuran small{display:block;font-size:12.5px;color:var(--g-teks);line-height:1.4;min-height:34px}
+.kad-yuran s{display:block;font-size:13px;color:#93a1b5;margin-top:6px}
+.kad-yuran strong{display:block;font-size:23px;font-weight:700;color:var(--g-ink);letter-spacing:-.02em}
+.promosi-bayaran{border-top:1px solid var(--g-line);padding-top:16px;margin-bottom:20px}
+.promosi-bayaran h3{font-size:14px;font-weight:700;color:var(--g-ink);margin:0 0 10px}
+.promosi-bayaran p{display:flex;gap:12px;font-size:14.5px;margin:4px 0;color:var(--g-ink)}
+.promosi-bayaran p span{flex:0 0 132px;color:var(--g-teks);font-size:13px}
+.sumber-berita{border-top:1px solid var(--g-line);margin-top:22px;padding-top:14px;font-size:13.5px;color:var(--g-teks)}
+.sumber-berita a{color:var(--g-biru);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){
+  .promosi{grid-template-columns:1fr;padding:20px 18px}
+  .promosi-poster{max-width:420px}
+  .promosi-yuran{grid-template-columns:1fr}
+  .kad-yuran small{min-height:0}
+}

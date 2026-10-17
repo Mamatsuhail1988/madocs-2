@@ -54,12 +54,6 @@
 "j": "Aktiviti"
 },
 {
-"t": "PCC3 Putrajaya",
-"u": "/aktiviti/pcc3-putrajaya/",
-"r": "",
-"j": "Aktiviti"
-},
-{
 "t": "PCC1-2 Kota Kinabalu",
 "u": "/aktiviti/pcc1-2-kota-kinabalu/",
 "r": "",
@@ -84,9 +78,15 @@
 "j": "Berita"
 },
 {
+"t": "MADOCS dalam Media: 150 Kanak-kanak Dirai dalam Program Khatan MADOCS",
+"u": "/berita/2026-07-03-liputan-media-kosmo/",
+"r": "Akhbar Kosmo! melaporkan program berkhatan beramai-ramai MADOCS di Semporna yang memberi manfaat kepada 150 kanak-kanak kurang berkemampuan.",
+"j": "Berita"
+},
+{
 "t": "Kursus PCC2-4 Semporna, Sabah",
 "u": "/berita/2026-06-17-pcc2-4-semporna/",
-"r": "Kursus PCC2-4 dijalankan di Semporna, Sabah — sesi kuliah dan latihan amali untuk peserta dari kawasan pantai timur Sabah.",
+"r": "Kursus PCC2-4 di Semporna, Sabah berlangsung serentak dengan Program Berkhatan Beramai-ramai yang memberi manfaat kepada 150 kanak-kanak kurang berkemampuan.",
 "j": "Berita"
 },
 {

@@ -54,12 +54,6 @@
 "j": "Activities"
 },
 {
-"t": "PCC3 Putrajaya",
-"u": "/en/activities/pcc3-putrajaya/",
-"r": "",
-"j": "Activities"
-},
-{
 "t": "PCC1-2 Kota Kinabalu",
 "u": "/en/activities/pcc1-2-kota-kinabalu/",
 "r": "",
@@ -84,9 +78,15 @@
 "j": "News"
 },
 {
+"t": "MADOCS in the Media: 150 Children Hosted in the MADOCS Circumcision Programme",
+"u": "/en/news/2026-07-03-liputan-media-kosmo/",
+"r": "The Kosmo! newspaper reported on the MADOCS mass circumcision programme in Semporna, which benefited 150 underprivileged children.",
+"j": "News"
+},
+{
 "t": "PCC2-4 Course, Semporna, Sabah",
 "u": "/en/news/2026-06-17-pcc2-4-semporna/",
-"r": "The PCC2-4 course was held in Semporna, Sabah — lectures and practical training for participants from Sabah’s east coast.",
+"r": "The PCC2-4 course in Semporna, Sabah ran alongside the mass circumcision programme that benefited 150 underprivileged children.",
 "j": "News"
 },
 {

@@ -26,11 +26,47 @@
   },
   {
    "s": "Berapa yuran keahlian?",
-   "j": "Struktur yuran sedang disahkan oleh jawatankuasa. Sila rujuk urusetia MADOCS."
+   "j": "Bagi promosi 2026: yuran pendaftaran RM100, dan keahlian seumur hidup RM900 (biasa RM1,000) untuk ahli baharu atau naik taraf. Butiran lanjut di bahagian Promosi Keahlian Seumur Hidup di halaman ini."
   },
   {
    "s": "Bagaimana proses permohonan?",
    "j": "Hantar borang permohonan; Jawatankuasa Keahlian akan menyemak dan menghubungi pemohon."
   }
- ]
+ ],
+ "promosi": {
+  "aktif": true,
+  "tajuk": "Promosi Keahlian Seumur Hidup 2026",
+  "chip": "Promosi 2026",
+  "pengenalan": "Untuk tempoh promosi 2026, yuran keahlian seumur hidup dikurangkan daripada RM1,000 kepada RM900. Tawaran ini terbuka kepada ahli baharu dan ahli sedia ada yang ingin menaik taraf keahlian seumur hidup.",
+  "sumber": "Poster rasmi jawatankuasa MADOCS (2026)",
+  "yuran": [
+   {
+    "nama": "Yuran pendaftaran",
+    "harga": "RM100"
+   },
+   {
+    "nama": "Ahli Seumur Hidup (baharu)",
+    "harga": "RM900",
+    "harga_asas": "RM1,000"
+   },
+   {
+    "nama": "Naik taraf ke Ahli Seumur Hidup",
+    "harga": "RM900",
+    "harga_asas": "RM1,000"
+   }
+  ],
+  "bayaran": {
+   "bank": "Maybank",
+   "akaun": "562991028408",
+   "nama_akaun": "MALAYSIAN DOCTORS OF CIRCUMCISION SOCIETY"
+  },
+  "urusan": {
+   "nama": "Madihah",
+   "telefon": "011-1524 9849",
+   "whatsapp": "601115249849"
+  },
+  "nota": "Hantar bukti pembayaran kepada urusetia untuk pengaktifan keahlian. Sebarang pertanyaan tentang kategori atau kelayakan boleh diajukan terus kepada urusetia.",
+  "gambar": "assets/promosi-life-membership-2026.webp",
+  "gambar_alt": "Poster Promosi Keahlian Seumur Hidup MADOCS 2026 dengan kadar yuran dan maklumat pembayaran"
+ }
 }
