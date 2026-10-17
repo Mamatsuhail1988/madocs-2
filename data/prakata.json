@@ -1,13 +1,17 @@
 {
- "cara_edit": "Prakata Presiden. Teks ini DRAF generik yang disediakan untuk Presiden — dia boleh ubah, tambah atau ganti mana-mana ayat. Setiap perenggan ialah satu item dalam 'perenggan'. 'tunjang' ialah senarai ringkas di bawah potret. Pastikan 'gambar_alt' menerangkan gambar dengan jujur.",
- "tajuk": "Prakata Presiden",
- "nama": "Dr. Abdul Rashid",
+ "cara_edit": "Pena Presiden (dahulunya \"Prakata Presiden\"). Teks ini DRAF generik yang disediakan untuk Presiden — dia boleh ubah, tambah atau ganti mana-mana ayat. Setiap perenggan ialah satu item dalam 'perenggan'. 'tunjang' ialah senarai ringkas di bawah potret. Pastikan 'gambar_alt' menerangkan gambar dengan jujur.",
+ "tajuk": "Pena Presiden",
+ "nama": "Dr. Abdol Rashid bin Masrom",
  "label": "Presiden Pertama",
  "jawatan": "Presiden · Sesi 2026–2028",
  "organisasi": "Pertubuhan Doktor Khatan Malaysia",
  "gambar": "assets/presiden.png",
- "gambar_alt": "Dr. Abdul Rashid, Presiden Pertama Pertubuhan Doktor Khatan Malaysia",
- "tunjang": ["Pendidikan berstruktur", "Latihan klinikal", "Perkongsian ilmu"],
+ "gambar_alt": "Dr. Abdol Rashid bin Masrom, Presiden Pertubuhan Doktor Khatan Malaysia",
+ "tunjang": [
+  "Pendidikan berstruktur",
+  "Latihan klinikal",
+  "Perkongsian ilmu"
+ ],
  "salam": "Assalamualaikum warahmatullahi wabarakatuh dan salam sejahtera.",
  "perenggan": [
   "Alhamdulillah, setinggi-tinggi kesyukuran ke hadrat Allah SWT kerana dengan limpah kurnia-Nya kita masih diberi ruang untuk terus berbakti kepada masyarakat melalui bidang kesihatan.",
