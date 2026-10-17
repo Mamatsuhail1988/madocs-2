@@ -838,11 +838,7 @@ def bina_tentang():
                            + (f" Sesi {esc(sesi)}" if sesi else "")
                            + " sebaik sahaja nama dan gambar disahkan oleh MADOCS.")
     else:
-        ahli_html = '<div class="grid-4">%s</div>' % "".join(
-            '<div class="tile">%s<h3>%s</h3><p>%s</p></div>'
-            % ('<img src="/%s" alt="%s" style="width:100%%;border-radius:10px;margin-bottom:14px">' % (esc(a["gambar"]), esc(a["nama"])) if a.get("gambar") else "",
-               esc(a["nama"]), esc(a.get("jawatan", "")))
-            for a in jk)
+        ahli_html = blok_jawatankuasa(jk_data)
 
     struktur_html = blok_struktur_organisasi(jk_data)
 
@@ -1616,6 +1612,36 @@ def bina_fail_statik():
     # CSS tambahan kecil untuk carian
     with open(ROOT / "styles.css", "a", encoding="utf-8") as f:
         f.write("\n.ikon-ganti{display:inline-block;width:1em;height:1em}\n")
+
+
+def blok_jawatankuasa(jk_data):
+    """Carta organisasi + senarai Jawatankuasa Eksekutif (nama, jawatan, potret).
+
+    Sumber: carta organisasi rasmi MADOCS sesi 2026–2028 yang diserahkan jawatankuasa.
+    Potret dipotong daripada carta (resolusi kecil) — ganti dengan gambar asal jika ada.
+    """
+    jk = jk_data.get("jawatankuasa") or []
+    if not jk:
+        return ""
+    carta = jk_data.get("carta") or {}
+    bahagian_carta = ""
+    if carta.get("gambar"):
+        bahagian_carta = (
+            '<div class="org-carta">'
+            '<button class="gambar" type="button" data-besar="/%s" data-kapsyen="%s" aria-label="%s">'
+            '<img src="/%s" alt="%s" loading="lazy" decoding="async"></button>'
+            '<p class="nota-isi">Klik carta untuk melihat saiz penuh. Sumber: %s.</p></div>'
+            % (esc(carta["gambar"]), esc(carta.get("gambar_alt", "")), esc(carta.get("gambar_alt", "")),
+               esc(carta["gambar"]), esc(carta.get("gambar_alt", "")), esc(carta.get("sumber", ""))))
+
+    ahli = "".join(
+        '<div class="org-ahli">%s<b>%s</b><small>%s</small></div>'
+        % ('<span class="org-bulat"><img src="/%s" alt="%s" loading="lazy" decoding="async"></span>'
+           % (esc(a["gambar"]), esc(a["nama"])) if a.get("gambar") else "",
+           esc(a["nama"]), esc(a.get("jawatan", "")))
+        for a in jk)
+    return bahagian_carta + '<div class="org-grid">%s</div>' % ahli
+
 
 
 def bina_galeri():

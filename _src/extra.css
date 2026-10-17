@@ -607,3 +607,22 @@ footer{background:#031330;background-image:none}
   .lightbox button{width:38px;height:38px;font-size:19px}
   .lightbox .lb-sebelum{left:8px} .lightbox .lb-selepas{right:8px}
 }
+
+/* --- GAYA A: carta organisasi + senarai jawatankuasa --- */
+.org-carta{margin-bottom:24px}
+.org-carta .gambar{padding:0;border:1px solid var(--g-line);border-radius:var(--g-r-kecil);overflow:hidden;
+                   background:#fff;cursor:zoom-in;display:block;width:100%}
+.org-carta .gambar img{width:100%;height:auto;display:block}
+.org-carta .nota-isi{margin-top:10px}
+.org-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:22px 16px}
+.org-ahli{text-align:center}
+.org-bulat{display:block;width:104px;height:104px;margin:0 auto 10px;border-radius:50%;overflow:hidden;
+           background:var(--g-permukaan);border:1px solid var(--g-line)}
+.org-bulat img{width:100%;height:100%;object-fit:cover;display:block}
+.org-ahli b{display:block;font-size:14.5px;font-weight:600;color:var(--g-ink);line-height:1.35}
+.org-ahli small{display:block;margin-top:3px;font-size:12.5px;color:var(--g-teks)}
+@media (max-width:640px){
+  .org-grid{grid-template-columns:repeat(2,1fr);gap:18px 12px}
+  .org-bulat{width:88px;height:88px}
+  .org-ahli b{font-size:13.5px}
+}

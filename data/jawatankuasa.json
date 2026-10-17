@@ -1,7 +1,73 @@
 {
  "cara_edit": "Senarai Jawatankuasa Eksekutif. 'jawatan' contohnya: Presiden, Naib Presiden, Setiausaha, Bendahari, Ahli Jawatankuasa. Gambar pilihan. 'sesi' dipaparkan sebagai tajuk seksyen di halaman Tentang. 'struktur' ialah carta organisasi (bilangan dan jawatan) daripada brosur rasmi; senarai nama individu diisi apabila jawatankuasa menyerahkan senarai 2026–2028.",
  "sesi": "2026–2028",
- "jawatankuasa": [],
+ "jawatankuasa": [
+  {
+   "nama": "Dr. Abdol Rashid bin Masrom",
+   "jawatan": "Presiden",
+   "gambar": "assets/jawatankuasa/abdol-rashid.webp"
+  },
+  {
+   "nama": "Dr. Norzaidi bin Zakaria",
+   "jawatan": "Naib Presiden",
+   "gambar": "assets/jawatankuasa/norzaidi.webp"
+  },
+  {
+   "nama": "Dr. Mohd Shafiz bin Mohd Zaini",
+   "jawatan": "Setiausaha Agung",
+   "gambar": "assets/jawatankuasa/mohd-shafiz.webp"
+  },
+  {
+   "nama": "Dr. Azfar Hakim bin Abdol Rashid",
+   "jawatan": "Bendahari Kehormat",
+   "gambar": "assets/jawatankuasa/azfar-hakim.webp"
+  },
+  {
+   "nama": "Dr. Wan Noorasmara bin Mohd Noor",
+   "jawatan": "Penolong Setiausaha",
+   "gambar": "assets/jawatankuasa/wan-noorasmara.webp"
+  },
+  {
+   "nama": "Dr. Shalizan bin Torman",
+   "jawatan": "Ahli Jawatankuasa",
+   "gambar": "assets/jawatankuasa/shalizan.webp"
+  },
+  {
+   "nama": "Datuk Dr. Hj. Hasbi bin Harun",
+   "jawatan": "Ahli Jawatankuasa",
+   "gambar": "assets/jawatankuasa/hasbi-harun.webp"
+  },
+  {
+   "nama": "Dr. Shazly bin Safian",
+   "jawatan": "Ahli Jawatankuasa",
+   "gambar": "assets/jawatankuasa/shazly.webp"
+  },
+  {
+   "nama": "Dr. Cheng Wai Woo",
+   "jawatan": "Ahli Jawatankuasa",
+   "gambar": "assets/jawatankuasa/cheng-wai-woo.webp"
+  },
+  {
+   "nama": "Dr. Afif bin Mohd Ridzwan",
+   "jawatan": "Ahli Jawatankuasa",
+   "gambar": "assets/jawatankuasa/afif.webp"
+  },
+  {
+   "nama": "Dr. Mohd Andalas Putra bin Mohamed Ismail",
+   "jawatan": "Ahli Jawatankuasa",
+   "gambar": "assets/jawatankuasa/mohd-andalas.webp"
+  },
+  {
+   "nama": "Mej. Dr. Muhammad Suhail bin Satri (B)",
+   "jawatan": "Ahli Jawatankuasa",
+   "gambar": "assets/jawatankuasa/muhammad-suhail.webp"
+  },
+  {
+   "nama": "Dr. Mohamad Saiful bin Mohd. Said",
+   "jawatan": "Ahli Jawatankuasa",
+   "gambar": "assets/jawatankuasa/mohamad-saiful.webp"
+  }
+ ],
  "struktur": {
   "jumlah_ahli_lembaga": 13,
   "ringkas": "MADOCS ditadbir urus oleh 13 orang ahli lembaga yang diketuai oleh Presiden, Naib Presiden, Setiausaha, Penolong Setiausaha, Bendahari dan 8 orang Ahli Jawatankuasa.",
@@ -33,5 +99,10 @@
   ],
   "tugas": "Jawatankuasa bertanggungjawab mengatur dan menyelia aktiviti harian pertubuhan serta membuat keputusan mengenai perkara yang mempengaruhi operasinya, dalam dasar umum yang ditetapkan oleh Mesyuarat Agung Tahunan.",
   "sumber": "Brosur rasmi MADOCS (2023)"
+ },
+ "carta": {
+  "gambar": "assets/carta-organisasi-2026-2028.webp",
+  "gambar_alt": "Carta organisasi Pertubuhan Doktor Khatan Malaysia (MADOCS) sesi 2026–2028",
+  "sumber": "Carta organisasi rasmi MADOCS sesi 2026–2028"
  }
 }

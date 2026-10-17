@@ -159,7 +159,7 @@
   var EN = document.documentElement.lang === "en";
   var TEKS = EN ? { tutup: "Close", sebelum: "Previous photo", selepas: "Next photo" }
                 : { tutup: "Tutup", sebelum: "Gambar sebelum", selepas: "Gambar seterusnya" };
-  var senarai = Array.prototype.slice.call(document.querySelectorAll(".galeri .gambar"));
+  var senarai = Array.prototype.slice.call(document.querySelectorAll(".gambar[data-besar]"));
   if (!senarai.length) { return; }
 
   var kotak = document.createElement("div");
