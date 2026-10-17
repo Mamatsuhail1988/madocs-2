@@ -40,7 +40,7 @@
  ],
  "dokumen": [],
  "proses": [
-  "Hantar borang permohonan melalui laman ini atau e-mel kepada urusetia MADOCS.",
+  "Hantar borang permohonan kepada urusetia MADOCS melalui WhatsApp atau e-mel.",
   "Permohonan disemak oleh Jawatankuasa Keahlian.",
   "Pemohon dihubungi untuk maklumat tambahan atau pengesahan.",
   "Keahlian diaktifkan selepas kelulusan dan pembayaran yuran."
@@ -93,8 +93,9 @@
   },
   "nota": "Hantar bukti pembayaran kepada urusetia untuk pengaktifan keahlian. Sebarang pertanyaan tentang kategori atau kelayakan boleh diajukan terus kepada urusetia.",
   "gambar": "assets/promosi-life-membership-2026.webp",
-  "gambar_alt": "Poster Promosi Keahlian Seumur Hidup MADOCS 2026 dengan kadar yuran dan maklumat pembayaran",
-  "amaran_bayaran": "Sebelum membayar, pastikan nama akaun ialah MALAYSIAN DOCTORS OF CIRCUMCISION SOCIETY. MADOCS tidak pernah meminta bayaran ke akaun peribadi individu. Jika ragu-ragu, sahkan dengan urusetia terlebih dahulu."
+  "gambar_alt": "Poster Promosi Keahlian Seumur Hidup MADOCS 2026 dengan kadar yuran, maklumat pembayaran dan kod QR pendaftaran",
+  "amaran_bayaran": "Sebelum membayar, pastikan nama akaun ialah MALAYSIAN DOCTORS OF CIRCUMCISION SOCIETY. MADOCS tidak pernah meminta bayaran ke akaun peribadi individu. Jika ragu-ragu, sahkan dengan urusetia terlebih dahulu.",
+  "borang_url": ""
  },
  "kategori_sumber": "Brosur rasmi MADOCS (2023) — jawatankuasa diminta mengesahkan kategori untuk sesi semasa.",
  "statistik": {

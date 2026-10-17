@@ -849,4 +849,12 @@ footer .socials a:hover,.tile:hover>span.ikon,.carousel-arrow:hover,.modal .clos
 .item-photo{position:relative}
 .kredit-foto{color:#526079;margin:-14px 0 20px;font-size:9px;line-height:1.5}
 
+/* --- Poster keahlian boleh klik + butang aksi promosi --- */
+.promosi-poster a.poster-pautan{display:block;border-radius:12px;overflow:hidden}
+.promosi-poster a.poster-pautan:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.promosi-aksi{display:grid;gap:10px;margin-top:14px}
+.btn-blok.borang{background:linear-gradient(135deg,var(--navy),#0b5bbb);color:#fff;
+  box-shadow:0 8px 20px #041e5438}
+.nota-qr{color:#526079;margin:10px 0 0;font-size:11px;line-height:1.55}
+
 .ikon-ganti{display:inline-block;width:1em;height:1em}

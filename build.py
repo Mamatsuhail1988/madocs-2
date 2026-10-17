@@ -88,9 +88,16 @@ def blok_promosi_keahlian(kh):
         for y in pr.get("yuran", []))
     bay = pr.get("bayaran") or {}
     urus = pr.get("urusan") or {}
+    # Pautan borang dalam talian: hanya jika jawatankuasa beri pautan yang benar-benar
+    # terbuka kepada awam. Kod QR pada poster memerlukan log masuk Google (HTTP 401),
+    # jadi pautan itu tidak boleh dipakai sebagai ganti.
+    borang_url = (pr.get("borang_url") or "").strip()
+    butang_borang = ('<a class="btn-blok borang" href="%s" target="_blank" rel="noopener">%s Isi borang keahlian dalam talian</a>'
+                     % (esc(borang_url), icon("file-text"))) if borang_url else ""
     pautan_wa = "https://wa.me/%s?text=%s" % (
         re.sub(r"\D", "", str(urus.get("whatsapp", ""))),
         urllib.parse.quote("Salam, saya ingin mendaftar / naik taraf keahlian seumur hidup MADOCS."))
+    pautan_form = borang_url or pautan_wa
     baris_bayar = "".join(
         "<p><span>%s</span><b>%s</b></p>" % (esc(label), esc(bay.get(kunci, "")))
         for kunci, label in (("bank", "Bank"), ("akaun", "Nombor akaun"), ("nama_akaun", "Nama akaun")))
@@ -98,7 +105,10 @@ def blok_promosi_keahlian(kh):
   <div class="shell">
     <div class="promosi">
       <div class="promosi-poster">
-        <img src="/%s" alt="%s" width="820" height="1025" loading="lazy" decoding="async">
+        <a class="poster-pautan" href="%s" target="_blank" rel="noopener"
+           aria-label="Buka borang pendaftaran keahlian MADOCS">
+          <img src="/%s" alt="%s" width="820" height="1025" loading="lazy" decoding="async">
+        </a>
       </div>
       <div class="promosi-isi">
         <span class="chip promosi-chip">%s</span>
@@ -110,14 +120,18 @@ def blok_promosi_keahlian(kh):
           %s
         </div>
         <p class="amaran-bayaran">%s</p>
-        <a class="btn-blok wa" href="%s" target="_blank" rel="noopener">%s WhatsApp %s (%s)</a>
+        <div class="promosi-aksi">
+          %s
+          <a class="btn-blok wa" href="%s" target="_blank" rel="noopener">%s WhatsApp %s (%s)</a>
+        </div>
+        <p class="nota-qr">Kod QR pada poster memerlukan log masuk akaun Google. Guna butang di atas — urusetia boleh bantu pendaftaran melalui WhatsApp.</p>
         <p class="nota-isi">%s Sumber: %s.</p>
       </div>
     </div>
   </div>
-</section>""" % (esc(pr.get("gambar", "")), esc(pr.get("gambar_alt", "")), esc(pr.get("chip", "Promosi")),
+</section>""" % (pautan_form, esc(pr.get("gambar", "")), esc(pr.get("gambar_alt", "")), esc(pr.get("chip", "Promosi")),
                  esc(pr.get("tajuk", "")), esc(pr.get("pengenalan", "")), kad, baris_bayar,
-                 esc(pr.get("amaran_bayaran", "")),
+                 esc(pr.get("amaran_bayaran", "")), butang_borang,
                  pautan_wa, icon("message-circle"), esc(urus.get("telefon", "")), esc(urus.get("nama", "")),
                  esc(pr.get("nota", "")), esc(pr.get("sumber", ""))))
 
