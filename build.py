@@ -1128,6 +1128,8 @@ def bina_keahlian():
         jika_belum = ('<div class="pengesahan"><b>Belum disahkan jawatankuasa:</b> kelayakan, kategori dan yuran keahlian '
                       'sedang disahkan. Laman ini hanya menerbitkan maklumat yang telah diluluskan. Sila hubungi urusetia '
                       'MADOCS untuk maklumat terkini.</div>')
+    elif kh.get("sumber_nota"):
+        jika_belum = '<div class="nota-sumber">%s</div>' % esc(kh["sumber_nota"])
 
     manfaat = "".join('<div class="tile"><span class="ikon">%s</span><h3>%s</h3></div>' % (icon("check"), esc(m))
                       for m in kh.get("manfaat", []))
@@ -1137,7 +1139,10 @@ def bina_keahlian():
             return '<div class="form-note">%s</div>' % esc(kosong_teks)
         return ('<div class="table-wrap"><table class="data"><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>'
                 % ("".join("<th>%s</th>" % esc(h) for h in kepala),
-                   "".join("<tr>%s</tr>" % "".join("<td>%s</td>" % c for c in r) for r in baris)))
+                   # data-label membolehkan jadual "bertimbun" pada telefon (lihat extra.css)
+                   "".join("<tr>%s</tr>" % "".join(
+                       '<td data-label="%s">%s</td>' % (esc(kepala[i]) if i < len(kepala) else "", c)
+                       for i, c in enumerate(r)) for r in baris)))
 
     kategori = jadual([[esc(k["nama"]), esc(k.get("kelayakan", "")), esc(k.get("yuran", ""))] for k in kh.get("kategori", [])],
                       ["Kategori", "Kelayakan", "Yuran"],

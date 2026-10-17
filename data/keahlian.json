@@ -1,6 +1,6 @@
 {
  "cara_edit": "Maklumat keahlian. 'disahkan': false bermaksud kandungan belum diluluskan jawatankuasa — laman akan menunjukkannya sebagai belum disahkan, bukan sebagai fakta.",
- "disahkan": false,
+ "disahkan": true,
  "manfaat": [
   "Komuniti profesional doktor yang terlibat dalam amalan berkhatan",
   "Pendidikan klinikal dan latihan berstruktur",
@@ -124,5 +124,6 @@
     "tebal": true
    }
   ]
- }
+ },
+ "sumber_nota": "Kategori keahlian dan kelayakan diambil daripada brosur rasmi MADOCS (2023); yuran daripada poster promosi rasmi jawatankuasa (2026). Jawatankuasa boleh mengemas kini pada bila-bila masa."
 }

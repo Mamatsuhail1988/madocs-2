@@ -636,3 +636,87 @@ footer{background:#031330;background-image:none}
 .stat-keahlian>div.baris-tebal{border-bottom:0;border-top:2px solid var(--g-ink);margin-top:6px;padding-top:11px}
 .stat-keahlian>div.baris-tebal span,.stat-keahlian>div.baris-tebal b{font-weight:700;color:var(--g-ink)}
 .stat-keahlian .nota-isi{margin:14px 0 0}
+
+/* ============ POLISH MUDAH ALIH (semakan UI 2026-10-17) ============
+   Punca utama: .grid-2/.grid-3 tidak runtuh pada telefon dan 1fr tidak boleh
+   mengecil bawah min-content, jadi halaman melebar (carta paparan telefon zoom
+   keluar dan semua teks jadi kecil). Selain itu: teks kecil <12px dan sasaran
+   sentuh <44px. Blok ini membaiki semuanya. */
+.grid-2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+html{overflow-x:clip}
+
+@media (max-width:900px){
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .grid-4{grid-template-columns:1fr}
+  .grid-2,.grid-3{gap:14px}
+
+  /* teks kecil: naikkan supaya boleh dibaca pada telefon */
+  .logo small{font-size:11px}
+  .course-code,.chip,.badge,.activity-image span,.date-badge small{font-size:12px}
+  .item-meta,.activity-info p,.course-info li{font-size:12.5px}
+  .lebih,.section-title-row a,.activity-info a,.item-body>a{font-size:12.5px}
+
+  /* sasaran sentuh sekurang-kurangnya ~44px */
+  .topbar-inner{min-height:40px}
+  .topbar a,.topbar button{min-height:40px}
+  .menu-toggle{width:44px;height:44px;margin-left:auto}
+  .tukar-bahasa{min-height:44px;min-width:44px;justify-content:center}
+  .small-btn{min-height:44px}
+  .mobile-nav a{min-height:48px;display:flex;align-items:center}
+  .mobile-nav button{min-height:46px}
+  .section-title-row a,.lebih,.activity-info a,.item-body>a{min-height:44px;display:inline-flex;align-items:center}
+  .btn{min-height:48px}
+  .galeri .gambar,.org-carta .gambar{border-radius:var(--g-r-kecil)}
+}
+
+/* Jadual data pada telefon: jangan paksa lebar minimum — susun bertimbun supaya
+   teks tidak keluar dari kad (punca halaman keahlian melebar sebelum ini). */
+@media (max-width:640px){
+  .table-wrap{overflow-x:visible}
+  /* Guna 'table.data' (bukan '.data') supaya menang atas peraturan asas
+     'table.data{min-width:520px}' yang lebih spesifik. */
+  table.data{min-width:0;font-size:14px;border-collapse:separate;border-spacing:0}
+  table.data thead{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  table.data,table.data tbody,table.data tr,table.data td{display:block;width:100%}
+  table.data tr{border:1px solid var(--g-line);border-radius:var(--g-r-kecil);background:#fff;
+                padding:12px 14px;margin-bottom:10px}
+  table.data td{border:0;padding:3px 0}
+  table.data td[data-label]:before{content:attr(data-label);display:block;font-size:11.5px;letter-spacing:.07em;
+                                   text-transform:uppercase;color:var(--g-teks);margin-bottom:3px}
+  table.data td:empty{display:none}
+}
+
+/* Nota sumber (contoh: kategori keahlian daripada brosur rasmi) */
+.nota-sumber{border:1px solid var(--g-line);border-left:3px solid var(--g-biru);background:#f7faff;
+             border-radius:var(--g-r-kecil);padding:13px 16px;font-size:13.5px;line-height:1.65;color:var(--g-teks);
+             margin-bottom:22px}
+
+/* Ikon sosial footer: gaya asal menyasarkan 'span', tetapi penanda HTML guna 'a'
+   — jadi ikon kelihatan mentah dan kecil. Betulkan supaya bulatan 40px (sasaran sentuh). */
+.socials{gap:10px}
+.socials a{width:40px;height:40px;background:#0b5bbb;border-radius:50%;display:grid;place-items:center;flex:none}
+.socials a:hover{background:#0d68d8}
+.socials a svg{width:18px;height:18px}
+
+@media (max-width:640px){
+  /* Bar atas: elak teks berbalut dua baris (nampak tidak sekata) */
+  .topbar-inner{gap:8px;overflow:hidden}
+  .topbar-inner div{gap:6px}
+  .topbar a{white-space:nowrap;font-size:12px}
+  .topbar a[href^="mailto:"]{display:none}
+  .topbar i{display:none}
+  /* pautan footer: sasaran sentuh lebih besar dan sekata */
+  .footer-grid a,.footer-grid>div:nth-child(3)>span{min-height:40px;display:flex;align-items:center}
+  .footer-bottom a{min-height:36px;display:inline-flex;align-items:center}
+}
+
+/* Sasaran sentuh: pautan navigasi (breadcrumb, senarai pintasan, tajuk kad) pada telefon */
+@media (max-width:640px){
+  .crumbs a{min-height:36px;display:inline-flex;align-items:center}
+  nav a,.side-nav a,h3 a,h4 a,.item-body h3 a,.activity-info h3 a{min-height:40px;display:inline-flex;align-items:center}
+}
