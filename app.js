@@ -280,3 +280,75 @@
       hero.addEventListener("focusout", mula);
     }
   })();
+
+/* ---- MADOCS 2.0: pengesahan sijil C&P ----
+   Membaca indeks awam yang tertanam dalam halaman (tiada nama/nombor MMC disimpan). */
+(function () {
+  "use strict";
+  var el = document.getElementById("indeks-sijil");
+  var borang = document.getElementById("borang-sahkan");
+  if (!el || !borang) { return; }
+
+  var indeks = [];
+  try { indeks = (JSON.parse(el.textContent || "{}").sijil) || []; } catch (e) { indeks = []; }
+
+  var EN = document.documentElement.lang === "en";
+  var T = EN
+    ? { jaya: "Certificate is valid", gagal: "Not found", kursus: "Course", tarikh: "Date",
+        cpd: "CPD points", hash: "SHA-256 (first 32 characters)", siri: "Serial number",
+        batal: "This certificate has been revoked." }
+    : { jaya: "Sijil ini sah", gagal: "Tidak dijumpai", kursus: "Kursus", tarikh: "Tarikh",
+        cpd: "Mata CPD", hash: "SHA-256 (32 aksara pertama)", siri: "Nombor siri",
+        batal: "Sijil ini telah dibatalkan." };
+
+  var masuk = document.getElementById("siri");
+  var hasil = document.getElementById("hasil-sahkan");
+
+  function tunjuk(html, kelas) {
+    hasil.className = "hasil-sahkan " + (kelas || "");
+    hasil.innerHTML = html;
+  }
+
+  function cari(siri) {
+    var kunci = String(siri || "").trim().toUpperCase();
+    if (!kunci) { return null; }
+    for (var i = 0; i < indeks.length; i++) {
+      if (String(indeks[i].siri || "").toUpperCase() === kunci) { return indeks[i]; }
+    }
+    return null;
+  }
+
+  function papar(siri) {
+    var r = cari(siri);
+    var kunci = String(siri || "").trim();
+    if (!r) {
+      tunjuk("<h3>" + T.gagal + "</h3><p>" + (EN ? "No certificate with serial number " : "Tiada sijil dengan nombor siri ")
+             + "<b>" + kunci.replace(/[<>&]/g, "") + "</b> "
+             + (EN ? "is recorded by MADOCS. Please check the number on the certificate and try again."
+                   : "dalam rekod MADOCS. Sila semak semula nombor pada sijil atau hubungi urusetia.") + "</p>", "gagal");
+      return;
+    }
+    if (r.status && r.status !== "sah") {
+      tunjuk("<h3>" + T.batal + "</h3><p>" + (r.nota || "") + "</p>", "gagal");
+      return;
+    }
+    var baris = [
+      [T.siri, r.siri], [T.kursus, (r.kod ? r.kod + " — " : "") + (r.kursus || "")],
+      [T.tarikh, r.tarikh || ""], [T.cpd, r.cpd || ""], [T.hash, r.hash || ""]
+    ];
+    tunjuk('<h3>' + T.jaya + '</h3><dl class="senarai-sah">'
+           + baris.map(function (b) {
+               return '<div><dt>' + b[0] + '</dt><dd>' + String(b[1] == null ? '' : b[1]).replace(/[<>&]/g, '') + '</dd></div>';
+             }).join('')
+           + '</dl><p class="nota-isi">'
+           + (EN ? "Match the serial number and hash with the certificate you received. Names and MMC numbers are not stored in this public record."
+                 : "Padankan nombor siri dan hash dengan sijil yang diterima. Nama dan nombor MMC tidak disimpan dalam rekod awam ini.")
+           + "</p>", "jaya");
+  }
+
+  borang.addEventListener("submit", function (e) { e.preventDefault(); papar(masuk.value); });
+
+  var q = null;
+  try { q = new URLSearchParams(window.location.search).get("s"); } catch (e) { q = null; }
+  if (q) { masuk.value = q; papar(q); }
+})();

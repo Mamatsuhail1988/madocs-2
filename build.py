@@ -240,7 +240,7 @@ NAV = [
 ]
 
 
-def head(tajuk, deskripsi, laluan, og_jenis="website", jsonld=None):
+def head(tajuk, deskripsi, laluan, og_jenis="website", jsonld=None, noindex=False):
     kanon = BASE + laluan
     sekatan = []
     sekatan.append('<meta charset="utf-8">')
@@ -250,6 +250,8 @@ def head(tajuk, deskripsi, laluan, og_jenis="website", jsonld=None):
     sekatan.append('<link rel="canonical" href="%s">' % esc(kanon))
     sekatan.append("<!--HREFLANG-->")
     sekatan.append('<meta name="theme-color" content="#041e54">')
+    if noindex:
+        sekatan.append('<meta name="robots" content="noindex, follow">')
     sekatan.append('<link rel="icon" href="/assets/favicon-64.png" sizes="64x64">')
     sekatan.append('<link rel="apple-touch-icon" href="/assets/apple-touch-180.png">')
     sekatan.append('<link rel="stylesheet" href="/styles.css">')
@@ -373,16 +375,16 @@ def footer():
   </div>
   <div class="shell footer-bottom">
     <span>© {date.today().year} {esc(SITE['nama'])}. Hak cipta terpelihara.</span>
-    <span><a href="/dasar-privasi/">Dasar Privasi</a><i></i><a href="/terma/">Terma Penggunaan</a><i></i><a href="/kebolehaksesan/">Aksesibiliti</a></span>
+    <span><a href="/sahkan/">Pengesahan Sijil</a><i></i><a href="/dasar-privasi/">Dasar Privasi</a><i></i><a href="/terma/">Terma Penggunaan</a><i></i><a href="/kebolehaksesan/">Aksesibiliti</a></span>
   </div>
 </footer>"""
 
 
-def halaman(aktif, tajuk, deskripsi, laluan, isi, og_jenis="website", jsonld=None, masuk_sitemap=True):
+def halaman(aktif, tajuk, deskripsi, laluan, isi, og_jenis="website", jsonld=None, masuk_sitemap=True, noindex=False):
     dokumen = f"""<!DOCTYPE html>
 <html lang="ms">
 <head>
-{head(tajuk, deskripsi, laluan, og_jenis, jsonld)}
+{head(tajuk, deskripsi, laluan, og_jenis, jsonld, noindex)}
 </head>
 <body>
 <a class="skip-link" href="#kandungan">Lompat ke kandungan utama</a>
@@ -624,6 +626,56 @@ def cta_komuniti(tajuk="Sertai komuniti profesional MADOCS",
     <a class="cta-btn" href="{href}">{esc(label)} {icon('arrow-right')}</a>
   </div>
 </section>"""
+
+
+def bina_sahkan():
+    """Halaman pengesahan sijil C&P — rekod awam TANPA data peribadi.
+
+    Rekod (data/sijil.json, dijana oleh madocs-admin/jana-sijil.py) hanya mengandungi
+    nombor siri, kursus, tarikh, mata CPD dan hash PDF. Nama dan nombor MMC pemegang
+    TIDAK disimpan di sini — jadi hospital boleh mengesahkan keaslian sijil tanpa
+    mendedahkan maklumat peribadi kepada awam (PRD §47).
+    """
+    data = load("sijil.json") if (DATA / "sijil.json").exists() else {"sijil": []}
+    indeks_json = json.dumps({"sijil": data.get("sijil", [])}, ensure_ascii=False).replace("</", "<\\/")
+    urus = (load("site.json").get("whatsapp") or "")
+    wa = "https://wa.me/%s" % re.sub(r"\D", "", str(urus))
+    isi = f"""<section class="page-hero">
+  <div class="shell">{crumbs([("Utama", "/"), ("Pengesahan Sijil", None)])}
+    <h1>Pengesahan Sijil C&amp;P</h1>
+    <p>Hospital dan pihak berkuasa boleh mengesahkan sijil Credentialing &amp; Privileging (C&amp;P) MADOCS di sini — tanpa perlu memaklumkan data peribadi pemegang sijil.</p>
+  </div>
+</section>
+<section class="content-wrap"><div class="shell"><div class="card prose">
+  <p class="banner-draf">{icon('info')} <b>Draf untuk semakan jawatankuasa.</b> Prosedur pengeluaran sijil C&amp;P (siapa menandatangani, bila dikeluarkan) belum diputuskan, jadi rekod di bawah masih belum rasmi.</p>
+  <form id="borang-sahkan" class="borang-sahkan" autocomplete="off" novalidate>
+    <label for="siri">Nombor siri sijil</label>
+    <p class="nota-isi">Nombor siri tercetak di bahagian bawah sijil, di sebelah kod QR. Contoh: <b>MADOCS-CP-2026-0001</b>.</p>
+    <div class="baris-sahkan">
+      <input id="siri" name="siri" type="text" placeholder="MADOCS-CP-2026-0001" required>
+      <button class="btn btn-primary" type="submit">{icon('search')} Sahkan sijil</button>
+    </div>
+  </form>
+  <div id="hasil-sahkan" class="hasil-sahkan" role="status" aria-live="polite"></div>
+
+  <h2>Bagaimana pengesahan berfungsi</h2>
+  <ul>
+    <li>Setiap sijil MADOCS mempunyai <b>nombor siri unik</b> dan <b>kod QR</b> yang membuka halaman ini dengan nombor itu.</li>
+    <li>Untuk mengesahkan, masukkan nombor siri — sistem memaparkan kursus, tarikh, mata CPD dan <b>hash SHA-256</b> fail sijil.</li>
+    <li>Sijil hanya sah jika nombor siri wujud dalam rekod, dan hash yang dipaparkan sepadan dengan fail sijil asal.</li>
+  </ul>
+
+  <h2>Privasi</h2>
+  <p>Rekod awam ini <b>tidak menyimpan nama atau nombor MMC</b> pemegang sijil. Nama pada sijil adalah pada dokumen pemegang sendiri, dan pengesahan di sini tidak mendedahkan maklumat peribadi kepada pihak ketiga. Pertanyaan tentang pengesahan boleh diajukan kepada urusetia.</p>
+
+  <h2>Jika sijil tidak dijumpai</h2>
+  <p>Sila semak semula nombor siri pada sijil. Jika masih tidak dijumpai, hubungi urusetia MADOCS: <a href="mailto:{esc(load('site.json').get('email',''))}">{esc(load('site.json').get('email',''))}</a> atau <a href="{esc(wa)}" target="_blank" rel="noopener">WhatsApp urusetia</a>.</p>
+
+  <script type="application/json" id="indeks-sijil">{indeks_json}</script>
+</div></div></section>"""
+    halaman("", "Pengesahan Sijil C&P | MADOCS",
+            "Sahkan keaslian sijil Credentialing & Privileging (C&P) MADOCS dengan nombor siri sijil.",
+            "/sahkan/", isi, masuk_sitemap=False, noindex=True)
 
 
 def laman_ringkas(slug, tajuk, isi_html):
@@ -2062,6 +2114,8 @@ def main():
     bina_carian()
     bina_prakata()
     bina_kebolehaksesan()
+    bina_sahkan()
+
     bina_dasar()
     bina_404()
 

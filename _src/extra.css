@@ -853,3 +853,30 @@ footer .socials a:hover,.tile:hover>span.ikon,.carousel-arrow:hover,.modal .clos
 .btn-blok.borang{background:linear-gradient(135deg,var(--navy),#0b5bbb);color:#fff;
   box-shadow:0 8px 20px #041e5438}
 .nota-qr{color:#526079;margin:10px 0 0;font-size:11px;line-height:1.55}
+
+/* --- Halaman pengesahan sijil C&P --- */
+.banner-draf{background:#fff8e6;border:1px solid #f0d18a;border-left:4px solid #d99b16;
+  border-radius:8px;padding:12px 14px;margin:0 0 22px;font-size:13px;color:#4a3a10;display:flex;gap:9px;align-items:flex-start;line-height:1.5}
+.banner-draf svg{width:17px;height:17px;flex:none;margin-top:2px;color:#b7791a}
+.borang-sahkan{margin:0 0 8px}
+.borang-sahkan label{display:block;font-weight:700;font-size:13px;color:var(--navy);margin-bottom:6px}
+.baris-sahkan{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.baris-sahkan input{flex:1 1 240px;min-height:46px;border:1px solid var(--line);border-radius:6px;
+  padding:0 14px;font-size:14px;font-family:inherit;background:#fff}
+.baris-sahkan input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px #0749a517}
+.baris-sahkan .btn{flex:0 0 auto}
+.hasil-sahkan{margin:18px 0 6px}
+.hasil-sahkan.jaya,.hasil-sahkan.gagal{border-radius:9px;padding:16px 18px}
+.hasil-sahkan.jaya{background:#eefaf1;border:1px solid #a7e0bd;border-left:4px solid #1a9e52}
+.hasil-sahkan.gagal{background:#fdf1f1;border:1px solid #f0b6b6;border-left:4px solid #cf3a3a}
+.hasil-sahkan h3{margin:0 0 10px;font-size:16px}
+.hasil-sahkan.jaya h3{color:#12683a}
+.hasil-sahkan.gagal h3{color:#9c1f1f}
+.senarai-sah{margin:0;display:grid;gap:7px}
+.senarai-sah>div{display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:baseline}
+.senarai-sah dt{color:var(--muted);font-size:12px;font-weight:600}
+.senarai-sah dd{margin:0;font-size:13px;word-break:break-word}
+@media (max-width:640px){
+  .senarai-sah>div{grid-template-columns:1fr;gap:2px}
+  .baris-sahkan input,.baris-sahkan .btn{flex:1 1 100%}
+}
