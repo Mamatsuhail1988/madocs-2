@@ -239,3 +239,44 @@
     else if (e.key === "ArrowRight") { tunjuk(indeks + 1); }
   });
 })();
+
+  /* ---- roulette imej hero ----
+     Slaid pertama dimuatkan segera; slaid lain dimuatkan selepas halaman sedia (data-src).
+     Putaran berhenti bila pengguna minta kurang gerakan, tab tidak aktif, atau tetikus
+     berada di atas hero. Tanpa JS, slaid pertama kekal kelihatan. */
+  (function () {
+    var slaid = Array.prototype.slice.call(document.querySelectorAll(".hero-slaid"));
+    if (slaid.length < 2) { return; }
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+
+    var hero = document.querySelector(".hero");
+    var selang = ((parseInt(hero && hero.getAttribute("data-selang"), 10) || 7)) * 1000;
+    var indeks = 0, pemasa = null;
+
+    function muatSemua() {
+      slaid.forEach(function (p) {
+        var s = p.querySelector("source[data-srcset]");
+        var i = p.querySelector("img[data-src]");
+        if (s) { s.srcset = s.getAttribute("data-srcset"); s.removeAttribute("data-srcset"); }
+        if (i) { i.src = i.getAttribute("data-src"); i.removeAttribute("data-src"); }
+      });
+    }
+    function tukar() {
+      slaid[indeks].classList.remove("aktif");
+      indeks = (indeks + 1) % slaid.length;
+      slaid[indeks].classList.add("aktif");
+    }
+    function mula() { if (!pemasa) { pemasa = window.setInterval(tukar, selang); } }
+    function henti() { if (pemasa) { window.clearInterval(pemasa); pemasa = null; } }
+
+    window.setTimeout(function () { muatSemua(); mula(); }, 2500);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) { henti(); } else { mula(); }
+    });
+    if (hero) {
+      hero.addEventListener("mouseenter", henti);
+      hero.addEventListener("mouseleave", mula);
+      hero.addEventListener("focusin", henti);
+      hero.addEventListener("focusout", mula);
+    }
+  })();

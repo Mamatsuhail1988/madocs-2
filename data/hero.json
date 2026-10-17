@@ -1,0 +1,21 @@
+{
+ "cara_edit": "Slaid imej hero (roulette). Susunan dalam 'slaid' ialah susunan putaran. Setiap slaid perlukan 'besar' (desktop 1400x1015) dan 'telefon' (1100x733) dalam assets/hero/, serta 'alt' yang menerangkan gambar dengan jujur. Jangan masukkan gambar yang menunjukkan muka pesakit/kanak-kanak.",
+ "selang_saat": 7,
+ "slaid": [
+  {
+   "besar": "assets/hero/1-besar.webp",
+   "telefon": "assets/hero/1-telefon.webp",
+   "alt": "Pakar MADOCS membimbing tangan peserta melakukan prosedur berkhatan bersama pasukan perubatan"
+  },
+  {
+   "besar": "assets/hero/2-besar.webp",
+   "telefon": "assets/hero/2-telefon.webp",
+   "alt": "Pasukan perubatan MADOCS bekerja dengan peralatan steril di atas meja semasa sesi amali berkhatan"
+  },
+  {
+   "besar": "assets/hero/3-besar.webp",
+   "telefon": "assets/hero/3-telefon.webp",
+   "alt": "Pasukan perubatan bermask dan bersarung tangan membantu peserta melakukan prosedur berkhatan"
+  }
+ ]
+}

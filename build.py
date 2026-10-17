@@ -245,7 +245,7 @@ def head(tajuk, deskripsi, laluan, og_jenis="website", jsonld=None):
     sekatan.append('<meta property="og:title" content="%s">' % esc(tajuk))
     sekatan.append('<meta property="og:description" content="%s">' % esc(deskripsi))
     sekatan.append('<meta property="og:url" content="%s">' % esc(kanon))
-    sekatan.append('<meta property="og:image" content="%s/assets/hero-clinical.webp">' % esc(BASE))
+    sekatan.append('<meta property="og:image" content="%s%s">' % (esc(BASE), esc(gambar_hero_utama())))
     sekatan.append('<meta name="twitter:card" content="summary_large_image">')
     data = [organisasi_ld()]
     if jsonld:
@@ -507,7 +507,7 @@ def kad_kursus(k, keutamaan=False):
     if k.get("masa_mula"):
         fakta.append(f"<li>{icon('clock')}{esc(k['masa_mula'])}–{esc(k.get('masa_tamat',''))}</li>")
     tag = "".join("<span>%s</span>" % esc(t) for t in (k.get("tag") or []))
-    img = k.get("gambar") or "assets/hero-clinical.webp"
+    img = k.get("gambar") or gambar_hero_utama()
     alt = k.get("gambar_alt") or k.get("tajuk", "")
     chip = chip_ilustrasi(alt)
     return f"""<article class="course-feature">
@@ -620,6 +620,37 @@ def laman_ringkas(slug, tajuk, isi_html):
 
 
 # ----------------------------------------------------------------- halaman: utama
+def gambar_hero_utama():
+    """Laluan imej hero pertama (untuk og:image dan gambar lalai kad kursus)."""
+    sl = (load("hero.json").get("slaid") or [])
+    return ("/" + sl[0]["besar"]) if sl else "/assets/logo.png"
+
+
+def blok_hero_slaid():
+    """Slaid imej hero (roulette) daripada data/hero.json.
+
+    Slaid pertama dimuatkan segera (LCP); slaid lain memakai data-src + data-srcset
+    supaya app.js memuatkannya selepas halaman sedia. Tanpa JS, hanya slaid pertama
+    kelihatan (ada kelas 'aktif' dalam HTML) — kandungan kekal boleh dilihat.
+    """
+    h = load("hero.json")
+    slaid = h.get("slaid") or []
+    keluar = []
+    for i, sl in enumerate(slaid):
+        aktif = " aktif" if i == 0 else ""
+        if i == 0:
+            sumber = '<source media="(max-width: 640px)" srcset="/%s">' % esc(sl["telefon"])
+            imej = ('<img src="/%s" alt="%s" width="1400" height="1015" class="hero-image" '
+                    'fetchpriority="high" decoding="async">' % (esc(sl["besar"]), esc(sl["alt"])))
+        else:
+            sumber = '<source media="(max-width: 640px)" data-srcset="/%s">' % esc(sl["telefon"])
+            imej = ('<img alt="%s" width="1400" height="1015" class="hero-image" decoding="async" '
+                    'data-src="/%s">' % (esc(sl["alt"]), esc(sl["besar"])))
+        keluar.append('<picture class="hero-slaid%s">%s%s</picture>' % (aktif, sumber, imej))
+    return "\n  ".join(keluar)
+
+
+
 def bina_utama():
     stats = load("stats.json")
     kursus = load("kursus.json")["kursus"]
@@ -720,15 +751,10 @@ def bina_utama():
         berita_html = kosong("file-text", "Belum ada berita diterbitkan",
                              "Pengumuman dan berita MADOCS akan diterbitkan di sini.")
 
-    isi = f"""<section class="hero">
-  <picture>
-  <source media="(max-width: 640px)" srcset="/assets/hero-clinical-mobile.webp">
-  <img src="/assets/hero-clinical.webp"
-       srcset="/assets/hero-clinical-w960.webp 960w, /assets/hero-clinical.webp 1600w"
-       sizes="(max-width: 640px) 100vw, 61vw"
-       alt="Doktor MADOCS berlampu kepala dan bermask menilai prosedur berkhatan bersama peserta, dengan papan penilaian Dorsal Slit di belakang"
-       width="1600" height="1160" class="hero-image" fetchpriority="high" decoding="async">
-  </picture>
+    hero_slaid_html = blok_hero_slaid()
+    selang_slaid = load("hero.json").get("selang_saat") or 7
+    isi = f"""<section class="hero" data-selang="{selang_slaid}">
+  {hero_slaid_html}
   <div class="hero-wash"></div>
   {chip_ilustrasi("Dewan majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam")}
   <div class="shell hero-content">
@@ -1943,11 +1969,14 @@ def cap_versi():
     # Penting kerana GitHub Pages mengecualikan imej daripada revalidasi (max-age=600):
     # tanpa cap, telefon boleh memaparkan gambar LAMA walaupun HTML sudah baharu.
     cap_imej = re.compile(r'(/(?:assets/|favicon|apple-touch-icon)[^"\'\s>]*?\.(?:webp|png|jpe?g|svg|ico))(\?v=[0-9a-f]+)?')
+    cap_imej_data = re.compile(r'(data-srcset?=")(/[^"]+?)(")')
     jadual = {}
     for f in ROOT.rglob("*.html"):
         if ".git" in f.parts:
             continue
-        for laluan in set(cap_imej.findall(f.read_text(encoding="utf-8"))):
+        teks_fail = f.read_text(encoding="utf-8")
+        for laluan in set(cap_imej.findall(teks_fail)) | set(
+                (m2.group(2),) for m2 in cap_imej_data.finditer(teks_fail)):
             laluan = laluan[0] if isinstance(laluan, tuple) else laluan
             fail = ROOT / laluan.lstrip("/")
             if laluan not in jadual and fail.exists():
@@ -1959,6 +1988,8 @@ def cap_versi():
         teks = f.read_text(encoding="utf-8")
         baharu = cap_imej.sub(
             lambda m: "%s?v=%s" % (m.group(1), jadual.get(m.group(1), tanda)), teks)
+        baharu = cap_imej_data.sub(
+            lambda m: "%s%s?v=%s%s" % (m.group(1), m.group(2), jadual.get(m.group(2), tanda), m.group(3)), baharu)
         if baharu != teks:
             f.write_text(baharu, encoding="utf-8")
             bil_imej += 1
