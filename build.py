@@ -45,8 +45,12 @@ def esc(s):
 
 
 def wa_nombor():
-    """Nombor WhatsApp urusetia dalam format antarabangsa tanpa tanda (untuk wa.me)."""
-    return re.sub(r"\D", "", str(SITE.get("telefon", "")))
+    """Nombor WhatsApp urusetia dalam format antarabangsa tanpa tanda (untuk wa.me).
+
+    Guna site.json → whatsapp (boleh berbeza daripada nombor telefon am), jika tidak ada
+    jatuh balik kepada telefon.
+    """
+    return re.sub(r"\D", "", str(SITE.get("whatsapp") or SITE.get("telefon", "")))
 
 
 def wa_pautan(teks=""):
