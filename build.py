@@ -105,6 +105,7 @@ def blok_promosi_keahlian(kh):
           <h3>Bayaran</h3>
           %s
         </div>
+        <p class="amaran-bayaran">%s</p>
         <a class="btn-blok wa" href="%s" target="_blank" rel="noopener">%s WhatsApp %s (%s)</a>
         <p class="nota-isi">%s Sumber: %s.</p>
       </div>
@@ -112,9 +113,29 @@ def blok_promosi_keahlian(kh):
   </div>
 </section>""" % (esc(pr.get("gambar", "")), esc(pr.get("gambar_alt", "")), esc(pr.get("chip", "Promosi")),
                  esc(pr.get("tajuk", "")), esc(pr.get("pengenalan", "")), kad, baris_bayar,
+                 esc(pr.get("amaran_bayaran", "")),
                  pautan_wa, icon("message-circle"), esc(urus.get("telefon", "")), esc(urus.get("nama", "")),
                  esc(pr.get("nota", "")), esc(pr.get("sumber", ""))))
 
+
+def blok_struktur_organisasi(jk_data):
+    """Carta organisasi (bilangan dan jawatan) daripada brosur rasmi MADOCS.
+
+    Nama individu diisi kemudian melalui data/jawatankuasa.json → jawatankuasa[].
+    Sumber: brosur rasmi "MADOCS Brochure 18012023".
+    """
+    st = jk_data.get("struktur") or {}
+    if not st:
+        return ""
+    jawatan = "".join(
+        '<li><span>%s</span><b>%s</b></li>' % (esc(j["nama"]), "%d orang" % j["bilangan"] if j.get("bilangan") else "")
+        for j in st.get("jawatan", []))
+    return ("""<div class="struktur">
+  <p class="struktur-ringkas">%s</p>
+  <ul class="struktur-jawatan">%s</ul>
+  <p class="struktur-tugas">%s</p>
+  <p class="nota-isi">Sumber: %s. Nama ahli jawatankuasa sesi semasa akan diumumkan setelah disahkan.</p>
+</div>""" % (esc(st.get("ringkas", "")), jawatan, esc(st.get("tugas", "")), esc(st.get("sumber", ""))))
 
 def blok_sumber_berita(b):
     """Nota sumber untuk berita yang memetik liputan media luar."""
@@ -822,6 +843,8 @@ def bina_tentang():
                esc(a["nama"]), esc(a.get("jawatan", "")))
             for a in jk)
 
+    struktur_html = blok_struktur_organisasi(jk_data)
+
     fakta = {'<dt>': '<dt>', }
     tadbir = f"""<dl class="facts">
   <div><dt>Nama berdaftar</dt><dd>{esc(SITE['nama'])} ({esc(SITE['nama_en'])})</dd></div>
@@ -858,6 +881,10 @@ def bina_tentang():
         <h2>Prakata Presiden</h2>
         <p>Perutusan daripada Presiden Pertama MADOCS, Dr. Abdul Rashid.</p>
         <p style="margin-top:14px"><a class="btn btn-outline" href="/prakata-presiden/" style="display:inline-flex;align-items:center;text-decoration:none">Baca prakata</a></p>
+      </div>
+      <div class="card">
+        <h2>Struktur Organisasi</h2>
+        {struktur_html}
       </div>
       <div class="card">
         <h2>{tajuk_jk}</h2>

@@ -9,9 +9,35 @@
   "Sumber dan bahan rujukan ahli",
   "Pembangunan profesional berterusan (CPD)"
  ],
- "kategori": [],
+ "kategori": [
+  {
+   "nama": "Ahli Biasa",
+   "kelayakan": "Doktor perubatan yang berdaftar dengan Majlis Perubatan Malaysia (MMC)",
+   "yuran": "Lihat promosi terkini"
+  },
+  {
+   "nama": "Ahli Bersekutu",
+   "kelayakan": "Kakitangan perubatan yang terlibat dalam prosedur berkhatan",
+   "yuran": "Hubungi urusetia"
+  },
+  {
+   "nama": "Ahli Pelajar",
+   "kelayakan": "Pelajar perubatan",
+   "yuran": "Hubungi urusetia"
+  },
+  {
+   "nama": "Ahli Seumur Hidup",
+   "kelayakan": "Ahli yang memilih keahlian seumur hidup",
+   "yuran": "RM900 (promosi 2026; biasa RM1,000)"
+  }
+ ],
  "yuran": [],
- "kelayakan": [],
+ "kelayakan": [
+  "Warganegara Malaysia.",
+  "Ahli Biasa: doktor perubatan yang berdaftar dengan Majlis Perubatan Malaysia (MMC).",
+  "Ahli Bersekutu: kakitangan perubatan yang terlibat dalam prosedur berkhatan.",
+  "Ahli Pelajar: pelajar perubatan."
+ ],
  "dokumen": [],
  "proses": [
   "Hantar borang permohonan melalui laman ini atau e-mel kepada urusetia MADOCS.",
@@ -22,7 +48,7 @@
  "faq": [
   {
    "s": "Siapa layak menyertai MADOCS?",
-   "j": "Kelayakan penuh sedang dikemas kini. Sila hubungi urusetia MADOCS untuk maklumat terkini."
+   "j": "Warganegara Malaysia: doktor perubatan berdaftar MMC (Ahli Biasa), kakitangan perubatan yang terlibat dalam prosedur berkhatan (Ahli Bersekutu) dan pelajar perubatan (Ahli Pelajar)."
   },
   {
    "s": "Berapa yuran keahlian?",
@@ -67,6 +93,8 @@
   },
   "nota": "Hantar bukti pembayaran kepada urusetia untuk pengaktifan keahlian. Sebarang pertanyaan tentang kategori atau kelayakan boleh diajukan terus kepada urusetia.",
   "gambar": "assets/promosi-life-membership-2026.webp",
-  "gambar_alt": "Poster Promosi Keahlian Seumur Hidup MADOCS 2026 dengan kadar yuran dan maklumat pembayaran"
- }
+  "gambar_alt": "Poster Promosi Keahlian Seumur Hidup MADOCS 2026 dengan kadar yuran dan maklumat pembayaran",
+  "amaran_bayaran": "Sebelum membayar, pastikan nama akaun ialah MALAYSIAN DOCTORS OF CIRCUMCISION SOCIETY. MADOCS tidak pernah meminta bayaran ke akaun peribadi individu. Jika ragu-ragu, sahkan dengan urusetia terlebih dahulu."
+ },
+ "kategori_sumber": "Brosur rasmi MADOCS (2023) — jawatankuasa diminta mengesahkan kategori untuk sesi semasa."
 }

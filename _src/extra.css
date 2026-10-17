@@ -560,3 +560,15 @@ footer{background:#031330;background-image:none}
   .promosi-yuran{grid-template-columns:1fr}
   .kad-yuran small{min-height:0}
 }
+
+/* --- GAYA A: carta organisasi + amaran bayaran --- */
+.struktur-ringkas{font-size:15px;line-height:1.7;color:var(--g-teks);margin:0 0 18px}
+.struktur-jawatan{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:8px}
+.struktur-jawatan li{display:flex;justify-content:space-between;gap:14px;border:1px solid var(--g-line);
+                     background:#fff;border-radius:var(--g-r-kecil);padding:11px 15px;font-size:14.5px}
+.struktur-jawatan li span{color:var(--g-ink);font-weight:600}
+.struktur-jawatan li b{color:var(--g-teks);font-weight:500;font-size:13.5px}
+.struktur-tugas{font-size:14px;line-height:1.7;color:var(--g-teks);border-left:3px solid var(--g-biru-lembut);
+                padding-left:14px;margin:0 0 14px}
+.amaran-bayaran{background:#fff8e6;border:1px solid #f2d99b;border-radius:var(--g-r-kecil);
+                padding:12px 14px;font-size:13.5px;line-height:1.6;color:#6b5316;margin:0 0 16px}

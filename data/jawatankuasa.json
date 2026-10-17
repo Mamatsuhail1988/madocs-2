@@ -1,5 +1,37 @@
 {
- "cara_edit": "Senarai Jawatankuasa Eksekutif. 'jawatan' contohnya: Presiden, Naib Presiden, Setiausaha, Bendahari, Ahli Jawatankuasa. Gambar pilihan. 'sesi' dipaparkan sebagai tajuk seksyen di halaman Tentang.",
- "sesi": "2026\u20132028",
- "jawatankuasa": []
+ "cara_edit": "Senarai Jawatankuasa Eksekutif. 'jawatan' contohnya: Presiden, Naib Presiden, Setiausaha, Bendahari, Ahli Jawatankuasa. Gambar pilihan. 'sesi' dipaparkan sebagai tajuk seksyen di halaman Tentang. 'struktur' ialah carta organisasi (bilangan dan jawatan) daripada brosur rasmi; senarai nama individu diisi apabila jawatankuasa menyerahkan senarai 2026–2028.",
+ "sesi": "2026–2028",
+ "jawatankuasa": [],
+ "struktur": {
+  "jumlah_ahli_lembaga": 13,
+  "ringkas": "MADOCS ditadbir urus oleh 13 orang ahli lembaga yang diketuai oleh Presiden, Naib Presiden, Setiausaha, Penolong Setiausaha, Bendahari dan 8 orang Ahli Jawatankuasa.",
+  "jawatan": [
+   {
+    "nama": "Presiden",
+    "bilangan": 1
+   },
+   {
+    "nama": "Naib Presiden",
+    "bilangan": 1
+   },
+   {
+    "nama": "Setiausaha",
+    "bilangan": 1
+   },
+   {
+    "nama": "Penolong Setiausaha",
+    "bilangan": 1
+   },
+   {
+    "nama": "Bendahari",
+    "bilangan": 1
+   },
+   {
+    "nama": "Ahli Jawatankuasa",
+    "bilangan": 8
+   }
+  ],
+  "tugas": "Jawatankuasa bertanggungjawab mengatur dan menyelia aktiviti harian pertubuhan serta membuat keputusan mengenai perkara yang mempengaruhi operasinya, dalam dasar umum yang ditetapkan oleh Mesyuarat Agung Tahunan.",
+  "sumber": "Brosur rasmi MADOCS (2023)"
+ }
 }
