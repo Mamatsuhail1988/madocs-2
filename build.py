@@ -605,7 +605,7 @@ def cta_komuniti(tajuk="Sertai komuniti profesional MADOCS",
       <h2>{esc(tajuk)}</h2>
       <p>{esc(mesej)}</p>
     </div>
-    <a href="{href}" style="text-decoration:none;min-height:46px;color:var(--blue);text-transform:uppercase;background:#fff;border-radius:5px;align-items:center;gap:14px;padding:0 28px;font-size:13px;font-weight:800;display:inline-flex;box-shadow:0 8px 22px #041e5433">{esc(label)} {icon('arrow-right')}</a>
+    <a class="cta-btn" href="{href}">{esc(label)} {icon('arrow-right')}</a>
   </div>
 </section>"""
 

@@ -147,6 +147,25 @@
         el.style.transitionDelay = (Math.min(i % 4, 3) * 45) + "ms";
         pemerhati.observe(el);
       });
+
+      /* Keselamatan: IntersectionObserver boleh terlepas elemen bila pelawat melompat
+         atau skrol terlalu laju (kes sebenar: kandungan kekal halimunan). Sapu elemen
+         yang berada dalam paparan tetapi masih belum muncul, dan buka semuanya selepas
+         beberapa saat supaya tiada kandungan tersembunyi selama-lamanya. */
+      function sapu() {
+        Array.prototype.forEach.call(document.querySelectorAll(".mula:not(.muncul)"), function (el) {
+          var b = el.getBoundingClientRect();
+          if (b.top < window.innerHeight && b.bottom > 0) { el.classList.add("muncul"); }
+        });
+      }
+      sapu();
+      window.addEventListener("scroll", function () { window.requestAnimationFrame(sapu); }, { passive: true });
+      window.addEventListener("resize", sapu, { passive: true });
+      window.setTimeout(function () {
+        Array.prototype.forEach.call(document.querySelectorAll(".mula"), function (el) {
+          el.classList.add("muncul");
+        });
+      }, 4000);
     }
   }
 })();

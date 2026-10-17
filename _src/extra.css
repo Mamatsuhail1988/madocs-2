@@ -725,3 +725,21 @@ html{overflow-x:clip}
 .activity-image.tiada-gambar{background:linear-gradient(135deg,#eef4ff,#dbe8fb);display:grid;place-items:center}
 .activity-image.tiada-gambar .ikon-tiada{color:var(--g-biru);opacity:.55}
 .activity-image.tiada-gambar .ikon-tiada svg{width:38px;height:38px}
+
+/* --- CTA komuniti: pautan bergaya butang ---
+   Bug: CSS lama menyasarkan `.cta-grid>button` sedangkan penanda HTML guna <a>, jadi
+   pautan itu tidak mendapat gaya grid/butang — pada telefon ia terjatuh ke lajur ikon
+   (58px) dan teks melimpah keluar kotak. Gaya penuh di sini. */
+.cta-btn{min-height:48px;color:var(--g-biru);text-transform:uppercase;background:#fff;border-radius:var(--g-r-kecil);
+         display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:0 26px;font-size:13px;
+         font-weight:800;text-decoration:none;box-shadow:0 8px 22px #041e5433;white-space:nowrap;line-height:1.2}
+.cta-btn svg{width:15px;height:15px;flex:none}
+.cta-btn:hover{background:#f2f7ff}
+.cta-btn:active{transform:translateY(1px)}
+@media (max-width:900px){
+  .cta-btn{grid-column:1 / -1;justify-self:stretch;width:100%;padding:13px 20px;white-space:normal;text-align:center}
+}
+@media (max-width:640px){
+  .cta-grid{grid-template-columns:54px minmax(0,1fr)}
+  .cta-btn{font-size:12.5px;letter-spacing:.02em}
+}
