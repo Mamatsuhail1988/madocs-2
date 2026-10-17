@@ -17,6 +17,21 @@
    "gambar_alt": "Kaunter pendaftaran dan sepanduk majlis pelancaran di Hospital Shah Alam"
   },
   {
+   "slug": "2026-09-16-mesyuarat-ahli-jawatankuasa",
+   "tajuk": "Mesyuarat Ahli Jawatankuasa MADOCS",
+   "tarikh": "2026-09-16",
+   "kategori": "Mesyuarat",
+   "penulis": "Urusetia MADOCS",
+   "ringkas": "Mesyuarat Ahli Jawatankuasa MADOCS diadakan di Qasar Balqis, Taman Melati bagi membincangkan perancangan program dan latihan.",
+   "kandungan": [
+    "Ahli Jawatankuasa MADOCS mengadakan mesyuarat pada 16 September 2026 di Qasar Balqis, Taman Melati.",
+    "Mesyuarat membincangkan perancangan program latihan, pengurusan keahlian dan penambahbaikan laman web persatuan.",
+    "Keputusan penuh mesyuarat akan dimaklumkan kepada ahli melalui urusetia dan papan makluman ahli."
+   ],
+   "gambar": "assets/berita-2026-09-16-mesyuarat.webp",
+   "gambar_alt": "Bangunan tempat berlangsungnya mesyuarat Ahli Jawatankuasa MADOCS"
+  },
+  {
    "slug": "2026-08-10-lawatan-klinik-sunat-indonesia",
    "tajuk": "Lawatan Kerja MADOCS ke Klinik Sunat Kanak-kanak di Indonesia",
    "tarikh": "2026-08-10",
@@ -32,19 +47,48 @@
    "gambar_alt": "Peralatan klinikal disusun di atas meja semasa lawatan kerja ke klinik berkhatan di Indonesia"
   },
   {
-   "slug": "2026-09-16-mesyuarat-ahli-jawatankuasa",
-   "tajuk": "Mesyuarat Ahli Jawatankuasa MADOCS",
-   "tarikh": "2026-09-16",
-   "kategori": "Mesyuarat",
+   "slug": "2026-06-17-pcc2-4-semporna",
+   "tajuk": "Kursus PCC2-4 Semporna, Sabah",
+   "tarikh": "2026-06-17",
+   "kategori": "Kursus",
    "penulis": "Urusetia MADOCS",
-   "ringkas": "Mesyuarat Ahli Jawatankuasa MADOCS diadakan di Qasar Balqis, Taman Melati bagi membincangkan perancangan program dan latihan.",
+   "ringkas": "Kursus PCC2-4 dijalankan di Semporna, Sabah — sesi kuliah dan latihan amali untuk peserta dari kawasan pantai timur Sabah.",
    "kandungan": [
-    "Ahli Jawatankuasa MADOCS mengadakan mesyuarat pada 16 September 2026 di Qasar Balqis, Taman Melati.",
-    "Mesyuarat membincangkan perancangan program latihan, pengurusan keahlian dan penambahbaikan laman web persatuan.",
-    "Keputusan penuh mesyuarat akan dimaklumkan kepada ahli melalui urusetia dan papan makluman ahli."
+    "Kursus PCC2-4 MADOCS diadakan di Semporna, Sabah pada Jun 2026. Peserta mengikuti sesi kuliah serta latihan amali sepanjang kursus berlangsung.",
+    "Penganjuran kursus di kawasan luar bandar membolehkan lebih ramai pengamal perubatan setempat mengikuti latihan tanpa perlu berpergian jauh.",
+    "MADOCS mengucapkan terima kasih kepada semua peserta dan pihak yang membantu menjayakan kursus ini."
    ],
-   "gambar": "assets/berita-2026-09-16-mesyuarat.webp",
-   "gambar_alt": "Bangunan tempat berlangsungnya mesyuarat Ahli Jawatankuasa MADOCS"
+   "gambar": "assets/berita-semporna-dewan.webp",
+   "gambar_alt": "Peserta kursus PCC2-4 berkumpul di dalam dewan di Semporna"
+  },
+  {
+   "slug": "2026-04-26-agm-dan-cme-raya",
+   "tajuk": "Mesyuarat Agung Tahunan dan Program CME Raya MADOCS 2026",
+   "tarikh": "2026-04-26",
+   "kategori": "Perhimpunan",
+   "penulis": "Urusetia MADOCS",
+   "ringkas": "MADOCS mengadakan Mesyuarat Agung Tahunan 2026 dan program CME Raya pada hari yang sama, dihadiri ahli dari seluruh negara.",
+   "kandungan": [
+    "MADOCS mengadakan Mesyuarat Agung Tahunan (AGM) 2026 pada 26 April 2026, diikuti program CME Raya MADOCS 2026 pada hari yang sama.",
+    "AGM membentangkan hal ehwal persatuan sepanjang tahun lalu dan memilih barisan jawatankuasa untuk sesi berikutnya. Ahli-ahli yang hadir turut berpeluang bertanya dan memberi pandangan.",
+    "Program CME Raya pula menghimpunkan ahli dalam sesi perkongsian ilmu. Maklumat penuh mengenai keputusan AGM akan dimaklumkan kepada ahli melalui urusetia."
+   ],
+   "gambar": "assets/berita-agm-2026-kumpulan.webp",
+   "gambar_alt": "Ahli-ahli MADOCS bergambar bersama selepas Mesyuarat Agung Tahunan 2026"
+  },
+  {
+   "slug": "2026-04-26-ccc8-batu-pahat",
+   "tajuk": "Kursus CCC8 Batu Pahat Berjaya Dijalankan",
+   "tarikh": "2026-04-26",
+   "kategori": "Kursus",
+   "penulis": "Urusetia MADOCS",
+   "ringkas": "Kursus CCC8 di Batu Pahat, Johor dijalankan selama beberapa hari dengan sesi kuliah dan latihan amali.",
+   "kandungan": [
+    "Kursus CCC8 MADOCS dijalankan di Batu Pahat, Johor. Sepanjang kursus, peserta mengikuti sesi kuliah, demonstrasi dan latihan amali dalam suasana klinikal.",
+    "Kursus ini merupakan sebahagian daripada usaha berterusan MADOCS untuk meningkatkan kemahiran pengamal berkhatan di seluruh negara."
+   ],
+   "gambar": "assets/berita-ccc8-dewan.webp",
+   "gambar_alt": "Para peserta kursus CCC8 mengikuti sesi di dalam dewan"
   }
  ]
 }

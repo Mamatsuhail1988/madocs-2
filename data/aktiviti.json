@@ -22,6 +22,26 @@
    "ringkas": "Lawatan kerja delegasi MADOCS bagi meninjau pengurusan perkhidmatan berkhatan kanak-kanak."
   },
   {
+   "slug": "2026-06-17-pcc2-4-semporna",
+   "kategori": "PCC",
+   "tajuk": "PCC2-4 Semporna",
+   "tarikh": "2026-06-17",
+   "tempat": "Semporna, Sabah",
+   "gambar": "assets/aktiviti-pcc2-4-semporna.webp",
+   "gambar_alt": "Sepanduk kursus PCC2-4 dipasang di hadapan premis di Semporna",
+   "ringkas": "Kursus PCC2-4 dijalankan di Semporna, Sabah dengan sesi kuliah dan latihan amali."
+  },
+  {
+   "slug": "2026-05-30-pcc2-3-putrajaya",
+   "kategori": "PCC",
+   "tajuk": "PCC2-3 Putrajaya",
+   "tarikh": "2026-05-30",
+   "tempat": "Putrajaya",
+   "gambar": "assets/aktiviti-pcc2-3-putrajaya.webp",
+   "gambar_alt": "Ruang pameran dan kaunter pendaftaran kursus PCC2-3 di Putrajaya",
+   "ringkas": "Kursus PCC2-3 diadakan di Putrajaya merangkumi sesi kuliah, penilaian dan pameran."
+  },
+  {
    "slug": "ccc8-batu-pahat",
    "kategori": "CCC",
    "tajuk": "CCC8 Batu Pahat",
@@ -30,6 +50,26 @@
    "gambar": "assets/activity-workshop.webp",
    "gambar_alt": "Imej ilustrasi: kursus komprehensif berkhatan",
    "ringkas": ""
+  },
+  {
+   "slug": "2026-04-26-agm-madocs",
+   "kategori": "AGM",
+   "tajuk": "Mesyuarat Agung Tahunan MADOCS 2026",
+   "tarikh": "2026-04-26",
+   "tempat": "Kuala Lumpur",
+   "gambar": "assets/aktiviti-agm-2026.webp",
+   "gambar_alt": "Dewan Mesyuarat Agung Tahunan MADOCS 2026",
+   "ringkas": "Mesyuarat Agung Tahunan MADOCS 2026 dihadiri ahli-ahli persatuan."
+  },
+  {
+   "slug": "2026-04-26-cme-raya-madocs",
+   "kategori": "CME",
+   "tajuk": "CME Raya MADOCS 2026",
+   "tarikh": "2026-04-26",
+   "tempat": "Kuala Lumpur",
+   "gambar": "assets/aktiviti-cme-raya-2026.webp",
+   "gambar_alt": "Kaunter pendaftaran dan sepanduk program CME Raya MADOCS 2026",
+   "ringkas": "Program CME Raya MADOCS 2026 dijalankan bersempena Mesyuarat Agung Tahunan."
   },
   {
    "slug": "ttt-sip-rejap",

@@ -18,9 +18,33 @@
 "j": "Activities"
 },
 {
+"t": "PCC2-4 Semporna",
+"u": "/en/activities/2026-06-17-pcc2-4-semporna/",
+"r": "The PCC2-4 course was held in Semporna, Sabah with lectures and practical training.",
+"j": "Activities"
+},
+{
+"t": "PCC2-3 Putrajaya",
+"u": "/en/activities/2026-05-30-pcc2-3-putrajaya/",
+"r": "The PCC2-3 course was held in Putrajaya, covering lectures, assessment and an exhibition.",
+"j": "Activities"
+},
+{
 "t": "CCC8 Batu Pahat",
 "u": "/en/activities/ccc8-batu-pahat/",
 "r": "",
+"j": "Activities"
+},
+{
+"t": "MADOCS 2026 Annual General Meeting",
+"u": "/en/activities/2026-04-26-agm-madocs/",
+"r": "The MADOCS 2026 Annual General Meeting was attended by members of the society.",
+"j": "Activities"
+},
+{
+"t": "MADOCS Raya CME 2026",
+"u": "/en/activities/2026-04-26-cme-raya-madocs/",
+"r": "The MADOCS 2026 Raya CME programme was held alongside the Annual General Meeting.",
 "j": "Activities"
 },
 {
@@ -48,15 +72,33 @@
 "j": "News"
 },
 {
+"t": "MADOCS Executive Committee Meeting",
+"u": "/en/news/2026-09-16-mesyuarat-ahli-jawatankuasa/",
+"r": "The MADOCS Executive Committee meeting was held at Qasar Balqis, Taman Melati to discuss programme and training plans.",
+"j": "News"
+},
+{
 "t": "Indonesia",
 "u": "/en/news/2026-08-10-lawatan-klinik-sunat-indonesia/",
 "r": "A MADOCS delegation made a working visit to a circumcision clinic in Indonesia to share experience in managing circumcision services for children.",
 "j": "News"
 },
 {
-"t": "MADOCS Executive Committee Meeting",
-"u": "/en/news/2026-09-16-mesyuarat-ahli-jawatankuasa/",
-"r": "The MADOCS Executive Committee meeting was held at Qasar Balqis, Taman Melati to discuss programme and training plans.",
+"t": "PCC2-4 Course, Semporna, Sabah",
+"u": "/en/news/2026-06-17-pcc2-4-semporna/",
+"r": "The PCC2-4 course was held in Semporna, Sabah — lectures and practical training for participants from Sabah’s east coast.",
+"j": "News"
+},
+{
+"t": "MADOCS 2026 Annual General Meeting and Raya CME Programme",
+"u": "/en/news/2026-04-26-agm-dan-cme-raya/",
+"r": "MADOCS held its 2026 Annual General Meeting and the Raya CME programme on the same day, attended by members from across the country.",
+"j": "News"
+},
+{
+"t": "CCC8 Course in Batu Pahat Successfully Held",
+"u": "/en/news/2026-04-26-ccc8-batu-pahat/",
+"r": "The CCC8 course in Batu Pahat, Johor ran over several days with lectures and practical training.",
 "j": "News"
 },
 {

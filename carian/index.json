@@ -18,9 +18,33 @@
 "j": "Aktiviti"
 },
 {
+"t": "PCC2-4 Semporna",
+"u": "/aktiviti/2026-06-17-pcc2-4-semporna/",
+"r": "Kursus PCC2-4 dijalankan di Semporna, Sabah dengan sesi kuliah dan latihan amali.",
+"j": "Aktiviti"
+},
+{
+"t": "PCC2-3 Putrajaya",
+"u": "/aktiviti/2026-05-30-pcc2-3-putrajaya/",
+"r": "Kursus PCC2-3 diadakan di Putrajaya merangkumi sesi kuliah, penilaian dan pameran.",
+"j": "Aktiviti"
+},
+{
 "t": "CCC8 Batu Pahat",
 "u": "/aktiviti/ccc8-batu-pahat/",
 "r": "",
+"j": "Aktiviti"
+},
+{
+"t": "Mesyuarat Agung Tahunan MADOCS 2026",
+"u": "/aktiviti/2026-04-26-agm-madocs/",
+"r": "Mesyuarat Agung Tahunan MADOCS 2026 dihadiri ahli-ahli persatuan.",
+"j": "Aktiviti"
+},
+{
+"t": "CME Raya MADOCS 2026",
+"u": "/aktiviti/2026-04-26-cme-raya-madocs/",
+"r": "Program CME Raya MADOCS 2026 dijalankan bersempena Mesyuarat Agung Tahunan.",
 "j": "Aktiviti"
 },
 {
@@ -48,15 +72,33 @@
 "j": "Berita"
 },
 {
+"t": "Mesyuarat Ahli Jawatankuasa MADOCS",
+"u": "/berita/2026-09-16-mesyuarat-ahli-jawatankuasa/",
+"r": "Mesyuarat Ahli Jawatankuasa MADOCS diadakan di Qasar Balqis, Taman Melati bagi membincangkan perancangan program dan latihan.",
+"j": "Berita"
+},
+{
 "t": "Lawatan Kerja MADOCS ke Klinik Sunat Kanak-kanak di Indonesia",
 "u": "/berita/2026-08-10-lawatan-klinik-sunat-indonesia/",
 "r": "Delegasi MADOCS mengadakan lawatan kerja ke sebuah klinik berkhatan di Indonesia untuk berkongsi pengalaman dalam pengurusan perkhidmatan berkhatan kanak-kanak.",
 "j": "Berita"
 },
 {
-"t": "Mesyuarat Ahli Jawatankuasa MADOCS",
-"u": "/berita/2026-09-16-mesyuarat-ahli-jawatankuasa/",
-"r": "Mesyuarat Ahli Jawatankuasa MADOCS diadakan di Qasar Balqis, Taman Melati bagi membincangkan perancangan program dan latihan.",
+"t": "Kursus PCC2-4 Semporna, Sabah",
+"u": "/berita/2026-06-17-pcc2-4-semporna/",
+"r": "Kursus PCC2-4 dijalankan di Semporna, Sabah — sesi kuliah dan latihan amali untuk peserta dari kawasan pantai timur Sabah.",
+"j": "Berita"
+},
+{
+"t": "Mesyuarat Agung Tahunan dan Program CME Raya MADOCS 2026",
+"u": "/berita/2026-04-26-agm-dan-cme-raya/",
+"r": "MADOCS mengadakan Mesyuarat Agung Tahunan 2026 dan program CME Raya pada hari yang sama, dihadiri ahli dari seluruh negara.",
+"j": "Berita"
+},
+{
+"t": "Kursus CCC8 Batu Pahat Berjaya Dijalankan",
+"u": "/berita/2026-04-26-ccc8-batu-pahat/",
+"r": "Kursus CCC8 di Batu Pahat, Johor dijalankan selama beberapa hari dengan sesi kuliah dan latihan amali.",
 "j": "Berita"
 },
 {
