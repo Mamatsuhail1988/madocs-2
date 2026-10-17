@@ -726,7 +726,7 @@ def bina_utama():
   <img src="/assets/hero-clinical.webp"
        srcset="/assets/hero-clinical-w960.webp 960w, /assets/hero-clinical.webp 1600w"
        sizes="(max-width: 640px) 100vw, 61vw"
-       alt="Pasukan perubatan MADOCS — jurulatih membimbing peserta melakukan prosedur berkhatan sambil doktor berlampu kepala menjalankan penilaian, dengan dulang peralatan steril di sisi meja"
+       alt="Doktor MADOCS berlampu kepala dan bermask menilai prosedur berkhatan bersama peserta, dengan papan penilaian Dorsal Slit di belakang"
        width="1600" height="1160" class="hero-image" fetchpriority="high" decoding="async">
   </picture>
   <div class="hero-wash"></div>
