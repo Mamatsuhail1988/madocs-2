@@ -1,31 +1,41 @@
 {
- "cara_edit": "PRD §11: angka TIDAK diterbitkan sehingga disahkan jawatankuasa. Set 'disahkan': true hanya selepas pengesahan bertulis.",
- "disahkan": false,
- "nota": "Angka di bawah menunggu pengesahan jawatankuasa MADOCS.",
+ "cara_edit": "PRD §11: angka hanya diterbitkan selepas disahkan jawatankuasa. 'disahkan': true bermaksud angka ini datang daripada daftar rasmi jawatankuasa. Sertakan 'setakat' (tarikh) supaya pengunjung tahu usia angka. Jangan letak angka yang belum disahkan — lebih baik sembunyi.",
+ "disahkan": true,
+ "setakat": "2026-09-15",
+ "sumber": "Daftar keahlian MADOCS (dikemas kini 15 September 2026)",
+ "nota": "Angka daripada daftar keahlian jawatankuasa, dikemas kini 15 September 2026.",
+ "pecahan": {
+  "ahli_seumur_hidup": 46,
+  "ahli_biasa": 170,
+  "ahli_bersekutu": 2,
+  "jumlah": 218,
+  "aktif": 85,
+  "tidak_aktif": 133
+ },
  "items": [
   {
-   "nilai": "300+",
-   "label": "Ahli Aktif",
-   "sub": "Seluruh Malaysia",
+   "nilai": "218",
+   "label": "Ahli Berdaftar",
+   "sub": "Setakat 15 September 2026",
    "ikon": "users"
   },
   {
-   "nilai": "25+",
-   "label": "Kursus & Program",
-   "sub": "Dilaksanakan",
-   "ikon": "graduation-cap"
+   "nilai": "85",
+   "label": "Ahli Aktif",
+   "sub": "Telah memperbaharui keahlian",
+   "ikon": "badge-check"
   },
   {
-   "nilai": "1,500+",
-   "label": "Doktor Terlatih",
-   "sub": "Sejak penubuhan",
-   "ikon": "stethoscope"
+   "nilai": "46",
+   "label": "Ahli Seumur Hidup",
+   "sub": "Daftar seumur hidup",
+   "ikon": "award"
   },
   {
-   "nilai": "10+",
-   "label": "Negeri Terlibat",
-   "sub": "Dalam Aktiviti",
-   "ikon": "map-pin"
+   "nilai": "13",
+   "label": "Ahli Jawatankuasa",
+   "sub": "Sesi 2026–2028",
+   "ikon": "shield-check"
   }
  ]
 }

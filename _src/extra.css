@@ -626,3 +626,13 @@ footer{background:#031330;background-image:none}
   .org-bulat{width:88px;height:88px}
   .org-ahli b{font-size:13.5px}
 }
+
+/* --- GAYA A: jadual statistik keahlian --- */
+.stat-keahlian h3{margin:0 0 12px;font-size:16px;font-weight:600;color:var(--g-ink)}
+.stat-keahlian>div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;
+                   border-bottom:1px solid var(--g-line);font-size:14.5px}
+.stat-keahlian>div span{color:var(--g-teks)}
+.stat-keahlian>div b{color:var(--g-ink);font-weight:600}
+.stat-keahlian>div.baris-tebal{border-bottom:0;border-top:2px solid var(--g-ink);margin-top:6px;padding-top:11px}
+.stat-keahlian>div.baris-tebal span,.stat-keahlian>div.baris-tebal b{font-weight:700;color:var(--g-ink)}
+.stat-keahlian .nota-isi{margin:14px 0 0}

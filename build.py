@@ -639,6 +639,7 @@ def bina_utama():
         for i, t, s in kred)
 
     # --- statistik (PRD §11: hanya jika disahkan)
+    nota_stats = stats.get("setakat") or ""
     if stats.get("disahkan"):
         stat_items = "".join(
             '<div class="stat"><span>%s</span><p><strong>%s</strong><b>%s</b><small>%s</small></p></div>'
@@ -1184,6 +1185,10 @@ def bina_keahlian():
           {yuran}
         </div>
         <div class="card">
+          <h2>Keahlian MADOCS</h2>
+          {blok_statistik_keahlian(kh)}
+        </div>
+        <div class="card">
           <h2>Dokumen diperlukan</h2>
           <ul class="prose" style="padding-left:18px">{dokumen}</ul>
         </div>
@@ -1616,6 +1621,23 @@ def bina_fail_statik():
     # CSS tambahan kecil untuk carian
     with open(ROOT / "styles.css", "a", encoding="utf-8") as f:
         f.write("\n.ikon-ganti{display:inline-block;width:1em;height:1em}\n")
+
+
+def blok_statistik_keahlian(kh):
+    """Jadual pecahan keahlian daripada daftar jawatankuasa (data/keahlian.json → statistik)."""
+    st = kh.get("statistik") or {}
+    if not st.get("baris"):
+        return ""
+    baris = "".join(
+        '<div class="%s"><span>%s</span><b>%s</b></div>'
+        % ("baris-tebal" if b.get("tebal") else "", esc(b["label"]), esc(b["nilai"]))
+        for b in st["baris"])
+    return ("""<div class="stat-keahlian">
+  <h3>%s</h3>
+  %s
+  <p class="nota-isi">Sumber: %s.</p>
+</div>""" % (esc(st.get("tajuk", "")), baris, esc(st.get("sumber", ""))))
+
 
 
 def blok_jawatankuasa(jk_data):
