@@ -893,7 +893,7 @@ def bina_tentang():
       <div class="card">
         <h2>Prakata Presiden</h2>
         <p>Perutusan daripada Presiden MADOCS, Dr. Abdol Rashid bin Masrom.</p>
-        <p style="margin-top:14px"><a class="btn btn-outline" href="/pena-presiden/" style="display:inline-flex;align-items:center;text-decoration:none">Baca Pena Presiden</a></p>
+        <p style="margin-top:14px"><a class="btn btn-outline" href="/dari-meja-presiden/" style="display:inline-flex;align-items:center;text-decoration:none">Baca Dari Meja Presiden</a></p>
       </div>
       <div class="card">
         <h2>Struktur Organisasi</h2>
@@ -1579,7 +1579,7 @@ def bina_carian():
         indeks.append({"t": s["tajuk"], "u": "/sumber/%s/" % s["slug"], "r": s.get("ringkas", ""), "j": "Sumber"})
     indeks += [
         {"t": "Tentang MADOCS", "u": "/tentang/", "r": "Latar belakang, visi, misi dan jawatankuasa eksekutif.", "j": "Halaman"},
-        {"t": "Pena Presiden", "u": "/pena-presiden/", "r": "Pena dan perutusan Presiden MADOCS.", "j": "Halaman"},
+        {"t": "Dari Meja Presiden", "u": "/dari-meja-presiden/", "r": "Perutusan Presiden MADOCS.", "j": "Halaman"},
         {"t": "Pendidikan & Latihan", "u": "/pendidikan/", "r": "Program latihan klinikal berstruktur MADOCS.", "j": "Halaman"},
         {"t": "Keahlian MADOCS", "u": "/keahlian/", "r": "Manfaat, kelayakan, kategori dan yuran keahlian.", "j": "Halaman"},
         {"t": "Borang permohonan keahlian", "u": "/keahlian/sertai/", "r": "Mohon menjadi ahli MADOCS.", "j": "Halaman"},
@@ -1840,13 +1840,13 @@ def bina_404():
 
 
 def bina_prakata():
-    """Halaman 'Pena Presiden' — kandungan dalam data/prakata.json (draf untuk Presiden)."""
+    """Halaman 'Dari Meja Presiden' — kandungan dalam data/prakata.json (draf untuk Presiden)."""
     p = load("prakata.json")
     tunjang = "".join('<li>%s</li>' % esc(t) for t in p.get("tunjang") or [])
     perenggan = "".join("<p>%s</p>" % esc(x) for x in p.get("perenggan") or [])
 
-    isi = page_hero([("Utama", "/"), ("Pena Presiden", None)], p["tajuk"],
-                    "Pena dan perutusan Presiden MADOCS.") + f"""
+    isi = page_hero([("Utama", "/"), ("Dari Meja Presiden", None)], p["tajuk"],
+                    "Perutusan Presiden MADOCS.") + f"""
 <section class="content-wrap">
   <div class="shell split-presiden">
     <aside>
@@ -1878,8 +1878,8 @@ def bina_prakata():
   </div>
 </section>"""
     halaman("tentang", "%s | MADOCS" % p["tajuk"],
-            "Pena Presiden Pertubuhan Doktor Khatan Malaysia (MADOCS) — perutusan daripada Presiden, Dr. Abdol Rashid bin Masrom.",
-            "/pena-presiden/", isi)
+            "Dari Meja Presiden — perutusan daripada Presiden Pertubuhan Doktor Khatan Malaysia (MADOCS), Dr. Abdol Rashid bin Masrom.",
+            "/dari-meja-presiden/", isi)
 
 
 def bina_dasar():

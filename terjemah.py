@@ -25,7 +25,7 @@ KAMUS = ROOT / "data" / "terjemahan.json"
 SLAG_EN = {
     "/": "/en/",
     "/tentang/": "/en/about/",
-    "/pena-presiden/": "/en/presidents-pen/",
+    "/dari-meja-presiden/": "/en/from-the-presidents-desk/",
     "/pendidikan/": "/en/education/",
     "/keahlian/": "/en/membership/",
     "/keahlian/sertai/": "/en/membership/join/",

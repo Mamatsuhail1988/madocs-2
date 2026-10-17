@@ -22,6 +22,7 @@
   <url><loc>https://madocs.drsuhailsatri.com/berita/2026-09-16-mesyuarat-ahli-jawatankuasa/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/berita/2026-09-17-pelancaran-garis-panduan-berkhatan/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/carian/</loc><priority>0.8</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/dari-meja-presiden/</loc><priority>0.8</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/dasar-privasi/</loc><priority>0.8</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/</loc><priority>1.0</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/about/</loc><priority>0.6</priority></url>
@@ -42,6 +43,7 @@
   <url><loc>https://madocs.drsuhailsatri.com/en/education/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/education/ccc9-masjid-putrajaya/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/education/pcc2-5-disember/</loc><priority>0.6</priority></url>
+  <url><loc>https://madocs.drsuhailsatri.com/en/from-the-presidents-desk/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/gallery/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/membership/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/membership/join/</loc><priority>0.6</priority></url>
@@ -53,7 +55,6 @@
   <url><loc>https://madocs.drsuhailsatri.com/en/news/2026-08-10-lawatan-klinik-sunat-indonesia/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/news/2026-09-16-mesyuarat-ahli-jawatankuasa/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/news/2026-09-17-pelancaran-garis-panduan-berkhatan/</loc><priority>0.6</priority></url>
-  <url><loc>https://madocs.drsuhailsatri.com/en/presidents-pen/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/privacy/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/resources/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/en/search/</loc><priority>0.6</priority></url>
@@ -63,7 +64,6 @@
   <url><loc>https://madocs.drsuhailsatri.com/keahlian/</loc><priority>0.8</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/keahlian/sertai/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/kebolehaksesan/</loc><priority>0.8</priority></url>
-  <url><loc>https://madocs.drsuhailsatri.com/pena-presiden/</loc><priority>0.8</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/pendidikan/</loc><priority>0.8</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/pendidikan/ccc9-masjid-putrajaya/</loc><priority>0.6</priority></url>
   <url><loc>https://madocs.drsuhailsatri.com/pendidikan/pcc2-5-disember/</loc><priority>0.6</priority></url>
