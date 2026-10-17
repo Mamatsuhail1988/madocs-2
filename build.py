@@ -721,11 +721,14 @@ def bina_utama():
                              "Pengumuman dan berita MADOCS akan diterbitkan di sini.")
 
     isi = f"""<section class="hero">
+  <picture>
+  <source media="(max-width: 640px)" srcset="/assets/hero-clinical-mobile.webp">
   <img src="/assets/hero-clinical.webp"
        srcset="/assets/hero-clinical-w960.webp 960w, /assets/hero-clinical.webp 1600w"
        sizes="(max-width: 640px) 100vw, 61vw"
        alt="Pasukan perubatan MADOCS — jurulatih membimbing peserta melakukan prosedur berkhatan sambil doktor berlampu kepala menjalankan penilaian, dengan dulang peralatan steril di sisi meja"
        width="1600" height="1160" class="hero-image" fetchpriority="high" decoding="async">
+  </picture>
   <div class="hero-wash"></div>
   {chip_ilustrasi("Dewan majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam")}
   <div class="shell hero-content">
