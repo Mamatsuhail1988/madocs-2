@@ -776,4 +776,19 @@ html{overflow-x:clip}
   .hero-slaid{transition:none}
 }
 
+/* --- Ikon sosial 3D (bola berkilat, gaya cembung) --- */
+.socials a{
+  background:radial-gradient(circle at 32% 26%, #d7e8ff 0%, #7db4f5 17%, #1b6fd4 52%, #06418f 82%, #04295c 100%);
+  border:1px solid #ffffff2e;
+  box-shadow:0 4px 9px #03123273, 0 1px 2px #03123280, inset 0 2px 3px #ffffff8c, inset 0 -3px 7px #00000059;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.socials a svg{filter:drop-shadow(0 1px 1.5px #020e2e8c)}
+.socials a:hover{
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 7px 14px #0312328c, inset 0 2px 3px #ffffff94, inset 0 -3px 7px #00000059;
+}
+.socials a:active{transform:translateY(0) scale(.97)}
+@media (prefers-reduced-motion:reduce){.socials a{transition:none}}
+
 .ikon-ganti{display:inline-block;width:1em;height:1em}
