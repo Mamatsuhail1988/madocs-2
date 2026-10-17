@@ -1,0 +1,54 @@
+name: Bina laman MADOCS
+
+# Setiap kali kandungan (data/), gaya (_src/), gambar (assets/) atau skrip bina diubah,
+# laman dibina semula dan hasilnya diterbitkan automatik. Ini membolehkan AJK mengemas
+# kini kandungan terus dari pelayar GitHub tanpa perlu memasang apa-apa dalam komputer.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "_src/**"
+      - "_icons/**"
+      - "assets/**"
+      - "build.py"
+      - "terjemah.py"
+      - "app.js"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bina-laman
+  cancel-in-progress: false
+
+jobs:
+  bina:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ambil kod
+        uses: actions/checkout@v4
+
+      - name: Sediakan Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sahkan skrip bina (tiada ralat sintaks)
+        run: python -c "import ast,pathlib; [ast.parse(pathlib.Path(f).read_text(encoding='utf-8')) for f in ('build.py','terjemah.py')]"
+
+      - name: Bina laman
+        run: python build.py
+
+      - name: Terbitkan jika ada perubahan
+        run: |
+          git config user.name "MADOCS bot"
+          git config user.email "bot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "bina automatik: kandungan dikemas kini"
+            git push origin HEAD:main
+          else
+            echo "Tiada perubahan selepas bina — laman sudah terkini."
+          fi

@@ -1,0 +1,60 @@
+name: Permintaan perubahan kandungan
+description: Untuk AJK MADOCS — minta perubahan pada laman (tarikh kursus, berita, gambar, teks).
+title: "[Perubahan] "
+labels: ["permintaan"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Isi ruang di bawah, kemudian tekan **Submit new issue**. Tidak perlu tahu teknikal.
+        Petugas (Doc atau pembantu laman) akan buat perubahan dan menutup permintaan ini
+        apabila siap.
+  - type: input
+    id: nama
+    attributes:
+      label: Nama pengirim
+      description: Nama penuh dan jawatan dalam AJK (supaya kami tahu siapa minta).
+      placeholder: "Dr. Contoh Bin Ahmad — Bendahari"
+    validations:
+      required: true
+  - type: dropdown
+    id: jenis
+    attributes:
+      label: Jenis perubahan
+      options:
+        - Kursus / jadual latihan
+        - Berita atau pengumuman
+        - Keahlian (yuran, angka ahli, promosi)
+        - Aktiviti dan galeri gambar
+        - Carta organisasi / jawatankuasa
+        - Teks halaman lain
+        - Gaya atau susun atur laman
+        - Masalah teknikal / laman rosak
+    validations:
+      required: true
+  - type: textarea
+    id: butiran
+    attributes:
+      label: Apa yang perlu diubah
+      description: Tulis apa yang salah sekarang dan apa yang sepatutnya. Sebut halaman atau nama kursus supaya mudah dicari.
+      placeholder: |
+        Contoh: Pada halaman "Pendidikan", kursus CCC 9 tertulis 13 Disember.
+        Sepatutnya 20 Disember 2026, tempat masih Masjid Putrajaya.
+    validations:
+      required: true
+  - type: input
+    id: sumber
+    attributes:
+      label: Sumber maklumat (pilihan)
+      description: Contoh — "keputusan mesyuarat AJK Bil. 2", "poster jawatankuasa", "hantar oleh Dr X".
+    validations:
+      required: false
+  - type: textarea
+    id: gambar
+    attributes:
+      label: Gambar (pilihan)
+      description: |
+        Tarik gambar ke dalam kotak ini jika perlu. Peringatan penting: jangan muat naik gambar
+        yang menunjukkan muka pesakit atau kanak-kanak, atau apa-apa dokumen peribadi.
+    validations:
+      required: false
