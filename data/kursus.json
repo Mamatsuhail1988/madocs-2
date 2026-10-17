@@ -7,8 +7,8 @@
    "tajuk": "Kursus Privileging Berkhatan (Dorsal Slit) PCC 2-5",
    "kategori": "Privileging",
    "ringkas": "Kursus penilaian kompetensi berkhatan (Dorsal Slit) PCC 2-5. Tarikh telah ditempah; tempat akan diumumkan setelah disahkan jawatankuasa.",
-   "gambar": "assets/course-ccc9.webp",
-   "gambar_alt": "Imej ilustrasi: peserta kursus latihan klinikal",
+   "gambar": "assets/kursus-amali.webp",
+   "gambar_alt": "Peserta kursus mempelajari prosedur Dorsal Slit dalam sesi amali MADOCS",
    "tarikh": "2026-12-12",
    "masa_mula": "",
    "masa_tamat": "",
@@ -35,8 +35,8 @@
    "tajuk": "Kursus Komprehensif Berkhatan (CCC 9)",
    "kategori": "Kursus Komprehensif",
    "ringkas": "Kursus komprehensif berkhatan CCC 9, dijadualkan pada Ahad 13 Disember 2026 di Masjid Putrajaya. Tarikh masih tentatif.",
-   "gambar": "assets/course-ccc9.webp",
-   "gambar_alt": "Imej ilustrasi: peserta kursus latihan klinikal",
+   "gambar": "assets/lokasi/masjid-putra-putrajaya.webp",
+   "gambar_alt": "Masjid Putra, Putrajaya — lokasi kursus CCC 9",
    "tarikh": "2026-12-13",
    "masa_mula": "",
    "masa_tamat": "",
@@ -55,7 +55,8 @@
    "daftar_url": "",
    "kandungan": [
     "Tarikh dan tempat kursus ini masih tentatif dan menunggu pengesahan jawatankuasa MADOCS. Butiran pendaftaran akan diumumkan kemudian."
-   ]
+   ],
+   "gambar_kredit": "Foto lokasi: Muhammad Faqih, Wikimedia Commons (CC BY-SA 4.0) — bukan gambar acara MADOCS"
   }
  ]
 }

@@ -838,3 +838,10 @@ footer .socials a:hover,.tile:hover>span.ikon,.carousel-arrow:hover,.modal .clos
   .credential-grid>div>span,.service-grid article>span,.stat>span,.modal .close,
   .success>span,.kosong span.ikon,.carousel-arrow,.tile>span.ikon,footer .socials a{transition:none}
 }
+
+/* --- Kredit foto pihak ketiga (cth. Wikimedia Commons) --- */
+.chip-kredit{position:absolute;right:8px;bottom:8px;z-index:3;background:#041e54c2;color:#fff;
+  border-radius:5px;padding:3px 7px;font-size:8px;line-height:1.35;max-width:86%;text-align:right;
+  letter-spacing:.01em}
+.item-photo{position:relative}
+.kredit-foto{color:#526079;margin:-14px 0 20px;font-size:9px;line-height:1.5}

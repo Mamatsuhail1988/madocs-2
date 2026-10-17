@@ -515,6 +515,7 @@ def kad_kursus(k, keutamaan=False):
     <img src="/{esc(img)}" alt="{esc(alt)}" loading="{'eager' if keutamaan else 'lazy'}" decoding="async">
     {badge}
     {chip}
+    {f'<span class="chip-kredit">{esc(k["gambar_kredit"])}</span>' if k.get("gambar_kredit") else ''}
   </div>
   <div class="course-info">
     <span class="course-code">{esc(k.get('kod',''))}</span>
@@ -537,9 +538,9 @@ def chip_ilustrasi(alt=""):
     """
     if not SITE.get("gambar_ilustrasi"):
         return ""
-    if alt and not str(alt).strip().lower().startswith("imej ilustrasi"):
-        return ""
-    return '<span class="chip-illustrasi">Imej ilustrasi</span>'
+    if str(alt or "").strip().lower().startswith("imej ilustrasi"):
+        return '<span class="chip-illustrasi">Imej ilustrasi</span>'
+    return ""
 
 
 def kad_aktiviti(a):
@@ -567,10 +568,11 @@ def kad_aktiviti(a):
 </article>"""
 
 
-def item_kandungan(tajuk, url, ringkas, tarikh=None, kategori="", gambar=None, alt="", meta_ikon="calendar-days"):
+def item_kandungan(tajuk, url, ringkas, tarikh=None, kategori="", gambar=None, alt="", meta_ikon="calendar-days", kredit=None):
     """Kad senarai untuk berita / aktiviti / sumber."""
-    foto = ('<div class="item-photo"><img src="/%s" alt="%s" loading="lazy" decoding="async">%s</div>'
-            % (esc(gambar), esc(alt or tajuk), chip_ilustrasi(alt))) if gambar else ""
+    foto = ('<div class="item-photo"><img src="/%s" alt="%s" loading="lazy" decoding="async">%s%s</div>'
+            % (esc(gambar), esc(alt or tajuk), chip_ilustrasi(alt),
+               '<span class="chip-kredit">%s</span>' % esc(kredit) if kredit else "")) if gambar else ""
     kelas = "" if gambar else " no-photo"
     badge = '<span class="badge">%s</span>' % esc(kategori) if kategori else ""
     masa = ('<time datetime="%s">%s %s</time>' % (esc(tarikh), icon(meta_ikon), esc(tarikh_pdk(parse_date(tarikh))))) if tarikh else ""
@@ -973,7 +975,8 @@ def bina_pendidikan():
             return kosong_teks
         return '<div class="listing">%s</div>' % "".join(
             item_kandungan(k["tajuk"], "/pendidikan/%s/" % k["slug"], k.get("ringkas", ""),
-                           tarikh=k.get("tarikh"), kategori=k.get("kod", ""), gambar=k.get("gambar"))
+                           tarikh=k.get("tarikh"), kategori=k.get("kod", ""), gambar=k.get("gambar"),
+                           alt=k.get("gambar_alt", ""), kredit=k.get("gambar_kredit"))
             for k in items)
 
     isi = page_hero([("Utama", "/"), ("Pendidikan & Latihan", None)],
@@ -1117,6 +1120,7 @@ def bina_kursus_detail(k):
           <span class="course-code">{esc(k.get('kod',''))}</span>{badge_status(k.get('status'))}
         </div>
         {'<img src="/%s" alt="%s" style="width:100%%;border-radius:11px;margin-bottom:22px">' % (esc(k['gambar']), esc(k.get('gambar_alt') or k['tajuk'])) if k.get('gambar') else ''}
+        {f'<p class="kredit-foto">{esc(k["gambar_kredit"])}</p>' if k.get('gambar_kredit') else ''}
         <div class="prose">{kandungan}</div>
         {objektif}
         {rangka}
