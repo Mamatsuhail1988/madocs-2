@@ -724,7 +724,7 @@ def bina_utama():
   <img src="/assets/hero-clinical.webp"
        srcset="/assets/hero-clinical-w960.webp 960w, /assets/hero-clinical.webp 1600w"
        sizes="(max-width: 640px) 100vw, 61vw"
-       alt="Peserta kursus MADOCS berlatih pada model berkhatan dengan peralatan klinikal tersusun, sambil sesi pembentangan anatomi berlangsung di dewan kursus"
+       alt="Sesi latihan MADOCS: peserta berlatih prosedur berkhatan pada model latihan dengan peralatan klinikal tersusun di atas meja"
        width="1600" height="1160" class="hero-image" fetchpriority="high" decoding="async">
   <div class="hero-wash"></div>
   {chip_ilustrasi("Dewan majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam")}
