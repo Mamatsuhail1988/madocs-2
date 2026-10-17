@@ -959,6 +959,7 @@ def bina_tentang():
     tadbir = f"""<dl class="facts">
   <div><dt>Nama berdaftar</dt><dd>{esc(SITE['nama'])} ({esc(SITE['nama_en'])})</dd></div>
   <div><dt>Nombor pendaftaran</dt><dd>{esc(SITE['pendaftaran'])}</dd></div>
+  {f'<div><dt>Berdaftar dengan ROS</dt><dd>{esc(SITE["daftar_ros"])}</dd></div>' if SITE.get('daftar_ros') else ''}
   <div><dt>Ditubuhkan</dt><dd>{esc(SITE['ditubuhkan'])}</dd></div>
   <div><dt>Skop</dt><dd>Malaysia</dd></div>
   <div><dt>E-mel urusetia</dt><dd><a href="mailto:{esc(SITE['email'])}">{esc(SITE['email'])}</a></dd></div>
