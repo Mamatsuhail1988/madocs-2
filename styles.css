@@ -747,4 +747,20 @@ html{overflow-x:clip}
   .cta-btn{font-size:12.5px;letter-spacing:.02em}
 }
 
+/* --- Hero pada telefon: foto sebagai latar dengan gradien menegak ---
+   Doc mahu gaya sama seperti desktop (foto + gradien), bukan jalur foto berasingan.
+   Foto memenuhi seluruh hero; gradien putih dari bawah supaya teks tajuk kekal jelas. */
+@media (max-width:640px){
+  .hero{min-height:520px}
+  .hero:after{display:none}
+  .hero-image{position:absolute;inset:0;width:100%;height:100%;object-position:center 28%}
+  /* Gradien menegak: foto jelas di atas, putih penuh sebelum teks bermula (42%). */
+  .hero-wash{display:block;background:linear-gradient(180deg,#0000 0%,#ffffff33 16%,#fffffff2 30%,#fff 42%,#fff 100%)}
+  .hero-content{min-height:520px;align-items:flex-end;margin-top:0}
+  .hero-copy{width:100%;padding:250px 0 30px}
+  .hero h1{font-size:34px}
+  .hero h2{font-size:16.5px}
+  .hero-copy>p{font-size:13.5px}
+}
+
 .ikon-ganti{display:inline-block;width:1em;height:1em}
