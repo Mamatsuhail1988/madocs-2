@@ -2,17 +2,17 @@
  "cara_edit": "Latihan/kursus. Tarikh = YYYY-MM-DD. status: open (buka), limited (kerusi terhad), closed (ditutup), done (selesai). Susun yang terbaru di atas. Medan kosong ('') akan tersembunyi dari laman — jangan reka nilai.",
  "kursus": [
   {
-   "slug": "ccc9-kuala-lumpur",
-   "kod": "CCC 9",
-   "tajuk": "Kursus Komprehensif Berkhatan",
-   "kategori": "Kursus Komprehensif",
-   "ringkas": "Program latihan klinikal seharian merangkumi teori, demonstrasi, amali dan penilaian untuk doktor perubatan.",
+   "slug": "pcc2-5-disember",
+   "kod": "PCC 2-5",
+   "tajuk": "Kursus Privileging Berkhatan (Dorsal Slit) PCC 2-5",
+   "kategori": "Privileging",
+   "ringkas": "Kursus penilaian kompetensi berkhatan (Dorsal Slit) PCC 2-5. Tarikh telah ditempah; tempat akan diumumkan setelah disahkan jawatankuasa.",
    "gambar": "assets/course-ccc9.webp",
    "gambar_alt": "Imej ilustrasi: peserta kursus latihan klinikal",
-   "tarikh": "2026-09-20",
-   "masa_mula": "08:00",
-   "masa_tamat": "17:00",
-   "tempat": "Kuala Lumpur",
+   "tarikh": "2026-12-12",
+   "masa_mula": "",
+   "masa_tamat": "",
+   "tempat": "",
    "penganjur": "MADOCS",
    "fakulti": "",
    "sasaran": "Doktor Perubatan",
@@ -23,10 +23,38 @@
    "yuran_bukan_ahli": "",
    "tutup_daftar": "",
    "kapasiti": "",
-   "status": "done",
+   "status": "open",
    "daftar_url": "",
    "kandungan": [
-    "Ini satu-satunya program latihan yang direkodkan pada laman MADOCS 2.0 setakat ini. Butiran penuh program (objektif pembelajaran, rangka masa, yuran, tenaga pengajar) belum disediakan oleh MADOCS dan perlu dilengkapkan dalam fail ini."
+    "Tarikh kursus telah ditempah. Tempat dan butiran penuh akan diterbitkan sebaik sahaja disahkan oleh jawatankuasa MADOCS."
+   ]
+  },
+  {
+   "slug": "ccc9-masjid-putrajaya",
+   "kod": "CCC 9",
+   "tajuk": "Kursus Komprehensif Berkhatan (CCC 9)",
+   "kategori": "Kursus Komprehensif",
+   "ringkas": "Kursus komprehensif berkhatan CCC 9, dijadualkan pada Ahad 13 Disember 2026 di Masjid Putrajaya. Tarikh masih tentatif.",
+   "gambar": "assets/course-ccc9.webp",
+   "gambar_alt": "Imej ilustrasi: peserta kursus latihan klinikal",
+   "tarikh": "2026-12-13",
+   "masa_mula": "",
+   "masa_tamat": "",
+   "tempat": "Masjid Putrajaya (tentatif)",
+   "penganjur": "MADOCS",
+   "fakulti": "",
+   "sasaran": "Doktor Perubatan",
+   "objektif": [],
+   "rangka": [],
+   "yuran": "",
+   "yuran_ahli": "",
+   "yuran_bukan_ahli": "",
+   "tutup_daftar": "",
+   "kapasiti": "",
+   "status": "open",
+   "daftar_url": "",
+   "kandungan": [
+    "Tarikh dan tempat kursus ini masih tentatif dan menunggu pengesahan jawatankuasa MADOCS. Butiran pendaftaran akan diumumkan kemudian."
    ]
   }
  ]

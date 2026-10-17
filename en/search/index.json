@@ -1,14 +1,26 @@
 [
 {
-"t": "Comprehensive Circumcision Course",
-"u": "/en/education/ccc9-kuala-lumpur/",
-"r": "A day-long clinical training programme covering theory, demonstration, practical sessions and assessment for medical doctors.",
+"t": "Circumcision Privileging Course (Dorsal Slit) PCC 2-5",
+"u": "/en/education/pcc2-5-disember/",
+"r": "A circumcision competency assessment course (Dorsal Slit), PCC 2-5. The date is booked; the venue will be announced once confirmed by the committee.",
 "j": "Course"
 },
 {
-"t": "Launch of the Circumcision Guideline 2026",
+"t": "Comprehensive Circumcision Course (CCC 9)",
+"u": "/en/education/ccc9-masjid-putrajaya/",
+"r": "The comprehensive circumcision course CCC 9, scheduled for Sunday 13 December 2026 at Masjid Putrajaya. The date is still tentative.",
+"j": "Course"
+},
+{
+"t": "Launch of the National Circumcision Guideline",
 "u": "/en/activities/2026-09-17-pelancaran-garis-panduan/",
-"r": "MADOCS took part in the launch of the Circumcision Guideline 2026 in conjunction with Patient Safety Day.",
+"r": "The National Circumcision Guideline was launched by the Director-General of Health. MADOCS also set up a booth at the event.",
+"j": "Activities"
+},
+{
+"t": "Executive Committee Meeting No. 2",
+"u": "/en/activities/2026-09-16-mesyuarat-ajk-bil2/",
+"r": "Executive Committee Meeting No. 2 discussed MADOCS programme and training plans.",
 "j": "Activities"
 },
 {
@@ -19,7 +31,7 @@
 },
 {
 "t": "PCC2-4 Semporna",
-"u": "/en/activities/2026-06-17-pcc2-4-semporna/",
+"u": "/en/activities/2026-06-18-pcc2-4-semporna/",
 "r": "The PCC2-4 course was held in Semporna, Sabah with lectures and practical training.",
 "j": "Activities"
 },
@@ -32,35 +44,47 @@
 {
 "t": "PCC2-3 Putrajaya",
 "u": "/en/activities/2026-05-30-pcc2-3-putrajaya/",
-"r": "The PCC2-3 course was held in Putrajaya, covering lectures, assessment and an exhibition.",
+"r": "The PCC2-3 course was held at Masjid Putra, Putrajaya (8 CPD points), with about 82 children registered. Executive Committee Meeting No. 1 was held the same evening.",
+"j": "Activities"
+},
+{
+"t": "Webinar on Post-Circumcision Wound Care",
+"u": "/en/activities/2026-05-21-webinar-penjagaan-luka/",
+"r": "A webinar on post-circumcision wound care with Antaviro HOCl, held online from 9 to 11 pm.",
 "j": "Activities"
 },
 {
 "t": "MADOCS Programme 2026 — CME, Aidilfitri Feast & 4th AGM",
 "u": "/en/activities/2026-04-26-program-madocs/",
-"r": "The MADOCS Programme 2026 combined a CME session, the Aidilfitri feast and the 4th Annual General Meeting with the election of committee members.",
-"j": "Activities"
-},
-{
-"t": "Trainer Training",
-"u": "/en/activities/ttt-sip-rejap/",
-"r": "",
+"r": "The MADOCS Programme 2026 (4 CPD points) combined a CME session, an Aidilfitri feast attended by 80 people, and the 4th AGM with the election of the 2026–2028 committee.",
 "j": "Activities"
 },
 {
 "t": "PCC1-2 Kota Kinabalu",
-"u": "/en/activities/pcc1-2-kota-kinabalu/",
-"r": "The PCC1-2 course was held in Kota Kinabalu, Sabah with lectures and clinical assessment.",
+"u": "/en/activities/2026-01-26-pcc1-2-kota-kinabalu/",
+"r": "The PCC1-2 course was attended by 76 participants at Hotel Klagan Regency 1Borneo, Kota Kinabalu.",
 "j": "Activities"
 },
 {
-"t": "Launch of the Circumcision Guideline 2026 at Hospital Shah Alam",
+"t": "PCC2-2 Masjid Wilayah",
+"u": "/en/activities/2025-12-27-pcc2-2-masjid-wilayah/",
+"r": "The PCC2-2 course was held at Masjid Wilayah Persekutuan, Kuala Lumpur.",
+"j": "Activities"
+},
+{
+"t": "CCC7 & TTT — Batu Pahat, Johor",
+"u": "/en/activities/2025-09-01-ccc7-ttt-batu-pahat/",
+"r": "CCC7 together with Trainer Training (TTT). A memorandum of understanding with Nano Medic Care was signed on 13 September 2025. The exact course date has not been confirmed.",
+"j": "Activities"
+},
+{
+"t": "Launch of the National Circumcision Guideline",
 "u": "/en/news/2026-09-17-pelancaran-garis-panduan-berkhatan/",
-"r": "MADOCS took part in the launch of the Circumcision Guideline 2026 at Hospital Shah Alam, held in conjunction with Patient Safety Day.",
+"r": "The National Circumcision Guideline was launched by the Director-General of Health at the Auditorium of Hospital Shah Alam; MADOCS set up a booth at the event.",
 "j": "News"
 },
 {
-"t": "MADOCS Executive Committee Meeting",
+"t": "Executive Committee Meeting No. 2",
 "u": "/en/news/2026-09-16-mesyuarat-ahli-jawatankuasa/",
 "r": "The MADOCS Executive Committee meeting was held at Qasar Balqis, Taman Melati to discuss programme and training plans.",
 "j": "News"
@@ -79,7 +103,7 @@
 },
 {
 "t": "PCC2-4 Course, Semporna, Sabah",
-"u": "/en/news/2026-06-17-pcc2-4-semporna/",
+"u": "/en/news/2026-06-18-pcc2-4-semporna/",
 "r": "The PCC2-4 course in Semporna, Sabah ran alongside the mass circumcision programme that benefited 150 underprivileged children.",
 "j": "News"
 },
@@ -92,7 +116,7 @@
 {
 "t": "MADOCS Programme 2026: CME, Aidilfitri Feast and 4th AGM",
 "u": "/en/news/2026-04-26-agm-dan-cme-raya/",
-"r": "The MADOCS Programme 2026 at Howard Johnson by Wyndham, Kuala Lumpur combined a CME session, the Aidilfitri feast and the 4th Annual General Meeting, where new committee members were elected.",
+"r": "The MADOCS Programme 2026 (4 CPD points) at Howard Johnson by Wyndham, Kuala Lumpur combined a CME session, an Aidilfitri feast attended by 80 people, and the 4th AGM, where new committee members were elected.",
 "j": "News"
 },
 {

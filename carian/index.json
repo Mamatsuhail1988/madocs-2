@@ -1,14 +1,26 @@
 [
 {
-"t": "Kursus Komprehensif Berkhatan",
-"u": "/pendidikan/ccc9-kuala-lumpur/",
-"r": "Program latihan klinikal seharian merangkumi teori, demonstrasi, amali dan penilaian untuk doktor perubatan.",
+"t": "Kursus Privileging Berkhatan (Dorsal Slit) PCC 2-5",
+"u": "/pendidikan/pcc2-5-disember/",
+"r": "Kursus penilaian kompetensi berkhatan (Dorsal Slit) PCC 2-5. Tarikh telah ditempah; tempat akan diumumkan setelah disahkan jawatankuasa.",
 "j": "Kursus"
 },
 {
-"t": "Majlis Pelancaran Garis Panduan Berkhatan 2026",
+"t": "Kursus Komprehensif Berkhatan (CCC 9)",
+"u": "/pendidikan/ccc9-masjid-putrajaya/",
+"r": "Kursus komprehensif berkhatan CCC 9, dijadualkan pada Ahad 13 Disember 2026 di Masjid Putrajaya. Tarikh masih tentatif.",
+"j": "Kursus"
+},
+{
+"t": "Pelancaran Garis Panduan Berkhatan Kebangsaan",
 "u": "/aktiviti/2026-09-17-pelancaran-garis-panduan/",
-"r": "Penyertaan MADOCS dalam majlis pelancaran Garis Panduan Berkhatan 2026 sempena Hari Keselamatan Pesakit.",
+"r": "Garis Panduan Berkhatan Kebangsaan dilancarkan oleh Ketua Pengarah Kesihatan. MADOCS turut membuka booth pada majlis itu.",
+"j": "Aktiviti"
+},
+{
+"t": "Mesyuarat Ahli Jawatankuasa Bil. 2",
+"u": "/aktiviti/2026-09-16-mesyuarat-ajk-bil2/",
+"r": "Mesyuarat Ahli Jawatankuasa Bil. 2 membincangkan perancangan program dan latihan MADOCS.",
 "j": "Aktiviti"
 },
 {
@@ -19,7 +31,7 @@
 },
 {
 "t": "PCC2-4 Semporna",
-"u": "/aktiviti/2026-06-17-pcc2-4-semporna/",
+"u": "/aktiviti/2026-06-18-pcc2-4-semporna/",
 "r": "Kursus PCC2-4 dijalankan di Semporna, Sabah dengan sesi kuliah dan latihan amali.",
 "j": "Aktiviti"
 },
@@ -32,35 +44,47 @@
 {
 "t": "PCC2-3 Putrajaya",
 "u": "/aktiviti/2026-05-30-pcc2-3-putrajaya/",
-"r": "Kursus PCC2-3 diadakan di Putrajaya merangkumi sesi kuliah, penilaian dan pameran.",
+"r": "Kursus PCC2-3 diadakan di Masjid Putra, Putrajaya (8 mata CPD), dengan sekitar 82 kanak-kanak didaftarkan. Malam yang sama berlangsung Mesyuarat AJK Bil. 1.",
+"j": "Aktiviti"
+},
+{
+"t": "Webinar Penjagaan Luka Selepas Berkhatan",
+"u": "/aktiviti/2026-05-21-webinar-penjagaan-luka/",
+"r": "Webinar penjagaan luka selepas berkhatan bersama Antaviro HOCl, dijalankan dalam talian pada 9–11 malam.",
 "j": "Aktiviti"
 },
 {
 "t": "Program MADOCS 2026 — CME, Jamuan Aidilfitri & AGM Ke-4",
 "u": "/aktiviti/2026-04-26-program-madocs/",
-"r": "Program MADOCS 2026 menggabungkan sesi CME, Jamuan Aidilfitri dan Mesyuarat Agung Tahunan Ke-4 dengan pemilihan ahli jawatankuasa.",
-"j": "Aktiviti"
-},
-{
-"t": "Latihan Tenaga Pengajar",
-"u": "/aktiviti/ttt-sip-rejap/",
-"r": "",
+"r": "Program MADOCS 2026 (4 mata CPD) menggabungkan sesi CME, Jamuan Aidilfitri yang dihadiri 80 orang, dan AGM Ke-4 dengan pemilihan ahli jawatankuasa sesi 2026–2028.",
 "j": "Aktiviti"
 },
 {
 "t": "PCC1-2 Kota Kinabalu",
-"u": "/aktiviti/pcc1-2-kota-kinabalu/",
-"r": "Kursus PCC1-2 diadakan di Kota Kinabalu, Sabah dengan sesi kuliah dan penilaian klinikal.",
+"u": "/aktiviti/2026-01-26-pcc1-2-kota-kinabalu/",
+"r": "Kursus PCC1-2 dihadiri 76 peserta di Hotel Klagan Regency 1Borneo, Kota Kinabalu.",
 "j": "Aktiviti"
 },
 {
-"t": "Majlis Pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam",
+"t": "PCC2-2 Masjid Wilayah",
+"u": "/aktiviti/2025-12-27-pcc2-2-masjid-wilayah/",
+"r": "Kursus PCC2-2 diadakan di Masjid Wilayah Persekutuan, Kuala Lumpur.",
+"j": "Aktiviti"
+},
+{
+"t": "CCC7 & TTT — Batu Pahat, Johor",
+"u": "/aktiviti/2025-09-01-ccc7-ttt-batu-pahat/",
+"r": "CCC7 bersama Latihan Tenaga Pengajar (TTT). Memorandum persefahaman dengan Nano Medic Care ditandatangani pada 13 September 2025. Tarikh tepat kursus belum disahkan.",
+"j": "Aktiviti"
+},
+{
+"t": "Pelancaran Garis Panduan Berkhatan Kebangsaan",
 "u": "/berita/2026-09-17-pelancaran-garis-panduan-berkhatan/",
-"r": "MADOCS menyertai majlis pelancaran Garis Panduan Berkhatan 2026 di Hospital Shah Alam, bersempena sambutan Hari Keselamatan Pesakit.",
+"r": "Garis Panduan Berkhatan Kebangsaan dilancarkan oleh Ketua Pengarah Kesihatan di Auditorium Hospital Shah Alam; MADOCS membuka booth pada majlis itu.",
 "j": "Berita"
 },
 {
-"t": "Mesyuarat Ahli Jawatankuasa MADOCS",
+"t": "Mesyuarat Ahli Jawatankuasa Bil. 2",
 "u": "/berita/2026-09-16-mesyuarat-ahli-jawatankuasa/",
 "r": "Mesyuarat Ahli Jawatankuasa MADOCS diadakan di Qasar Balqis, Taman Melati bagi membincangkan perancangan program dan latihan.",
 "j": "Berita"
@@ -79,7 +103,7 @@
 },
 {
 "t": "Kursus PCC2-4 Semporna, Sabah",
-"u": "/berita/2026-06-17-pcc2-4-semporna/",
+"u": "/berita/2026-06-18-pcc2-4-semporna/",
 "r": "Kursus PCC2-4 di Semporna, Sabah berlangsung serentak dengan Program Berkhatan Beramai-ramai yang memberi manfaat kepada 150 kanak-kanak kurang berkemampuan.",
 "j": "Berita"
 },
@@ -92,7 +116,7 @@
 {
 "t": "Program MADOCS 2026: CME, Jamuan Aidilfitri dan AGM Ke-4",
 "u": "/berita/2026-04-26-agm-dan-cme-raya/",
-"r": "Program MADOCS 2026 di Howard Johnson by Wyndham, Kuala Lumpur menggabungkan sesi CME, Jamuan Aidilfitri dan Mesyuarat Agung Tahunan Ke-4 dengan pemilihan ahli jawatankuasa baharu.",
+"r": "Program MADOCS 2026 (4 mata CPD) di Howard Johnson by Wyndham, Kuala Lumpur menggabungkan sesi CME, Jamuan Aidilfitri yang dihadiri 80 orang, dan AGM Ke-4 dengan pemilihan ahli jawatankuasa baharu.",
 "j": "Berita"
 },
 {

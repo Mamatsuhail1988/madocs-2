@@ -4,12 +4,22 @@
   {
    "slug": "2026-09-17-pelancaran-garis-panduan",
    "kategori": "Program",
-   "tajuk": "Majlis Pelancaran Garis Panduan Berkhatan 2026",
+   "tajuk": "Pelancaran Garis Panduan Berkhatan Kebangsaan",
    "tarikh": "2026-09-17",
-   "tempat": "Hospital Shah Alam, Selangor",
+   "tempat": "Auditorium Hospital Shah Alam, Selangor",
    "gambar": "assets/berita-2026-09-17-shah-alam.webp",
    "gambar_alt": "Papan tanda Hospital Shah Alam tempat majlis pelancaran diadakan",
-   "ringkas": "Penyertaan MADOCS dalam majlis pelancaran Garis Panduan Berkhatan 2026 sempena Hari Keselamatan Pesakit."
+   "ringkas": "Garis Panduan Berkhatan Kebangsaan dilancarkan oleh Ketua Pengarah Kesihatan. MADOCS turut membuka booth pada majlis itu."
+  },
+  {
+   "slug": "2026-09-16-mesyuarat-ajk-bil2",
+   "kategori": "Mesyuarat",
+   "tajuk": "Mesyuarat Ahli Jawatankuasa Bil. 2",
+   "tarikh": "2026-09-16",
+   "tempat": "Restoran Casar Balqis, Taman Melati, Kuala Lumpur",
+   "gambar": "assets/berita-2026-09-16-mesyuarat.webp",
+   "gambar_alt": "Bangunan tempat berlangsungnya mesyuarat Ahli Jawatankuasa MADOCS",
+   "ringkas": "Mesyuarat Ahli Jawatankuasa Bil. 2 membincangkan perancangan program dan latihan MADOCS."
   },
   {
    "slug": "2026-08-10-lawatan-klinik-indonesia",
@@ -22,10 +32,10 @@
    "ringkas": "Lawatan kerja delegasi MADOCS bagi meninjau pengurusan perkhidmatan berkhatan kanak-kanak."
   },
   {
-   "slug": "2026-06-17-pcc2-4-semporna",
+   "slug": "2026-06-18-pcc2-4-semporna",
    "kategori": "PCC",
    "tajuk": "PCC2-4 Semporna",
-   "tarikh": "2026-06-17",
+   "tarikh": "2026-06-18",
    "tempat": "Semporna, Sabah",
    "gambar": "assets/aktiviti-pcc2-4-semporna.webp",
    "gambar_alt": "Sepanduk kursus PCC2-4 dipasang di hadapan premis di Semporna",
@@ -48,7 +58,16 @@
    "tempat": "Masjid Putra, Putrajaya",
    "gambar": "assets/aktiviti-pcc2-3-putrajaya.webp",
    "gambar_alt": "Ruang pameran dan kaunter pendaftaran kursus PCC2-3 di Putrajaya",
-   "ringkas": "Kursus PCC2-3 diadakan di Putrajaya merangkumi sesi kuliah, penilaian dan pameran."
+   "ringkas": "Kursus PCC2-3 diadakan di Masjid Putra, Putrajaya (8 mata CPD), dengan sekitar 82 kanak-kanak didaftarkan. Malam yang sama berlangsung Mesyuarat AJK Bil. 1."
+  },
+  {
+   "slug": "2026-05-21-webinar-penjagaan-luka",
+   "kategori": "Webinar",
+   "tajuk": "Webinar Penjagaan Luka Selepas Berkhatan",
+   "tarikh": "2026-05-21",
+   "tempat": "Google Meet (dalam talian)",
+   "gambar": "",
+   "ringkas": "Webinar penjagaan luka selepas berkhatan bersama Antaviro HOCl, dijalankan dalam talian pada 9–11 malam."
   },
   {
    "slug": "2026-04-26-program-madocs",
@@ -58,27 +77,35 @@
    "tempat": "Howard Johnson by Wyndham, Kuala Lumpur",
    "gambar": "assets/aktiviti-agm-2026.webp",
    "gambar_alt": "Dewan Program MADOCS 2026 di Howard Johnson by Wyndham, Kuala Lumpur",
-   "ringkas": "Program MADOCS 2026 menggabungkan sesi CME, Jamuan Aidilfitri dan Mesyuarat Agung Tahunan Ke-4 dengan pemilihan ahli jawatankuasa."
+   "ringkas": "Program MADOCS 2026 (4 mata CPD) menggabungkan sesi CME, Jamuan Aidilfitri yang dihadiri 80 orang, dan AGM Ke-4 dengan pemilihan ahli jawatankuasa sesi 2026–2028."
   },
   {
-   "slug": "ttt-sip-rejap",
-   "kategori": "TTT",
-   "tajuk": "Latihan Tenaga Pengajar",
-   "tarikh": "2026-03-15",
-   "tempat": "SIP Rejap, Kuala Lumpur",
-   "gambar": "assets/activity-team.webp",
-   "gambar_alt": "Imej ilustrasi: sesi latihan tenaga pengajar",
-   "ringkas": ""
-  },
-  {
-   "slug": "pcc1-2-kota-kinabalu",
+   "slug": "2026-01-26-pcc1-2-kota-kinabalu",
    "kategori": "PCC",
    "tajuk": "PCC1-2 Kota Kinabalu",
    "tarikh": "2026-01-26",
-   "tempat": "Kota Kinabalu, Sabah",
+   "tempat": "Hotel Klagan Regency 1Borneo, Kota Kinabalu, Sabah",
    "gambar": "assets/aktiviti-pcc1-2-kota-kinabalu.webp",
    "gambar_alt": "Foto berkumpulan peserta kursus PCC1-2 di Kota Kinabalu",
-   "ringkas": "Kursus PCC1-2 diadakan di Kota Kinabalu, Sabah dengan sesi kuliah dan penilaian klinikal."
+   "ringkas": "Kursus PCC1-2 dihadiri 76 peserta di Hotel Klagan Regency 1Borneo, Kota Kinabalu."
+  },
+  {
+   "slug": "2025-12-27-pcc2-2-masjid-wilayah",
+   "kategori": "PCC",
+   "tajuk": "PCC2-2 Masjid Wilayah",
+   "tarikh": "2025-12-27",
+   "tempat": "Masjid Wilayah Persekutuan, Kuala Lumpur",
+   "gambar": "",
+   "ringkas": "Kursus PCC2-2 diadakan di Masjid Wilayah Persekutuan, Kuala Lumpur."
+  },
+  {
+   "slug": "2025-09-01-ccc7-ttt-batu-pahat",
+   "kategori": "CCC",
+   "tajuk": "CCC7 & TTT — Batu Pahat, Johor",
+   "tarikh": "2025-09-01",
+   "tempat": "Batu Pahat, Johor",
+   "gambar": "",
+   "ringkas": "CCC7 bersama Latihan Tenaga Pengajar (TTT). Memorandum persefahaman dengan Nano Medic Care ditandatangani pada 13 September 2025. Tarikh tepat kursus belum disahkan."
   }
  ]
 }
