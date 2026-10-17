@@ -796,4 +796,50 @@ footer .socials a:hover{
 footer .socials a:active{transform:translateY(0) scale(.97)}
 @media (prefers-reduced-motion:reduce){footer .socials a{transition:none}}
 
+/* ================= IKON 3D — diselaraskan seluruh laman =================
+   Dua keluarga supaya ikon tidak hilang pada latar berbeza:
+     • "bola cerah" (putih berkilat) — latar putih/terang
+     • "bola biru" (biru berkilat) — latar navy/gelap
+   Cahaya datang dari kiri atas, bayang lembut di bawah => nampak cembung (timbul). */
+
+.credential-grid>div>span,
+.service-grid article>span,
+.stat>span,
+.modal .close,
+.success>span,
+.kosong span.ikon,
+.carousel-arrow,
+.cta-icon{
+  border:1px solid #ffffffd9;
+  background:radial-gradient(circle at 32% 26%, #ffffff 0%, #f7fbff 40%, #e4ecf8 74%, #ccd8ea 100%);
+  box-shadow:0 7px 15px #0b244020, 0 2px 4px #0b244033, 0 0 0 1px #cfdcee,
+             inset 0 2px 3px #ffffff, inset 0 -4px 9px #b3c4d966;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+/* Bulatan pada jalur biru CTA: bola cerah + ikon biru supaya jelas */
+.cta-icon{color:var(--navy)}
+.cta-icon svg{filter:drop-shadow(0 1px 1.5px #0b24402e)}
+.credential-grid svg,.service-grid svg,.stat svg,.kosong span.ikon svg{filter:drop-shadow(0 1px 1.5px #0b24402e)}
+
+footer .socials a,
+.tile>span.ikon{
+  border:1px solid #ffffff2e;
+  background:radial-gradient(circle at 32% 26%, #d7e8ff 0%, #7db4f5 17%, #1b6fd4 52%, #06418f 82%, #04295c 100%);
+  box-shadow:0 5px 11px #03123273, 0 1px 2px #03123280, inset 0 2px 3px #ffffff8c, inset 0 -3px 7px #00000059;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.tile>span.ikon svg{filter:drop-shadow(0 1px 1.5px #020e2e8c)}
+
+/* Butang bulat di atas lapisan gelap + anak panah: sedikit timbul */
+.lightbox button{box-shadow:0 5px 12px #00000059, inset 0 1px 2px #ffffff33}
+
+/* Kesan sentuh/hover */
+footer .socials a:hover,.tile:hover>span.ikon,.carousel-arrow:hover,.modal .close:hover{
+  transform:translateY(-2px) scale(1.05);
+}
+@media (prefers-reduced-motion:reduce){
+  .credential-grid>div>span,.service-grid article>span,.stat>span,.modal .close,
+  .success>span,.kosong span.ikon,.carousel-arrow,.tile>span.ikon,footer .socials a{transition:none}
+}
+
 .ikon-ganti{display:inline-block;width:1em;height:1em}
