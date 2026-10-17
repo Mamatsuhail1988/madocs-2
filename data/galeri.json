@@ -2,6 +2,56 @@
  "cara_edit": "Galeri foto. Setiap album ada 'gambar' (senarai) dengan 'src' dan 'alt'. Gambar diletakkan dalam assets/galeri/<slug>/. Hanya gambar dewasa dalam konteks kursus/perhimpunan — JANGAN masukkan gambar pesakit dirawat atau kanak-kanak tanpa kebenaran bertulis.",
  "album": [
   {
+   "slug": "sesi-amali-kursus",
+   "tajuk": "Sesi Amali Kursus",
+   "tarikh": "",
+   "tempat": "",
+   "kategori": "Kursus",
+   "gambar": [
+    {
+     "src": "assets/galeri/sesi-amali-kursus/01.webp",
+     "alt": "Jurulatih berpengalaman membimbing peserta secara hands-on semasa sesi amali berkhatan"
+    },
+    {
+     "src": "assets/galeri/sesi-amali-kursus/02.webp",
+     "alt": "Doktor memakai lampu kepala menjalankan penilaian prosedur dalam sesi amali bertempoh"
+    },
+    {
+     "src": "assets/galeri/sesi-amali-kursus/03.webp",
+     "alt": "Pakar membimbing tangan peserta melakukan prosedur, dengan dulang peralatan steril di sisi meja"
+    },
+    {
+     "src": "assets/galeri/sesi-amali-kursus/04.webp",
+     "alt": "Dulang peralatan steril dan borang penilaian di hadapan pasukan perubatan yang sedang bekerja"
+    },
+    {
+     "src": "assets/galeri/sesi-amali-kursus/05.webp",
+     "alt": "Jurulatih memerhati dan membimbing peserta dari belakang semasa prosedur dijalankan"
+    },
+    {
+     "src": "assets/galeri/sesi-amali-kursus/06.webp",
+     "alt": "Pasukan perubatan bermask dan bersarung tangan membantu peserta dengan peralatan semasa prosedur"
+    }
+   ]
+  },
+  {
+   "slug": "demo-peranti-cme",
+   "tajuk": "Demo Peranti — Booth CME",
+   "tarikh": "",
+   "tempat": "",
+   "kategori": "CME",
+   "gambar": [
+    {
+     "src": "assets/galeri/demo-peranti-cme/01.webp",
+     "alt": "Demonstrasi peranti berkhatan di booth pameran semasa program CME MADOCS"
+    },
+    {
+     "src": "assets/galeri/demo-peranti-cme/02.webp",
+     "alt": "Peserta melihat demonstrasi peranti di booth pameran semasa program CME MADOCS"
+    }
+   ]
+  },
+  {
    "slug": "program-madocs-2026",
    "tajuk": "Program MADOCS 2026 (AGM Ke-4, CME & Jamuan Aidilfitri)",
    "tarikh": "2026-04-26",
